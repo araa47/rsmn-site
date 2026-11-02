@@ -1,7 +1,14 @@
 # RSMN — website
 
-Static marketing site for **RSMN**, an automation and interior-technology consultancy
-in Mumbai. Built for interior designers, architects and their clients.
+Static marketing site for **RSMN**, an interior design and automation studio in
+Mumbai. The site covers three entry points equally:
+
+- **Full design** — blank shell, new build or full redo, with the interior and the
+  automation designed together.
+- **Renovation** — join existing drawings or a contractor, coordinate first fix, keep
+  the technology invisible.
+- **Lived-in home** — a reversible, minimal-change retrofit using IR, RF, relays and
+  battery sensors.
 
 **Live:** https://araa47.github.io/rsmn-site/
 
@@ -10,7 +17,7 @@ Everything is served from this repository.
 
 ## Notes
 
-- **Photography is reference imagery, not client projects.** The six interiors and
+- **Photography is reference imagery, not client projects.** The five interiors and
   the retrofit detail are used under the [Pexels license](https://www.pexels.com/license/).
   Replace them with real project photography, with permission, when available.
 - **The interactive floor plan is a demo.** It uses local browser state to toggle
@@ -32,7 +39,7 @@ Everything is served from this repository.
 
 - `index.html` — the full site
 - `privacy.html` — privacy note
-- `styles.css` — styles, gallery and floor-plan UI
+- `styles.css` — styles, stages, gallery and floor-plan UI
 - `site.js` — mobile menu, app tabs, floor plan, scroll reveal
 - `assets/` — mark, social preview and local images
 - `robots.txt`, `sitemap.xml` — crawler metadata
