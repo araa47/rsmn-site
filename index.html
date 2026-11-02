@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261103p" />
+  <link rel="stylesheet" href="styles.css?v=20261103q" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
@@ -987,9 +987,10 @@
             <h2>If it’s published live,<br />it can run the house.</h2>
           </div>
           <p class="lede">
-            Metro timetables, traffic, flights, weather, energy prices, a delivery
-            rider’s ETA. Most automation stops at the device. We connect the live data
-            to the home.
+            Metro timetables, traffic, flights, weather, energy prices — and
+            Swiggy / Zomato delivery ETAs where the account or partner API exposes
+            them. Most automation stops at the device. We connect the live data to the
+            home.
           </p>
         </div>
 
@@ -1013,12 +1014,14 @@
               <span>Flights</span>
               <span>Weather</span>
               <span>Energy price</span>
+              <span>Swiggy / Zomato</span>
               <span>Delivery ETA</span>
             </div>
-            <p class="anything-fine">If it has an API, a published feed, a sensor, IR/RF or a relay, it’s usually a candidate. This is the layer most automation companies never reach.</p>
+            <p class="anything-fine">If it has an API, a published feed, a sensor, IR/RF or a relay, it’s usually a candidate. Swiggy / Zomato access depends on your account or partner API; we connect what is exposed, not scrape an app. This is the layer most automation companies never reach.</p>
           </div>
 
-          <aside class="commute-card" aria-label="Example: entrance light linked to the metro">
+          <div class="anything-visuals">
+            <aside class="commute-card" aria-label="Example: entrance light linked to the metro">
             <div class="commute-card__head">
               <span><i></i> Entrance · live</span>
               <span class="commute-card__source">Metro feed</span>
@@ -1040,6 +1043,70 @@
               <span>Green · leave</span>
             </div>
           </aside>
+            <aside class="delivery-card" aria-label="Example food delivery ETA automation">
+              <div class="delivery-card__head">
+                <span><i></i> Kitchen display · live</span>
+                <span>Swiggy</span>
+              </div>
+              <div class="delivery-eta"><strong>8:42</strong><span>arriving</span></div>
+              <p>Chicken biryani · 1.2 km away</p>
+              <div class="delivery-bar"><i style="width:72%"></i></div>
+              <div class="delivery-light"><i></i> Porch light · amber under 5 min</div>
+              <p class="delivery-card__note">Example. Feed depends on your account or partner API.</p>
+            </aside>
+          </div>
+        </div>
+
+        <div class="automation-list">
+          <div class="automation-list__head">
+            <div>
+              <p class="kicker">More than lights</p>
+              <h3>Small automations that feel like magic.</h3>
+            </div>
+            <p>Each one is a live signal, a rule and a useful output. No dashboard required.</p>
+          </div>
+          <div class="automation-grid">
+            <article class="automation-card">
+              <span>01</span>
+              <h4>Metro leave-now light</h4>
+              <p>Timetable + live disruption + walk time + presence. Entrance light says leave, wait, or next train.</p>
+            </article>
+            <article class="automation-card">
+              <span>02</span>
+              <h4>Food ETA display</h4>
+              <p>Swiggy / Zomato ETA on a small kitchen display; porch light turns amber under five minutes.</p>
+            </article>
+            <article class="automation-card">
+              <span>03</span>
+              <h4>Desk presence</h4>
+              <p>Walk away from the computer: monitor off, desk light off, AC back. Walk back: everything returns.</p>
+            </article>
+            <article class="automation-card">
+              <span>04</span>
+              <h4>Window open, AC off</h4>
+              <p>A window sensor cuts the AC — no remote, no reminder, no wasted afternoon.</p>
+            </article>
+            <article class="automation-card">
+              <span>05</span>
+              <h4>Rain before you notice</h4>
+              <p>Rain feed or local sensor closes the awning and shades before the balcony gets wet.</p>
+            </article>
+            <article class="automation-card">
+              <span>06</span>
+              <h4>Sunrise shades</h4>
+              <p>Shades open at actual sunrise — a different time every day — or hold blackout if you’re still asleep.</p>
+            </article>
+            <article class="automation-card">
+              <span>07</span>
+              <h4>Flight or traffic delay</h4>
+              <p>Live travel time updates; the house tells you when to leave, not just what the traffic app says.</p>
+            </article>
+            <article class="automation-card">
+              <span>08</span>
+              <h4>Cheap energy window</h4>
+              <p>When the tariff drops, the house runs the dishwasher, water heater or EV charger — automatically.</p>
+            </article>
+          </div>
         </div>
 
         <div class="compare-block">
@@ -2282,7 +2349,7 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261103o" defer></script>
+  <script src="site.js?v=20261103q" defer></script>
           <div class="delivery-toast" id="deliveryToast" hidden role="status" aria-live="polite">
             <span class="delivery-toast__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
             <div class="delivery-toast__copy">

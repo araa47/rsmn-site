@@ -32,6 +32,10 @@ can be switched in the header; the choice is stored locally.
 - **Automation ladder** — app control → routines → ambient/presence → local agent,
   plus the DIY tax (multiple apps, one-brand lock-in, cloud accounts, no support) and
   the RSMN layer across Zigbee, Wi-Fi, BLE, IR, RF, relays, Matter, ESPHome and HA.
+- **Anything with a feed** — metro/traffic/flight/weather/energy examples, an entrance
+  light that says when to leave, and Swiggy/Zomato delivery ETAs where an account or
+  partner API exposes them. Includes a display example and eight concrete automations.
+  Zomato is generally partner/POS access, not a general consumer API; the site says so.
 - **Pre-programmed voice demo** immediately after the plan — five examples with
   self-hosted audio. The replies follow the home assistant’s Rocky-style voice notes:
   short, literal, warm, “buddy”, occasional “Amaze.” — no fixed “Good good” opener.
