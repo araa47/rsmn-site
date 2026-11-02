@@ -29,6 +29,9 @@ can be switched in the header; the choice is stored locally.
 - **Live hero phone app** — comfort ring, security state, scene chips, room cards
   and an activity feed that all update when the floor plan changes. Delivery alerts
   also surface inside the phone.
+- **Automation ladder** — app control → routines → ambient/presence → local agent,
+  plus the DIY tax (multiple apps, one-brand lock-in, cloud accounts, no support) and
+  the RSMN layer across Zigbee, Wi-Fi, BLE, IR, RF, relays, Matter, ESPHome and HA.
 - **Pre-programmed voice demo** immediately after the plan — five examples with
   self-hosted audio. The replies follow the home assistant’s Rocky-style voice notes:
   short, literal, warm, “buddy”, occasional “Amaze.” — no fixed “Good good” opener.
