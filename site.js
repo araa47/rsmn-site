@@ -186,15 +186,35 @@
         onDesc: "Master bedroom cooling to 24°, fan on auto.",
         offDesc: "AC off. Window sensor says the window is open."
       },
+      venetian: {
+        room: "Living room",
+        name: "Venetian blind",
+        on: "Open",
+        off: "Closed",
+        onSub: "Daylight in",
+        offSub: "Privacy",
+        onDesc: "Slats open. Balcony light spills into the living room.",
+        offDesc: "Slats closed. The living room goes quiet and private."
+      },
+      roller: {
+        room: "Master bedroom",
+        name: "Roller blind",
+        on: "Open",
+        off: "Closed",
+        onSub: "Morning light",
+        offSub: "Blackout",
+        onDesc: "Roller up. Morning light on the bed.",
+        offDesc: "Roller down. Blackout for the night."
+      },
       awning: {
         room: "Balcony",
         name: "Balcony awning",
         on: "Closed",
         off: "Open",
-        onSub: "Rain in 20 min",
-        offSub: "Evening light",
-        onDesc: "Awning closed. Rain is 20 minutes away.",
-        offDesc: "Awning open. Evening light on the balcony."
+        onSub: "Auto · rain",
+        offSub: "Sunset timer",
+        onDesc: "Rain in 20 minutes — the awning is closing on its own. It will reopen when the sun returns.",
+        offDesc: "Awning open. Sun on the balcony, rain kept outside."
       },
       lock: {
         room: "Entrance",
@@ -203,8 +223,8 @@
         off: "Unlocked",
         onSub: "Auto-locked 7:41 PM",
         offSub: "Unlocked for arrival",
-        onDesc: "Main door locked. The entrance is secure.",
-        offDesc: "Main door unlocked. The door swings open."
+        onDesc: "Main door locked. Auto-lock at 7:41; the entry light is off.",
+        offDesc: "Main door unlocked. The door swings in and the entry light comes up."
       }
     };
 
@@ -213,25 +233,32 @@
       projector: false,
       bedroomLight: true,
       ac: true,
+      venetian: false,
+      roller: false,
       awning: true,
       lock: true
     };
 
     var planScenes = {
+      morning: {
+        title: "Morning, let in.",
+        desc: "Blinds up, lights off, the room does the rest. The AC has stopped and the door is still locked.",
+        state: { living: false, projector: false, bedroomLight: false, ac: false, venetian: true, roller: true, awning: false, lock: true }
+      },
       evening: {
         title: "Evening at home",
         desc: "The lights are low, the bedroom is cooling, and the door is locked. The house is ready for the night.",
-        state: { living: true, projector: false, bedroomLight: true, ac: true, awning: true, lock: true }
+        state: { living: true, projector: false, bedroomLight: true, ac: true, venetian: false, roller: false, awning: true, lock: true }
       },
       cinema: {
         title: "Cinema, ready.",
         desc: "Projector on, blinds closed, lights down to 8%. One tap and the room changes.",
-        state: { living: false, projector: true, bedroomLight: false, ac: true, awning: true, lock: true }
+        state: { living: false, projector: true, bedroomLight: false, ac: true, venetian: false, roller: false, awning: true, lock: true }
       },
       away: {
         title: "Away mode.",
         desc: "Everything off, the awning in, the door locked. The house looks after itself.",
-        state: { living: false, projector: false, bedroomLight: false, ac: false, awning: true, lock: true }
+        state: { living: false, projector: false, bedroomLight: false, ac: false, venetian: false, roller: false, awning: true, lock: true }
       }
     };
 
@@ -281,6 +308,24 @@
       if (projectorEl) projectorEl.classList.toggle("is-on", planState.projector);
       var acEl = document.querySelector("[data-ac]");
       if (acEl) acEl.classList.toggle("is-on", planState.ac);
+
+      document.querySelectorAll("[data-blind]").forEach(function (blind) {
+        blind.classList.toggle("is-open", !!planState[blind.getAttribute("data-blind")]);
+      });
+      document.querySelectorAll("[data-room-shade]").forEach(function (shade) {
+        var room = shade.getAttribute("data-room-shade");
+        var lightKey = room === "living" ? "living" : "bedroomLight";
+        var blindKey = room === "living" ? "venetian" : "roller";
+        shade.style.opacity = (!planState[lightKey] && !planState[blindKey]) ? "0.32" : "0";
+      });
+      document.querySelectorAll("[data-daylight]").forEach(function (day) {
+        day.style.opacity = planState[day.getAttribute("data-daylight")] ? "0.38" : "0";
+      });
+      document.querySelectorAll("[data-ac-tint]").forEach(function (tint) {
+        tint.style.opacity = planState.ac ? "0.18" : "0";
+      });
+      var entryGlow = document.querySelector("[data-entry-glow]");
+      if (entryGlow) entryGlow.style.opacity = planState.lock ? "0" : "0.45";
 
       if (activeKey && planData[activeKey]) {
         var current = planData[activeKey];
@@ -337,18 +382,28 @@
   var voiceData = {
     awning: {
       heard: "“Close the awning.”",
-      reply: "Done — the awning’s closed. Rain’s still about twenty minutes out.",
-      src: "assets/voice/awning.mp3?v=3"
+      reply: "Awning’s in. Let the rain throw its best shot.",
+      src: "assets/voice/awning.mp3?v=5"
     },
     cinema: {
       heard: "“Movie night.”",
-      reply: "Movie night. Lights down to eight, blinds shut, projector on.",
-      src: "assets/voice/cinema.mp3?v=3"
+      reply: "Movie mode. Lights down, blinds shut, projector warming up. Popcorn is your department.",
+      src: "assets/voice/cinema.mp3?v=5"
+    },
+    morning: {
+      heard: "“Good morning.”",
+      reply: "Morning. Blinds are up, lights are off, and the kettle has the floor.",
+      src: "assets/voice/morning.mp3?v=5"
+    },
+    home: {
+      heard: "“I’m home.”",
+      reply: "Welcome back. Lights are waking up, AC’s on your side, and the door’s locked behind you.",
+      src: "assets/voice/home.mp3?v=5"
     },
     lock: {
       heard: "“Is the door locked?”",
-      reply: "Yes — the main door’s locked. Locked at seven forty-one.",
-      src: "assets/voice/lock.mp3?v=3"
+      reply: "Door’s locked. I checked twice, so you can stop patting your pocket.",
+      src: "assets/voice/lock.mp3?v=5"
     }
   };
 

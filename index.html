@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261102c" />
+  <link rel="stylesheet" href="styles.css?v=20261103a" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
@@ -267,7 +267,7 @@
             <h2>Your floor plan, as a control surface.</h2>
           </div>
           <p class="lede">
-            Tap a marker and the room responds — lights, AC, awning, projector, lock. The
+            Tap a marker and the room responds — lights, AC, blinds, awning, projector, lock. The
             same plan can live on a wall tablet in the hallway, so the house is legible
             at a glance, not buried in a list of entities.
           </p>
@@ -288,6 +288,7 @@
 <defs>
   <pattern id="planGrid3d" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#123c31" stroke-opacity=".055" stroke-width="1"/></pattern>
   <radialGradient id="lightWarm" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="#f8d28f" stop-opacity=".9"/><stop offset="55%" stop-color="#e9b56f" stop-opacity=".4"/><stop offset="100%" stop-color="#e9b56f" stop-opacity=".16"/></radialGradient>
+  <linearGradient id="daylight" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8f4f6" stop-opacity=".9"/><stop offset="100%" stop-color="#cfe3e8" stop-opacity=".55"/></linearGradient>
   <linearGradient id="coneGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe7ae" stop-opacity=".9"/><stop offset="100%" stop-color="#f4c46e" stop-opacity="0"/></linearGradient>
   <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffe7ae" stop-opacity=".95"/><stop offset="38%" stop-color="#f4c46e" stop-opacity=".45"/><stop offset="100%" stop-color="#f4c46e" stop-opacity="0"/></radialGradient>
   <linearGradient id="wallShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#205043"/><stop offset="100%" stop-color="#123c31"/></linearGradient>
@@ -337,6 +338,25 @@
 <line x1="411.6" y1="213.3" x2="266.0" y2="300.7" stroke="#356453" stroke-width="3"/>
 <line x1="411.6" y1="262.9" x2="411.6" y2="213.3" stroke="#356453" stroke-width="2"/>
 <line x1="266.0" y1="350.3" x2="266.0" y2="300.7" stroke="#356453" stroke-width="2"/>
+<g class="venetian" data-blind="venetian">
+<polygon points="409.0,255.8 268.6,340.0 268.6,284.2 409.0,200.0" fill="#cfe3df" class="glass" opacity=".16"/>
+<line x1="407.4" y1="253.0" x2="270.2" y2="335.4" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="407.4" y1="246.5" x2="270.2" y2="328.9" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="407.4" y1="240.0" x2="270.2" y2="322.4" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="407.4" y1="233.5" x2="270.2" y2="315.9" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="407.4" y1="227.0" x2="270.2" y2="309.3" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="407.4" y1="220.5" x2="270.2" y2="302.8" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="407.4" y1="214.0" x2="270.2" y2="296.3" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="407.4" y1="207.4" x2="270.2" y2="289.8" stroke="#e7ddcb" stroke-width="2.6" class="slat"/>
+<line x1="409.0" y1="258.3" x2="268.6" y2="342.5" stroke="#8a7d68" stroke-width="1.4"/>
+<line x1="409.0" y1="198.8" x2="268.6" y2="283.0" stroke="#8a7d68" stroke-width="1.4"/>
+<polygon points="412.6,200.9 272.2,285.2 272.2,277.7 412.6,193.5" fill="#c8bda8" stroke="rgba(12,42,34,.18)" stroke-width="0.8"/><polygon points="267.0,282.1 272.2,285.2 272.2,277.7 267.0,274.6" fill="#d8cbb3" stroke="rgba(12,42,34,.18)" stroke-width="0.8"/><polygon points="407.4,190.4 412.6,193.5 272.2,277.7 267.0,274.6" fill="#e7ddcb" stroke="rgba(12,42,34,.18)" stroke-width="0.8"/>
+</g>
+<g class="roller" data-blind="roller">
+<polygon points="838.0,319.2 936.8,378.5 936.8,333.8 838.0,274.6" fill="#d8cbb3" class="fabric" opacity=".95"/>
+<polygon points="939.4,334.2 931.1,339.2 931.1,333.0 939.4,328.0" fill="#9a856d" stroke="rgba(12,42,34,.18)" stroke-width="0.8"/><polygon points="827.1,276.8 931.1,339.2 931.1,333.0 827.1,270.6" fill="#aa967b" stroke="rgba(12,42,34,.18)" stroke-width="0.8"/><polygon points="835.4,265.6 939.4,328.0 931.1,333.0 827.1,270.6" fill="#b9a58a" stroke="rgba(12,42,34,.18)" stroke-width="0.8"/>
+<line x1="840.6" y1="321.4" x2="934.2" y2="377.5" stroke="#b9a58a" stroke-width="2"/>
+</g>
 <polygon points="468.8,478.2 666.4,596.8 666.4,568.2 468.8,449.7" fill="#d9ccb5" stroke="#9d8d75" stroke-width="0.7"/>
 <line x1="468.8" y1="449.7" x2="666.4" y2="568.2" stroke="#8f7e67" stroke-width="1.4"/>
 <polygon points="260.8,353.4 383.0,426.7 383.0,409.4 260.8,336.0" fill="#d9ccb5" stroke="#9d8d75" stroke-width="0.7"/>
@@ -411,6 +431,12 @@
 <line x1="276.4" y1="191.1" x2="333.6" y2="225.4" stroke="#8e9c89" stroke-width="0.8"/>
 <line x1="242.6" y1="211.3" x2="299.8" y2="245.7" stroke="#8e9c89" stroke-width="0.8"/>
 </g>
+<polygon points="414.2,267.9 606.6,383.4 468.8,466.0 276.4,350.6" fill="#0b2027" class="room-shade" data-room-shade="living" style="opacity:0"/>
+<polygon points="812.0,328.8 952.4,413.0 780.8,516.0 640.4,431.7" fill="#0b2027" class="room-shade" data-room-shade="master" style="opacity:0"/>
+<polygon points="414.2,267.8 606.6,383.2 468.8,465.9 276.4,350.5" fill="#d8ecf0" class="daylight" data-daylight="venetian" style="opacity:0"/>
+<polygon points="812.0,328.6 952.4,412.9 780.8,515.8 640.4,431.6" fill="#d8ecf0" class="daylight" data-daylight="roller" style="opacity:0"/>
+<polygon points="812.0,328.5 952.4,412.8 780.8,515.7 640.4,431.5" fill="#a9d3e6" class="ac-tint" data-ac-tint="master" style="opacity:0"/>
+<polygon points="403.8,420.5 455.8,451.7 442.8,459.5 390.8,428.3" fill="url(#lightWarm)" class="entry-glow" data-entry-glow style="opacity:0"/>
 <polygon points="414.2,268.2 606.6,383.7 468.8,466.4 276.4,350.9" fill="url(#lightWarm)" class="light-wash" data-light-wash="living" style="opacity:0"/>
 <polygon points="812.0,329.1 952.4,413.3 780.8,516.3 640.4,432.0" fill="url(#lightWarm)" class="light-wash" data-light-wash="bedroomLight" style="opacity:0"/>
 <g class="light-fixture" data-fixture="living">
@@ -488,6 +514,14 @@
                 <svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg>
                 <span class="hotspot__label">Master AC</span>
               </button>
+              <button class="hotspot" type="button" data-device="venetian" aria-pressed="false" aria-label="Venetian blind, closed" style="left:19%;top:38.1%">
+                <svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg>
+                <span class="hotspot__label">Venetian blind</span>
+              </button>
+              <button class="hotspot" type="button" data-device="roller" aria-pressed="false" aria-label="Master roller blind, closed" style="left:83.2%;top:41.2%">
+                <svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg>
+                <span class="hotspot__label">Roller blind</span>
+              </button>
               <button class="hotspot" type="button" data-device="awning" aria-pressed="true" aria-label="Balcony awning, closed" style="left:16.4%;top:29%">
                 <svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg>
                 <span class="hotspot__label">Balcony awning</span>
@@ -534,6 +568,16 @@
                 <span class="plan-device__text"><span>Master bedroom AC</span><small data-sub>24° · cooling</small></span>
                 <span class="plan-device__state" data-state>On</span>
               </button>
+              <button class="plan-device" type="button" data-device="venetian" aria-pressed="false">
+                <span class="plan-device__icon"><svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg></span>
+                <span class="plan-device__text"><span>Venetian blind</span><small data-sub>Privacy</small></span>
+                <span class="plan-device__state" data-state>Closed</span>
+              </button>
+              <button class="plan-device" type="button" data-device="roller" aria-pressed="false">
+                <span class="plan-device__icon"><svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg></span>
+                <span class="plan-device__text"><span>Master roller blind</span><small data-sub>Blackout</small></span>
+                <span class="plan-device__state" data-state>Closed</span>
+              </button>
               <button class="plan-device" type="button" data-device="awning" aria-pressed="true">
                 <span class="plan-device__icon"><svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg></span>
                 <span class="plan-device__text"><span>Balcony awning</span><small data-sub>Rain in 20 min</small></span>
@@ -549,6 +593,7 @@
             <div class="plan-scenes">
               <span class="plan-scenes__label">Run a scene</span>
               <div class="plan-scenes__buttons">
+                <button type="button" data-scene="morning">Morning</button>
                 <button type="button" data-scene="evening" class="is-active">Evening</button>
                 <button type="button" data-scene="cinema">Cinema</button>
                 <button type="button" data-scene="away">Away</button>
@@ -595,6 +640,8 @@
             <div class="voice__chips" role="group" aria-label="Choose a voice demo request">
               <button type="button" class="is-active" data-voice="awning" aria-pressed="true">“Close the awning”</button>
               <button type="button" data-voice="cinema" aria-pressed="false">“Movie night”</button>
+              <button type="button" data-voice="morning" aria-pressed="false">“Good morning”</button>
+              <button type="button" data-voice="home" aria-pressed="false">“I’m home”</button>
               <button type="button" data-voice="lock" aria-pressed="false">“Is the door locked?”</button>
             </div>
             <p class="voice__fine">
@@ -609,7 +656,7 @@
               <span class="voice__eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
             </div>
             <p class="voice__heard" id="voiceHeard">“Close the awning.”</p>
-            <p class="voice__reply" id="voiceReply">Done — the awning’s closed. Rain’s still about twenty minutes out.</p>
+            <p class="voice__reply" id="voiceReply">Awning’s in. Let the rain throw its best shot.</p>
             <audio id="voiceAudio" preload="none"></audio>
             <button class="voice__play" type="button" id="voicePlay">
               Play voice
@@ -1058,7 +1105,7 @@
         <div class="motion">
           <div class="motion__copy">
             <p class="motion__eyebrow">Automation, in motion</p>
-            <h3>Evening → Cinema → Away.</h3>
+            <h3>Morning → Evening → Cinema → Away.</h3>
             <p>
               This is the plan demo running: lights, AC, projector, awning and lock
               changing together. The interactive version is further down.
@@ -1069,9 +1116,9 @@
             </a>
           </div>
           <div class="motion__media">
-            <video width="1200" height="706" autoplay muted loop playsinline preload="metadata" poster="assets/video/scene-loop-poster.jpg?v=3" aria-label="Seven second loop of the home plan changing between Evening, Cinema and Away scenes; lights, air conditioning, projector, awning and lock update together." data-autoplay>
-              <source src="assets/video/scene-loop.mp4?v=3" type="video/mp4" />
-              Your browser can’t play the loop. <a href="assets/video/scene-loop.mp4?v=3">Download it here</a>.
+            <video width="1200" height="718" autoplay muted loop playsinline preload="metadata" poster="assets/video/scene-loop-poster.jpg?v=5" aria-label="Seven second loop of the home plan changing between Evening, Cinema and Away scenes; lights, air conditioning, projector, awning and lock update together." data-autoplay>
+              <source src="assets/video/scene-loop.mp4?v=5" type="video/mp4" />
+              Your browser can’t play the loop. <a href="assets/video/scene-loop.mp4?v=5">Download it here</a>.
             </video>
             <span class="motion__tag">7.8s loop · demo</span>
           </div>
@@ -1915,6 +1962,6 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261102c"></script>
+  <script src="site.js?v=20261103a"></script>
 </body>
 </html>

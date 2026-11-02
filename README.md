@@ -1,45 +1,68 @@
 # RSMN — website
 
 Static marketing site for **RSMN**, an interior design and automation studio in
-Mumbai. The site covers three entry points equally:
-
-- **Full design** — blank shell, new build or full redo, with the interior and the
-  automation designed together.
-- **Renovation** — join existing drawings or a contractor, coordinate first fix, keep
-  the technology invisible.
-- **Lived-in home** — a reversible, minimal-change retrofit using IR, RF, relays and
-  battery sensors.
+Mumbai. The site covers full interior design, renovation integration and
+minimal-change retrofit, with one calm app for the whole home.
 
 **Live:** https://araa47.github.io/rsmn-site/
 
+This repository is the source of truth for the site. It is a separate public repo
+from the private Home Assistant configuration; no HA URL, token or internal path is
+referenced here.
+
 No build step. No frameworks, no external fonts, no CDN, no analytics, no cookies.
-Everything is served from this repository. The interactive 2BHK plan and the voice
-demo sit immediately after the hero, and the plan’s lights visibly brighten the 3D
-rooms.
+Everything is served from this repository.
 
-## Notes
+## What is here
 
-- **Photography is reference imagery, not client projects.** The four interiors, the
-  wall control panel and the retrofit detail are used under the
-  [Pexels license](https://www.pexels.com/license/). Replace them with real project
-  photography, with permission, when available.
-- **The scene loop and floor plan are demos.** The 7.8-second MP4 shows a
-  representative 2BHK plan — not a scan of the client’s home — moving through
-  Evening → Cinema → Away. It uses local browser state, not a live Home Assistant
-  instance, and has no path into any home.
-- **Pricing is indicative.** ₹2,00,000 / ₹5,00,000 / ₹12,00,000 are starting points,
-  exclusive of GST; the final quote comes after a walkthrough. Confirm before quoting
-  a client.
-- **The voice is a generic local TTS sample.** It is not a celebrity voice clone.
-  Replace it with a licensed voice, or the client’s own Rocky sample, before treating
-  it as the live assistant voice. The three files can be swapped without code changes;
-  see `assets/voice/README.md`.
-- **Sun/shade examples and the local-agent chat are illustrative.** Confirm the
-  actual triggers and what the local agent can safely change for each installation
-  before publishing hard guarantees.
-- **Voice and pricing need a final check.** The voice files are generic samples; the
-  high price tiers are placeholders. Neither should be treated as a client commitment
-  without review.
+- **Interactive 2BHK floor plan** directly after the hero — a representative isometric
+  cutaway, not a scan of the client's home. Lights, AC, venetian and roller blinds,
+  awning, projector and the entry door/lock are interactive. Morning / Evening /
+  Cinema / Away scenes run the whole plan. The live HA plan stays behind HA auth.
+- **Pre-programmed voice demo** immediately after the plan — five examples with
+  self-hosted audio. It is a sample, not a live language model. The real assistant runs
+  locally on the hub.
+- **Indicative INR pricing** — Lights + mmWave from ₹2,00,000; whole home from
+  ₹5,00,000; full interior design + automation from ₹12,00,000. Exclusive of GST;
+  final scope and quote after a walkthrough. The upper tiers are indicative and should
+  be confirmed before quoting a client.
+- **Voice samples** in `assets/voice/`. They are a generic macOS `Tara`
+  Indian-English TTS sample — not a celebrity voice clone. See
+  `assets/voice/README.md` to replace them with PocketTTS, a licensed voice, or a
+  Rocky sample the client has the rights to use.
+- **Photography is reference imagery**, not client projects. The images are used under
+  the [Pexels license](https://www.pexels.com/license/) and stored locally in
+  `assets/img/`. Replace with real project photography, with permission, when available.
+
+## Files
+
+```
+index.html              the one-page site
+privacy.html            plain-language privacy note
+styles.css              design system, layout, phone UI, gallery, plan
+site.js                 mobile menu, app tabs, floor plan, voice demo, reveal, year
+robots.txt              crawler rules + sitemap reference
+sitemap.xml             the two public pages
+assets/
+├── mark.svg            RSMN mark / favicon
+├── og.png              1200 × 630 social preview image
+├── img/                reference interiors + control + retrofit detail
+├── video/              scene-loop.mp4 + poster (plan demo)
+└── voice/              five pre-programmed TTS samples + replacement guide
+```
+
+## Preview it
+
+```sh
+python3 -m http.server 8787
+```
+
+Then open <http://localhost:8787/>. The privacy note is at
+<http://localhost:8787/privacy.html>.
+
+## Deploy
+
+Push to `main`. GitHub Pages serves the repository root; there is no build step.
 
 ## Image credits
 
@@ -51,14 +74,3 @@ rooms.
 | Control panel | [Pexels 16423103](https://www.pexels.com/photo/16423103/) |
 | Retrofit switch | [Pexels 7746038](https://www.pexels.com/photo/7746038/) — Max Vakhtbovych |
 | Balcony | [Pexels 35123428](https://www.pexels.com/photo/35123428/) — Murun. E |
-
-## Files
-
-- `index.html` — the full site
-- `privacy.html` — privacy note
-- `styles.css` — styles, stages, gallery, motion loop and floor-plan UI
-- `site.js` — mobile menu, app tabs, floor plan, reduced-motion video handling
-- `assets/` — mark, social preview, local images and scene loop
-- `robots.txt`, `sitemap.xml` — crawler metadata
-
-Published with GitHub Pages from the `main` branch.

@@ -3682,6 +3682,42 @@ ol {
   mix-blend-mode: screen;
   transition: opacity 0.45s var(--ease);
 }
+.room-shade,
+.daylight,
+.ac-tint,
+.entry-glow {
+  pointer-events: none;
+  transition: opacity 0.45s var(--ease);
+}
+.daylight {
+  mix-blend-mode: screen;
+}
+.venetian .slat,
+.venetian .glass,
+.roller .fabric {
+  transition: opacity 0.45s var(--ease);
+}
+.venetian.is-open .slat {
+  opacity: 0.12;
+}
+.venetian.is-open .glass {
+  opacity: 0.55;
+}
+.roller.is-open .fabric {
+  opacity: 0;
+}
+.entry-door {
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.awning {
+  transform-box: view-box;
+  transform-origin: 410px 182px;
+  transition: opacity 0.45s var(--ease), transform 0.55s var(--ease) !important;
+}
+.awning.is-open {
+  opacity: 0.02;
+  transform: translateY(-8px) scaleX(0.62);
+}
 .light-fixture .light-cone,
 .light-fixture .light-pool {
   opacity: 0;
@@ -3708,15 +3744,6 @@ ol {
   fill: #ffe3a3;
   stroke: #b58a4e;
 }
-.awning {
-  transition: opacity 0.45s var(--ease);
-}
-.awning.is-open {
-  opacity: 0.08;
-}
-.entry-door {
-  transition: transform 0.5s var(--ease);
-}
 .entry-door.is-open {
   transform: rotate(-32deg);
 }
@@ -3737,6 +3764,9 @@ ol {
 }
 .ac-glow.is-on {
   opacity: 1 !important;
+}
+.ac-glow.is-on circle {
+  fill: #87c7df;
 }
 .plan-labels text {
   font-weight: 600;
