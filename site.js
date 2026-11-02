@@ -382,28 +382,28 @@
   var voiceData = {
     awning: {
       heard: "“Close the awning.”",
-      reply: "Awning’s in. Let the rain throw its best shot.",
-      src: "assets/voice/awning.mp3?v=5"
+      reply: "Good, good. Awning’s in. Let the rain throw its best shot.",
+      src: "assets/voice/awning.mp3?v=6"
     },
     cinema: {
       heard: "“Movie night.”",
-      reply: "Movie mode. Lights down, blinds shut, projector warming up. Popcorn is your department.",
-      src: "assets/voice/cinema.mp3?v=5"
+      reply: "Good, good. Movie mode. Lights down, blinds shut, projector warming up. Popcorn is your department.",
+      src: "assets/voice/cinema.mp3?v=6"
     },
     morning: {
       heard: "“Good morning.”",
-      reply: "Morning. Blinds are up, lights are off, and the kettle has the floor.",
-      src: "assets/voice/morning.mp3?v=5"
+      reply: "Good, good. Morning. Blinds are up, lights are off, and the kettle has the floor.",
+      src: "assets/voice/morning.mp3?v=6"
     },
     home: {
       heard: "“I’m home.”",
-      reply: "Welcome back. Lights are waking up, AC’s on your side, and the door’s locked behind you.",
-      src: "assets/voice/home.mp3?v=5"
+      reply: "Good, good. Welcome back. Lights waking up, AC on your side, and the door locked behind you.",
+      src: "assets/voice/home.mp3?v=6"
     },
     lock: {
       heard: "“Is the door locked?”",
-      reply: "Door’s locked. I checked twice, so you can stop patting your pocket.",
-      src: "assets/voice/lock.mp3?v=5"
+      reply: "Good, good. Door’s locked. I checked twice, so you can stop patting your pocket.",
+      src: "assets/voice/lock.mp3?v=6"
     }
   };
 

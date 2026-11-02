@@ -26,10 +26,10 @@ Everything is served from this repository.
   ₹5,00,000; full interior design + automation from ₹12,00,000. Exclusive of GST;
   final scope and quote after a walkthrough. The upper tiers are indicative and should
   be confirmed before quoting a client.
-- **Voice samples** in `assets/voice/`. They are a generic macOS `Tara`
-  Indian-English TTS sample — not a celebrity voice clone. See
-  `assets/voice/README.md` to replace them with PocketTTS, a licensed voice, or a
-  Rocky sample the client has the rights to use.
+- **Voice samples** in `assets/voice/`, generated locally with **PocketTTS**
+  (`alba` preset). They are a sample, not a live model call. The live hub can clone
+  any voice the client has the rights to; see `assets/voice/README.md` to replace the
+  files with a licensed or client-owned voice.
 - **Photography is reference imagery**, not client projects. The images are used under
   the [Pexels license](https://www.pexels.com/license/) and stored locally in
   `assets/img/`. Replace with real project photography, with permission, when available.
