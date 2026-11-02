@@ -235,7 +235,9 @@
     var phonePill = document.querySelector("[data-phone-pill]");
     var phoneLiving = document.querySelector("[data-phone-living]");
     var phoneMaster = document.querySelector("[data-phone-master]");
-    var phoneTemp = document.querySelector("[data-phone-temp]");
+    var phoneCover = document.querySelector("[data-phone-cover]");
+    var phoneProjector = document.querySelector("[data-phone-projector]");
+    var phoneTiles = Array.prototype.slice.call(document.querySelectorAll("[data-phone-tile]"));
     var phoneActivity = document.querySelector("[data-phone-activity]");
     var phoneActivityLabel = document.querySelector("[data-phone-activity-label]");
     var phoneNotify = document.getElementById("phoneNotify");
@@ -246,16 +248,15 @@
 
     function updatePhone(activeKey) {
       var scene = currentScene && planScenes[currentScene];
-      var living = planState.living ? "Lights 40%" : "Lights off";
-      if (planState.projector) living += " · Cinema";
-      else if (planState.venetian) living += " · Daylight";
-      else living += " · Quiet";
-      if (phoneLiving) phoneLiving.textContent = living;
-
-      var master = planState.ac ? "AC 24°" : "AC off";
-      master += planState.roller ? " · blinds up" : " · blinds down";
-      if (phoneMaster) phoneMaster.textContent = master;
-      if (phoneTemp) phoneTemp.textContent = planState.ac ? "24°" : "21°";
+      if (phoneLiving) phoneLiving.textContent = planState.living ? "40% · warm" : "Off";
+      if (phoneMaster) phoneMaster.textContent = planState.ac ? "24° · cooling" : "Off";
+      if (phoneCover) phoneCover.textContent = planState.venetian ? "Open" : "Closed";
+      if (phoneProjector) phoneProjector.textContent = planState.projector ? "On · HDMI 2" : "Off";
+      phoneTiles.forEach(function (tile) {
+        var key = tile.getAttribute("data-phone-tile");
+        var on = key === "ac" ? planState.ac : key === "cover" ? planState.venetian : key === "projector" ? planState.projector : planState.living;
+        tile.classList.toggle("is-on", !!on);
+      });
 
       if (phoneState) {
         var stateLabel = scene ? scene.title.replace(/\.$/, "") : "Home, mapped.";

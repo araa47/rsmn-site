@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261103r" />
+  <link rel="stylesheet" href="styles.css?v=20261103t" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
@@ -210,23 +210,70 @@
                 <div class="app-screen">
                   <div class="statusbar"><span>7:42</span><span class="statusbar__icons"><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg><span class="battery" aria-hidden="true"></span></span></div>
                   <div class="app">
-                    <div class="app__head">
-                      <div>
-                        <div class="app__eyebrow">Wednesday, 2 November · Mumbai</div>
-                        <div class="app__title">Good evening,<br /><em>Home.</em></div>
+                    <div class="ha-topbar">
+                      <div class="ha-topbar__title"><span>Overview</span><strong>Home</strong></div>
+                      <div class="ha-topbar__actions">
+                        <span class="ha-icon-btn"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span>
+                        <span class="ha-icon-btn"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></span>
                       </div>
-                      <span class="avatar" aria-hidden="true">R<i class="avatar__live"></i></span>
                     </div>
+
+                    <div class="ha-chips" aria-hidden="true">
+                      <span class="ha-chip is-on">Overview</span>
+                      <span class="ha-chip">Living</span>
+                      <span class="ha-chip">Master</span>
+                      <span class="ha-chip">Security</span>
+                    </div>
+
                     <div class="app__body">
-                      <div class="app-hero">
-                        <div class="app-hero__ring" aria-hidden="true">
-                          <span data-phone-temp>21°</span>
-                          <small>inside</small>
-                        </div>
-                        <div class="app-hero__copy">
-                          <span class="app-hero__label">Home state</span>
+                      <div class="ha-hero">
+                        <div>
+                          <span class="ha-label">Home state</span>
                           <strong data-phone-state>Evening at home</strong>
-                          <span class="app-hero__sync"><i></i> Synced · local hub</span>
+                          <span class="ha-sync"><i></i> Local · synced</span>
+                        </div>
+                        <span class="pill" data-phone-pill>Home</span>
+                      </div>
+
+                      <div class="ha-tiles">
+                        <div class="ha-tile ha-tile--light is-on" data-phone-tile="living">
+                          <div class="ha-tile__top">
+                            <span class="ha-tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg></span>
+                            <span class="ha-toggle" aria-hidden="true"></span>
+                          </div>
+                          <strong>Living lights</strong>
+                          <span class="ha-tile__state" data-phone-living>40% · warm</span>
+                          <span class="ha-slider" aria-hidden="true"><i style="width:72%"></i></span>
+                        </div>
+
+                        <div class="ha-tile ha-tile--climate is-on" data-phone-tile="ac">
+                          <div class="ha-tile__top">
+                            <span class="ha-tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></span>
+                            <span class="ha-toggle" aria-hidden="true"></span>
+                          </div>
+                          <strong>Master AC</strong>
+                          <span class="ha-tile__state" data-phone-master>24° · cooling</span>
+                          <span class="ha-slider" aria-hidden="true"><i style="width:62%"></i></span>
+                        </div>
+
+                        <div class="ha-tile ha-tile--cover" data-phone-tile="cover">
+                          <div class="ha-tile__top">
+                            <span class="ha-tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg></span>
+                            <span class="ha-state" data-phone-cover>Closed</span>
+                          </div>
+                          <strong>Blinds</strong>
+                          <span class="ha-tile__state">Living · privacy</span>
+                          <span class="ha-slider ha-slider--cover" aria-hidden="true"><i style="width:22%"></i></span>
+                        </div>
+
+                        <div class="ha-tile ha-tile--media" data-phone-tile="projector">
+                          <div class="ha-tile__top">
+                            <span class="ha-tile__icon"><svg class="icon" aria-hidden="true"><use href="#i-film"/></svg></span>
+                            <span class="ha-toggle" aria-hidden="true"></span>
+                          </div>
+                          <strong>Projector</strong>
+                          <span class="ha-tile__state" data-phone-projector>Off</span>
+                          <span class="ha-slider ha-slider--media" aria-hidden="true"><i style="width:6%"></i></span>
                         </div>
                       </div>
 
@@ -236,7 +283,6 @@
                           <strong data-phone-secure>All secure</strong>
                           <span data-phone-secure-sub>3 cameras · door locked</span>
                         </div>
-                        <span class="pill" data-phone-pill>Home</span>
                       </div>
 
                       <div class="scenes">
@@ -246,22 +292,18 @@
                         <span class="scene" data-phone-scene="away"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg> Away</span>
                       </div>
 
-                      <div class="room-grid">
-                        <div class="room room--warm">
-                          <span class="room__name">Living</span>
-                          <span class="room__meta" data-phone-living>Lights 40% · Quiet</span>
-                          <span class="room__bar" aria-hidden="true"><i style="width:72%"></i></span>
+                      <div class="ha-energy">
+                        <div>
+                          <span class="ha-label">Energy today</span>
+                          <strong>4.8 <small>kWh</small></strong>
                         </div>
-                        <div class="room">
-                          <span class="room__name">Master</span>
-                          <span class="room__meta" data-phone-master>AC 24° · blinds down</span>
-                          <span class="room__bar" aria-hidden="true"><i style="width:55%"></i></span>
-                        </div>
+                        <span class="ha-energy__delta">−12%</span>
+                        <span class="ha-energy__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
                       </div>
 
                       <div class="ui-card app-activity">
-                        <div class="activity">
-                          <span class="activity__thumb" aria-hidden="true"></span>
+                        <div class="ha-log">
+                          <span class="ha-log__dot" aria-hidden="true"></span>
                           <div>
                             <div class="activity__label" data-phone-activity-label>Now · Home Assistant</div>
                             <p class="activity__text" data-phone-activity><b>Evening at home.</b> Lights low, door locked, the house is settled.</p>
@@ -277,10 +319,10 @@
                     </div>
 
                     <div class="app-nav" aria-hidden="true">
-                      <span class="is-on"><svg class="icon"><use href="#i-home"/></svg> Home</span>
-                      <span><svg class="icon"><use href="#i-shield"/></svg> Secure</span>
-                      <span><svg class="icon"><use href="#i-grid"/></svg> Rooms</span>
-                      <span><svg class="icon"><use href="#i-bolt"/></svg> Energy</span>
+                      <span class="is-on"><svg class="icon"><use href="#i-home"/></svg> Overview</span>
+                      <span><svg class="icon"><use href="#i-grid"/></svg> Areas</span>
+                      <span><svg class="icon"><use href="#i-bolt"/></svg> Automations</span>
+                      <span><svg class="icon"><use href="#i-remote"/></svg> Settings</span>
                     </div>
                   </div>
                 </div>
@@ -509,11 +551,11 @@
 <line x1="322.2" y1="396.5" x2="274.3" y2="425.2" stroke="#9b8a70" stroke-width="1"/>
 <line x1="322.2" y1="343.8" x2="274.3" y2="372.5" stroke="#7e6d55" stroke-width="1.6"/>
 <g class="awning" data-awning style="transition:opacity .45s">
-<polygon points="238.4,262.5 325.8,314.9 280.6,342.1 193.2,289.6" fill="rgba(196,207,178,.58)" stroke="#7d8d74" stroke-width="1.1"/>
-<line x1="231.7" y1="267.2" x2="317.0" y2="318.4" stroke="#8e9c89" stroke-width="0.8"/>
-<line x1="224.4" y1="271.6" x2="309.7" y2="322.7" stroke="#8e9c89" stroke-width="0.8"/>
-<line x1="217.1" y1="275.9" x2="302.4" y2="327.1" stroke="#8e9c89" stroke-width="0.8"/>
-<line x1="209.8" y1="280.3" x2="295.1" y2="331.5" stroke="#8e9c89" stroke-width="0.8"/>
+<polygon points="229.6,249.2 317.0,301.6 280.6,323.5 193.2,271.0" fill="rgba(196,207,178,.58)" stroke="#7d8d74" stroke-width="1.1"/>
+<line x1="225.4" y1="252.3" x2="310.7" y2="303.5" stroke="#8e9c89" stroke-width="0.8"/>
+<line x1="218.2" y1="256.7" x2="303.4" y2="307.9" stroke="#8e9c89" stroke-width="0.8"/>
+<line x1="210.9" y1="261.1" x2="296.2" y2="312.2" stroke="#8e9c89" stroke-width="0.8"/>
+<line x1="203.6" y1="265.4" x2="288.9" y2="316.6" stroke="#8e9c89" stroke-width="0.8"/>
 </g>
 <polygon points="351.8,230.5 606.6,383.4 468.8,466.0 214.0,313.2" fill="#0b2027" class="room-shade" data-room-shade="living" style="opacity:0"/>
 <polygon points="812.0,328.8 952.4,413.0 780.8,516.0 640.4,431.7" fill="#0b2027" class="room-shade" data-room-shade="master" style="opacity:0"/>
@@ -605,7 +647,7 @@
                 <svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg>
                 <span class="hotspot__label">Roller blind</span>
               </button>
-              <button class="hotspot" type="button" data-device="awning" aria-pressed="true" aria-label="Balcony awning, closed" style="left:8.7%;top:44.5%">
+              <button class="hotspot" type="button" data-device="awning" aria-pressed="true" aria-label="Balcony awning, closed" style="left:8.7%;top:42.2%">
                 <svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg>
                 <span class="hotspot__label">Balcony awning</span>
               </button>
@@ -1009,6 +1051,7 @@
               <span>Weather</span>
               <span>Energy price</span>
               <span>Swiggy / Zomato</span>
+              <span>Pet feeder</span>
               <span>Delivery ETA</span>
             </div>
             <p class="anything-fine">If it has an API, a published feed, a sensor, IR/RF or a relay, it’s usually a candidate. Swiggy / Zomato access depends on your account or partner API; we connect what is exposed, not scrape an app. This is the layer most automation companies never reach.</p>
@@ -1138,6 +1181,16 @@
               <span>08</span>
               <h4>Cheap energy window</h4>
               <p>When the tariff drops, the house runs the dishwasher, water heater or EV charger — automatically.</p>
+            </article>
+
+            <article class="automation-card">
+              <div class="automation-visual automation-visual--pet" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><g class="av-paw"><ellipse cx="42" cy="58" rx="12" ry="9" fill="currentColor"/><circle cx="30" cy="45" r="4.5" fill="currentColor"/><circle cx="40" cy="40" r="4.5" fill="currentColor"/><circle cx="51" cy="43" r="4.5" fill="currentColor"/></g><ellipse class="av-bowl" cx="120" cy="67" rx="43" ry="15" fill="#e9a17c"/><path d="M96 60h48l-6 16h-36z" fill="#7c4b3f"/><g class="av-kibble"><circle cx="116" cy="49" r="3.5" fill="currentColor"/><circle cx="127" cy="43" r="3" fill="currentColor"/><circle cx="111" cy="39" r="2.6" fill="currentColor"/><circle cx="134" cy="51" r="3.2" fill="currentColor"/></g><text class="av-text" x="166" y="33">7:00</text></svg>
+                <span class="av-tag">Portion 1</span>
+              </div>
+              <span>09</span>
+              <h4>Pet feeding</h4>
+              <p>Feed the cat at 7:00 and 18:00, portion-controlled. Skip if already fed; ping you if the bowl is empty.</p>
             </article>
           </div>
 
@@ -1507,9 +1560,9 @@
             </a>
           </div>
           <div class="motion__media">
-            <video width="1200" height="728" autoplay muted loop playsinline preload="metadata" poster="assets/video/scene-loop-poster.jpg?v=10" aria-label="Seven second loop of the home plan changing between Evening, Cinema and Away scenes; lights, air conditioning, projector, awning and lock update together." data-autoplay>
-              <source src="assets/video/scene-loop.mp4?v=10" type="video/mp4" />
-              Your browser can’t play the loop. <a href="assets/video/scene-loop.mp4?v=10">Download it here</a>.
+            <video width="1200" height="728" autoplay muted loop playsinline preload="metadata" poster="assets/video/scene-loop-poster.jpg?v=11" aria-label="Seven second loop of the home plan changing between Evening, Cinema and Away scenes; lights, air conditioning, projector, awning and lock update together." data-autoplay>
+              <source src="assets/video/scene-loop.mp4?v=11" type="video/mp4" />
+              Your browser can’t play the loop. <a href="assets/video/scene-loop.mp4?v=11">Download it here</a>.
             </video>
             <span class="motion__tag">7.8s loop · demo</span>
           </div>
@@ -2381,7 +2434,7 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261103r" defer></script>
+  <script src="site.js?v=20261103t" defer></script>
           <div class="delivery-toast" id="deliveryToast" hidden role="status" aria-live="polite">
             <span class="delivery-toast__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
             <div class="delivery-toast__copy">

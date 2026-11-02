@@ -27,15 +27,16 @@ can be switched in the header; the choice is stored locally.
   venetian and roller blinds, awning, animated projector and the entry door/lock are
   interactive. A Delivery alert shows a rider outside with an unlock action. Morning /
   Evening / Cinema / Away scenes run the whole plan. The live HA plan stays behind HA auth.
-- **Live hero phone app** — comfort ring, security state, scene chips, room cards
-  and an activity feed that all update when the floor plan changes. Delivery alerts
-  also surface inside the phone.
+- **Live hero phone app** — Home Assistant Lovelace-style top bar, area chips, entity
+  tile cards, toggles, energy card and logbook that all update when the floor plan
+  changes. Delivery alerts also surface inside the phone.
 - **Automation ladder** — app control → routines → ambient/presence → local agent,
   plus the DIY tax (multiple apps, one-brand lock-in, cloud accounts, no support) and
   the RSMN layer across Zigbee, Wi-Fi, BLE, IR, RF, relays, Matter, ESPHome and HA.
 - **Anything with a feed** — metro/traffic/flight/weather/energy examples, an entrance
   light that says when to leave, and Swiggy/Zomato delivery ETAs where an account or
-  partner API exposes them. Includes a display example and eight concrete automations.
+  partner API exposes them. Includes a display example and nine animated automations
+  (including pet feeding).
   Zomato is generally partner/POS access, not a general consumer API; the site says so.
 - **Pre-programmed voice demo** immediately after the plan — five examples with
   self-hosted audio. The replies follow the home assistant’s Rocky-style voice notes:
