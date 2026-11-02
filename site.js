@@ -97,7 +97,7 @@
   /* ---------- scroll reveal ---------- */
   var revealItems = Array.prototype.slice.call(
     document.querySelectorAll(
-      ".section__head, .partner-grid, .auto-grid, .retrofit-grid, .tenure, .app-grid, .ai-flow, .ai-grid, .proof-grid, .steps, .price-grid, .care, .faq"
+      ".section__head, .partner-grid, .auto-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .proof-grid, .steps, .price-grid, .care, .faq"
     )
   );
 
@@ -123,6 +123,167 @@
     revealItems.forEach(function (item) {
       observer.observe(item);
     });
+  }
+
+  /* ---------- interactive floor plan ---------- */
+  var planTitle = document.getElementById("planTitle");
+  var planDesc = document.getElementById("planDesc");
+  var planAnnounce = document.getElementById("planAnnounce");
+  var planDevices = Array.prototype.slice.call(
+    document.querySelectorAll("[data-device]")
+  );
+  var sceneButtons = Array.prototype.slice.call(
+    document.querySelectorAll("[data-scene]")
+  );
+
+  if (planTitle && planDevices.length) {
+    var planData = {
+      living: {
+        room: "Living room",
+        name: "Living lights",
+        on: "On",
+        off: "Off",
+        onSub: "40% · warm",
+        offSub: "Off",
+        onDesc: "Cove light at 40%, curtains drawn — the room settles into the evening.",
+        offDesc: "Living lights off. Daylight and the city take over."
+      },
+      projector: {
+        room: "Living room",
+        name: "Projector",
+        on: "On",
+        off: "Off",
+        onSub: "HDMI 2 · 4K",
+        offSub: "Off",
+        onDesc: "Projector on, blinds closed, soundbar at movie level.",
+        offDesc: "Projector off, blinds open."
+      },
+      ac: {
+        room: "Bedroom",
+        name: "Bedroom AC",
+        on: "On",
+        off: "Off",
+        onSub: "24° · cooling",
+        offSub: "Off",
+        onDesc: "Bedroom cooling to 24°, fan on auto.",
+        offDesc: "AC off. Window sensor says the window is open."
+      },
+      awning: {
+        room: "Balcony",
+        name: "Balcony awning",
+        on: "Closed",
+        off: "Open",
+        onSub: "Rain in 20 min",
+        offSub: "Evening light",
+        onDesc: "Awning closed. Rain is 20 minutes away.",
+        offDesc: "Awning open. Evening light on the balcony."
+      },
+      lock: {
+        room: "Entrance",
+        name: "Main door",
+        on: "Locked",
+        off: "Unlocked",
+        onSub: "Auto-locked 7:41 PM",
+        offSub: "Unlocked for arrival",
+        onDesc: "Main door locked. Entry light off.",
+        offDesc: "Main door unlocked. Entry light on."
+      }
+    };
+
+    var planState = {
+      living: true,
+      projector: false,
+      ac: true,
+      awning: true,
+      lock: true
+    };
+
+    var planScenes = {
+      evening: {
+        title: "Evening at home",
+        desc: "The lights are low, the bedroom is cooling, and the door is locked. The house is ready for the night.",
+        state: { living: true, projector: false, ac: true, awning: true, lock: true }
+      },
+      cinema: {
+        title: "Cinema, ready.",
+        desc: "Projector on, blinds closed, lights down to 8%. One tap and the room changes.",
+        state: { living: false, projector: true, ac: true, awning: true, lock: true }
+      },
+      away: {
+        title: "Away mode.",
+        desc: "Everything off, the awning in, the door locked. The house looks after itself.",
+        state: { living: false, projector: false, ac: false, awning: true, lock: true }
+      }
+    };
+
+    function announcePlan(message) {
+      if (planAnnounce) planAnnounce.textContent = message;
+    }
+
+    function renderPlan(activeKey, title, desc) {
+      planDevices.forEach(function (button) {
+        var key = button.getAttribute("data-device");
+        var data = planData[key];
+        if (!data) return;
+        var on = planState[key];
+        button.setAttribute("aria-pressed", String(on));
+
+        if (button.classList.contains("hotspot")) {
+          button.setAttribute(
+            "aria-label",
+            data.name + ", " + (on ? data.on.toLowerCase() : data.off.toLowerCase())
+          );
+        }
+
+        var stateEl = button.querySelector("[data-state]");
+        if (stateEl) stateEl.textContent = on ? data.on : data.off;
+        var subEl = button.querySelector("[data-sub]");
+        if (subEl) subEl.textContent = on ? data.onSub : data.offSub;
+      });
+
+      if (activeKey && planData[activeKey]) {
+        var current = planData[activeKey];
+        var isOn = planState[activeKey];
+        planTitle.textContent = current.room;
+        planDesc.textContent = isOn ? current.onDesc : current.offDesc;
+        announcePlan(
+          current.name + " " + (isOn ? current.on.toLowerCase() : current.off.toLowerCase())
+        );
+      } else if (title && desc) {
+        planTitle.textContent = title;
+        planDesc.textContent = desc;
+      }
+    }
+
+    planDevices.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var key = button.getAttribute("data-device");
+        if (!planData[key]) return;
+        planState[key] = !planState[key];
+        sceneButtons.forEach(function (scene) {
+          scene.classList.remove("is-active");
+        });
+        renderPlan(key);
+      });
+    });
+
+    sceneButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var name = button.getAttribute("data-scene");
+        var scene = planScenes[name];
+        if (!scene) return;
+        Object.keys(scene.state).forEach(function (key) {
+          planState[key] = scene.state[key];
+        });
+        sceneButtons.forEach(function (item) {
+          item.classList.toggle("is-active", item === button);
+        });
+        renderPlan(null, scene.title, scene.desc);
+        announcePlan("Scene set: " + name + ".");
+      });
+    });
+
+    renderPlan(null);
   }
 
   /* ---------- year ---------- */
