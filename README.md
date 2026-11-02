@@ -1,6 +1,6 @@
-# RSMN — website
+# Ambient Form Studio — website
 
-Static marketing site for **RSMN**, an interior design and automation studio in
+Static marketing site for **Ambient Form Studio**, an interior design and automation studio in
 Mumbai. The site covers full interior design, renovation integration and
 minimal-change retrofit, with one calm app for the whole home.
 
@@ -32,7 +32,7 @@ can be switched in the header; the choice is stored locally.
   changes. Delivery alerts also surface inside the phone.
 - **Automation ladder** — app control → routines → ambient/presence → local agent,
   plus the DIY tax (multiple apps, one-brand lock-in, cloud accounts, no support) and
-  the RSMN layer across Zigbee, Wi-Fi, BLE, IR, RF, relays, Matter, ESPHome and HA.
+  the Ambient Form layer across Zigbee, Wi-Fi, BLE, IR, RF, relays, Matter, ESPHome and HA.
 - **Anything with a feed** — metro/traffic/flight/weather/energy examples, an entrance
   light that says when to leave, and Swiggy/Zomato delivery ETAs where an account or
   partner API exposes them. Includes a display example and nine animated automations
@@ -67,7 +67,7 @@ site.js                 mobile menu, app tabs, floor plan, voice demo, reveal, y
 robots.txt              crawler rules + sitemap reference
 sitemap.xml             the two public pages
 assets/
-├── mark.svg            RSMN mark / favicon
+├── mark.svg            Ambient Form mark / favicon
 ├── og.png              1200 × 630 social preview image
 ├── img/                reference interiors + control + retrofit detail
 ├── video/              scene-loop.mp4 + poster (plan demo)

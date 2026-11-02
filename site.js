@@ -1,4 +1,4 @@
-/* RSMN site — small, dependency-free enhancements. */
+/* Ambient Form Studio site — small, dependency-free enhancements. */
 (function () {
   "use strict";
 
