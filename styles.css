@@ -3609,12 +3609,15 @@ ol {
 }
 
 /* ---------- blueprint ---------- */
+.section--blueprint .wrap {
+  max-width: 1280px;
+}
 .section--blueprint {
   background: var(--paper-2);
 }
 .blueprint {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
   grid-gap: 18px;
   align-items: stretch;
 }

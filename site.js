@@ -322,7 +322,7 @@
         day.style.opacity = planState[day.getAttribute("data-daylight")] ? "0.38" : "0";
       });
       document.querySelectorAll("[data-ac-tint]").forEach(function (tint) {
-        tint.style.opacity = planState.ac ? "0.18" : "0";
+        tint.style.opacity = planState.ac ? "0.22" : "0";
       });
       var entryGlow = document.querySelector("[data-entry-glow]");
       if (entryGlow) entryGlow.style.opacity = planState.lock ? "0" : "0.45";
