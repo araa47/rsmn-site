@@ -24,6 +24,9 @@ Everything is served from this repository.
 - **The scene loop and floor plan are demos.** The 7.8-second MP4 shows the plan
   moving through Evening → Cinema → Away. It uses local browser state, not a live
   Home Assistant instance, and has no path into any home.
+- **Sun/shade examples and the local-agent chat are illustrative.** Confirm the
+  actual triggers and what the local agent can safely change for each installation
+  before publishing hard guarantees.
 
 ## Image credits
 

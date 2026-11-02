@@ -105,7 +105,7 @@
   /* ---------- scroll reveal ---------- */
   var revealItems = Array.prototype.slice.call(
     document.querySelectorAll(
-      ".section__head, .stages-grid, .partner-grid, .auto-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .proof-grid, .steps, .price-grid, .care, .faq"
+      ".section__head, .stages-grid, .partner-grid, .auto-grid, .scenario-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .agent, .proof-grid, .steps, .price-grid, .care, .faq"
     )
   );
 
