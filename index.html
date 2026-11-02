@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261103m" />
+  <link rel="stylesheet" href="styles.css?v=20261103o" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
@@ -978,6 +978,105 @@
       </div>
     </section>
 
+    <!-- ============================== anything live ============================== -->
+    <section class="section section--anything" id="anything">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">Anything with a feed</p>
+            <h2>If it’s published live,<br />it can run the house.</h2>
+          </div>
+          <p class="lede">
+            Metro timetables, traffic, flights, weather, energy prices, a delivery
+            rider’s ETA. Most automation stops at the device. We connect the live data
+            to the home.
+          </p>
+        </div>
+
+        <div class="anything-grid">
+          <div class="anything-copy">
+            <p class="anything-label">The metro is already telling you when to leave</p>
+            <h3>Leave only when you’ll catch it.</h3>
+            <p>
+              A sensor knows you’re home. The published timetable and live disruption
+              feed know when the next train is. Walking time and the platform finish the
+              maths. The result is a light at the entrance that says <strong>leave now,
+              wait, or take the next one</strong> — not another app to check.
+            </p>
+            <p>
+              If the train is delayed, the light waits. If the next one is too tight,
+              it tells you. If you’re not home, it doesn’t bother.
+            </p>
+            <div class="anything-chips" aria-label="Examples of live data">
+              <span>Metro</span>
+              <span>Traffic</span>
+              <span>Flights</span>
+              <span>Weather</span>
+              <span>Energy price</span>
+              <span>Delivery ETA</span>
+            </div>
+            <p class="anything-fine">If it has an API, a published feed, a sensor, IR/RF or a relay, it’s usually a candidate. This is the layer most automation companies never reach.</p>
+          </div>
+
+          <aside class="commute-card" aria-label="Example: entrance light linked to the metro">
+            <div class="commute-card__head">
+              <span><i></i> Entrance · live</span>
+              <span class="commute-card__source">Metro feed</span>
+            </div>
+            <div class="commute-route">
+              <span>Home → Andheri</span>
+              <strong>Metro 8:42</strong>
+            </div>
+            <div class="commute-time">
+              <strong>Leave in 6 min</strong>
+              <span>Next 8:49 · 12 min walk</span>
+            </div>
+            <div class="commute-light">
+              <i aria-hidden="true"></i>
+              <span>Leave now</span>
+            </div>
+            <div class="commute-card__foot">
+              <span>Entrance light</span>
+              <span>Green · leave</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="compare-block">
+          <div class="compare-block__head">
+            <div>
+              <p class="kicker">The difference</p>
+              <h3>Other systems control devices. This one uses context.</h3>
+            </div>
+            <p>Typical patterns, not a brand-by-brand audit. RSMN is vendor-neutral and local-first.</p>
+          </div>
+          <div class="compare-scroll">
+            <table class="compare-table">
+              <caption class="sr-only">Comparison of app ecosystems, traditional integrators, DIY and RSMN</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Capability</th>
+                  <th scope="col">App ecosystems</th>
+                  <th scope="col">Traditional integrators</th>
+                  <th scope="col">DIY</th>
+                  <th scope="col" class="compare-table__rsmn">RSMN</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">One app across brands</th><td>Limited</td><td>Within their catalogue</td><td>Usually</td><td class="compare-table__rsmn">Yes</td></tr>
+                <tr><th scope="row">Existing devices stay</th><td>No</td><td>Sometimes</td><td>Yes</td><td class="compare-table__rsmn">Yes, where possible</td></tr>
+                <tr><th scope="row">No-touch, presence-based rules</th><td>Basic</td><td>Yes</td><td>You build it</td><td class="compare-table__rsmn">Yes</td></tr>
+                <tr><th scope="row">Live public data: metro, traffic, flights</th><td>No</td><td>Rare, custom</td><td>You build it</td><td class="compare-table__rsmn">Yes</td></tr>
+                <tr><th scope="row">Local-first, no mandatory cloud</th><td>No</td><td>Often cloud-bound</td><td>Yes</td><td class="compare-table__rsmn">Yes</td></tr>
+                <tr><th scope="row">One team for design + technology</th><td>No</td><td>Sometimes</td><td>No</td><td class="compare-table__rsmn">Yes</td></tr>
+                <tr><th scope="row">Support when it breaks</th><td>App support</td><td>Dealer</td><td>You</td><td class="compare-table__rsmn">On-site</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============================== for designers ============================== -->
     <section class="section" id="designers">
       <div class="wrap">
@@ -1926,7 +2025,7 @@
           </div>
           <div class="coverage__item">
             <span class="coverage__place">Hong Kong</span>
-            <p>Design and retrofit projects; site visits scheduled around the scope.</p>
+            <p>Design and retrofit projects; local labour and electrical costs reflected in pricing.</p>
           </div>
           <div class="coverage__item">
             <span class="coverage__place">Elsewhere</span>
@@ -2153,6 +2252,7 @@
           <div class="footer__links">
             <a href="#stages">Every stage</a>
             <a href="#levels">Automation levels</a>
+            <a href="#anything">Anything live</a>
             <a href="#designers">For designers</a>
             <a href="#capabilities">Capabilities</a>
             <a href="#retrofit">Retrofit</a>
@@ -2182,7 +2282,7 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261103k" defer></script>
+  <script src="site.js?v=20261103o" defer></script>
           <div class="delivery-toast" id="deliveryToast" hidden role="status" aria-live="polite">
             <span class="delivery-toast__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
             <div class="delivery-toast__copy">

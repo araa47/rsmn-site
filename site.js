@@ -105,7 +105,7 @@
   /* ---------- scroll reveal ---------- */
   var revealItems = Array.prototype.slice.call(
     document.querySelectorAll(
-      ".section__head, .stages-grid, .levels-grid, .levels-compare, .partner-grid, .auto-grid, .scenario-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .voice, .agent, .proof-grid, .steps, .pricing-grid, .coverage, .price-grid, .care, .faq"
+      ".section__head, .stages-grid, .levels-grid, .levels-compare, .anything-grid, .compare-block, .partner-grid, .auto-grid, .scenario-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .voice, .agent, .proof-grid, .steps, .pricing-grid, .coverage, .price-grid, .care, .faq"
     )
   );
 
@@ -586,11 +586,11 @@
       }
     },
     "hong-kong": {
-      note: "Indicative launch pricing for Hong Kong, exclusive of local taxes. Final scope and quote after a walkthrough; hardware and site work line-itemed before you approve.",
+      note: "Indicative launch pricing for Hong Kong, exclusive of local taxes. Reflects higher local labour and electrical costs; final scope and quote after a walkthrough, with hardware and site work line-itemed before you approve.",
       prices: {
-        lights: "HK$25,000",
-        "whole-home": "HK$60,000",
-        "full-design": "HK$150,000"
+        lights: "HK$200,000",
+        "whole-home": "HK$500,000",
+        "full-design": "HK$1,200,000"
       }
     }
   };

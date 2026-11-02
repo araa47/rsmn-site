@@ -37,8 +37,8 @@ can be switched in the header; the choice is stored locally.
   short, literal, warm, “buddy”, occasional “Amaze.” — no fixed “Good good” opener.
   It is a sample, not a live language model. The real assistant runs locally on the hub.
 - **Indicative pricing with an India / Hong Kong selector** — Mumbai INR:
-  ₹2,00,000 / ₹5,00,000 / ₹12,00,000; Hong Kong HKD: HK$25,000 / HK$60,000 /
-  HK$150,000. The HKD figures are indicative equivalents, exclusive of local taxes;
+  ₹2,00,000 / ₹5,00,000 / ₹12,00,000; Hong Kong HKD: HK$200,000 / HK$500,000 /
+  HK$1,200,000. The HKD figures reflect Hong Kong labour/electrical costs, are exclusive of local taxes;
   confirm both tiers before quoting a client. Final scope and quote follow a
   walkthrough.
 - **Home Assistant at the core** — most of the stack runs on an open-source HA hub
