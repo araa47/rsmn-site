@@ -13,7 +13,8 @@ Mumbai. The site covers three entry points equally:
 **Live:** https://araa47.github.io/rsmn-site/
 
 No build step. No frameworks, no external fonts, no CDN, no analytics, no cookies.
-Everything is served from this repository.
+Everything is served from this repository. The interactive 2BHK plan and the voice
+demo sit immediately after the hero.
 
 ## Notes
 
@@ -30,7 +31,8 @@ Everything is served from this repository.
   a client.
 - **The voice is a generic local TTS sample.** It is not a celebrity voice clone.
   Replace it with a licensed voice, or the client’s own Rocky sample, before treating
-  it as the live assistant voice.
+  it as the live assistant voice. The three files can be swapped without code changes;
+  see `assets/voice/README.md`.
 - **Sun/shade examples and the local-agent chat are illustrative.** Confirm the
   actual triggers and what the local agent can safely change for each installation
   before publishing hard guarantees.

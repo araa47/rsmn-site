@@ -262,7 +262,7 @@
 
       document.querySelectorAll("[data-light-wash]").forEach(function (wash) {
         var lightKey = wash.getAttribute("data-light-wash");
-        wash.style.opacity = planState[lightKey] ? "0.85" : "0";
+        wash.style.opacity = planState[lightKey] ? "0.95" : "0";
       });
       document.querySelectorAll("[data-fixture]").forEach(function (fixture) {
         fixture.classList.toggle("is-on", !!planState[fixture.getAttribute("data-fixture")]);

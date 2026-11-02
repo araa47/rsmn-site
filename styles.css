@@ -2025,6 +2025,15 @@ ol {
   height: 11px;
 }
 
+.section--voice .section__head {
+  margin-bottom: clamp(28px, 3.5vw, 42px);
+}
+.section--voice .voice {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
 /* ---------- local agent ---------- */
 .agent {
   display: grid;
@@ -3670,7 +3679,20 @@ ol {
   height: 100%;
 }
 .light-wash {
+  mix-blend-mode: screen;
   transition: opacity 0.45s var(--ease);
+}
+.light-fixture .light-cone,
+.light-fixture .light-pool {
+  opacity: 0;
+  transition: opacity 0.45s var(--ease);
+  pointer-events: none;
+}
+.light-fixture.is-on .light-cone {
+  opacity: 0.34;
+}
+.light-fixture.is-on .light-pool {
+  opacity: 0.7;
 }
 .light-fixture .glow {
   opacity: 0;
@@ -3972,6 +3994,27 @@ ol {
   height: 12px;
   margin-top: 2px;
   color: var(--gold);
+}
+.blueprint-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(18, 60, 49, 0.3);
+  color: var(--forest);
+  font: 650 10px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.blueprint-next .icon {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.2s var(--ease);
+}
+.blueprint-next:hover .icon {
+  transform: translateX(3px);
 }
 .blueprint-foot {
   display: flex;
