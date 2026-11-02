@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261103q" />
+  <link rel="stylesheet" href="styles.css?v=20261103r" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
@@ -1067,47 +1067,85 @@
           </div>
           <div class="automation-grid">
             <article class="automation-card">
+              <div class="automation-visual automation-visual--metro" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><path class="av-line-soft" d="M14 66H206"/><path class="av-line" d="M14 66H206"/><g class="av-train"><rect x="64" y="46" width="68" height="25" rx="6" fill="currentColor"/><rect x="71" y="51" width="12" height="8" rx="2" fill="#102e24"/><rect x="88" y="51" width="12" height="8" rx="2" fill="#102e24"/><rect x="105" y="51" width="12" height="8" rx="2" fill="#102e24"/><circle cx="78" cy="73" r="3.2" fill="#102e24"/><circle cx="118" cy="73" r="3.2" fill="#102e24"/></g><circle class="av-signal" cx="200" cy="66" r="4"/><text class="av-text" x="162" y="31">8:42</text></svg>
+                <span class="av-tag">Leave now</span>
+              </div>
               <span>01</span>
               <h4>Metro leave-now light</h4>
               <p>Timetable + live disruption + walk time + presence. Entrance light says leave, wait, or next train.</p>
             </article>
+
             <article class="automation-card">
+              <div class="automation-visual automation-visual--food" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><path class="av-line-soft" d="M16 70H204" stroke-dasharray="3 6"/><g class="av-scooter"><rect x="78" y="44" width="25" height="18" rx="4" fill="currentColor"/><path d="M82 44l5-9h12l4 9" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="82" cy="65" r="5.5" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="102" cy="65" r="5.5" fill="none" stroke="currentColor" stroke-width="3"/></g><rect class="av-progress-track" x="16" y="82" width="150" height="4" rx="2"/><rect class="av-progress" x="16" y="82" width="86" height="4" rx="2"/><text class="av-text" x="176" y="38">8:42</text><circle class="av-signal" cx="198" cy="70" r="4"/></svg>
+                <span class="av-tag">4 min</span>
+              </div>
               <span>02</span>
               <h4>Food ETA display</h4>
               <p>Swiggy / Zomato ETA on a small kitchen display; porch light turns amber under five minutes.</p>
             </article>
+
             <article class="automation-card">
+              <div class="automation-visual automation-visual--desk" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><rect class="av-desk" x="28" y="76" width="164" height="3" rx="1.5"/><rect class="av-monitor" x="44" y="22" width="94" height="50" rx="5"/><rect class="av-screen" x="50" y="28" width="82" height="38" rx="2"/><g class="av-person"><circle cx="164" cy="46" r="6" fill="currentColor"/><path d="M154 76q10-20 20 0" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></g><path class="av-arrow" d="M140 52h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="av-arrow" d="M150 47l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="av-tag">Monitor off</span>
+              </div>
               <span>03</span>
               <h4>Desk presence</h4>
               <p>Walk away from the computer: monitor off, desk light off, AC back. Walk back: everything returns.</p>
             </article>
+
             <article class="automation-card">
+              <div class="automation-visual automation-visual--climate" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><rect class="av-window" x="24" y="20" width="68" height="58" rx="3"/><line class="av-window-line" x1="58" y1="20" x2="58" y2="78"/><rect class="av-pane" x="60" y="23" width="29" height="52" rx="2"/><rect class="av-ac" x="126" y="30" width="58" height="27" rx="4"/><line class="av-ac-line" x1="133" y1="55" x2="177" y2="55"/><g class="av-air"><path d="M126 38q-9 4 0 8"/><path d="M126 45q-12 5 0 10"/></g><g class="av-snow"><path d="M150 39v9M146 42l8 3M154 42l-8 3"/></g></svg>
+                <span class="av-tag">AC off</span>
+              </div>
               <span>04</span>
               <h4>Window open, AC off</h4>
               <p>A window sensor cuts the AC — no remote, no reminder, no wasted afternoon.</p>
             </article>
+
             <article class="automation-card">
+              <div class="automation-visual automation-visual--rain" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><path class="av-awning" d="M18 28h184l-17 18H35z"/><path class="av-awning-line" d="M52 28l-5 18M86 28l-4 18M120 28l-4 18M154 28l-4 18M188 28l-5 18"/><g class="av-rain"><line x1="42" y1="54" x2="38" y2="66"/><line x1="70" y1="55" x2="66" y2="67"/><line x1="102" y1="54" x2="98" y2="66"/><line x1="138" y1="55" x2="134" y2="67"/><line x1="170" y1="54" x2="166" y2="66"/></g><path class="av-plant" d="M28 82h18M37 82V68M37 72c-7-1-10-5-10-9 6 0 9 3 10 9zM37 76c7-1 10-5 10-9-6 0-9 3-10 9z"/></svg>
+                <span class="av-tag">Before the rain</span>
+              </div>
               <span>05</span>
               <h4>Rain before you notice</h4>
               <p>Rain feed or local sensor closes the awning and shades before the balcony gets wet.</p>
             </article>
+
             <article class="automation-card">
+              <div class="automation-visual automation-visual--sun" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><rect class="av-window" x="32" y="16" width="124" height="66" rx="4"/><circle class="av-sun" cx="94" cy="55" r="12"/><g class="av-rays"><path d="M94 34v-7M94 83v-7M73 55h-7M122 55h-7M79 40l-5-5M114 75l-5-5M109 40l5-5M79 70l-5 5"/></g><g class="av-slats"><line x1="38" y1="28" x2="150" y2="28"/><line x1="38" y1="40" x2="150" y2="40"/><line x1="38" y1="52" x2="150" y2="52"/><line x1="38" y1="64" x2="150" y2="64"/></g></svg>
+                <span class="av-tag">Sunrise</span>
+              </div>
               <span>06</span>
               <h4>Sunrise shades</h4>
               <p>Shades open at actual sunrise — a different time every day — or hold blackout if you’re still asleep.</p>
             </article>
+
             <article class="automation-card">
+              <div class="automation-visual automation-visual--flight" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><path class="av-path" d="M18 72Q108 20 202 50" stroke-dasharray="4 7"/><circle class="av-node" cx="18" cy="72" r="3"/><circle class="av-node" cx="202" cy="50" r="3"/><g class="av-plane"><path d="M-3 0l15 3-15 3 5-3z" fill="currentColor"/><animateMotion dur="6s" repeatCount="indefinite" path="M18 72Q108 20 202 50" rotate="auto"/></g><text class="av-text" x="156" y="26">+20 min</text></svg>
+                <span class="av-tag">Delayed</span>
+              </div>
               <span>07</span>
               <h4>Flight or traffic delay</h4>
               <p>Live travel time updates; the house tells you when to leave, not just what the traffic app says.</p>
             </article>
+
             <article class="automation-card">
+              <div class="automation-visual automation-visual--energy" aria-hidden="true">
+                <svg viewBox="0 0 220 96"><rect class="av-battery" x="24" y="32" width="82" height="36" rx="6"/><rect class="av-terminal" x="106" y="42" width="6" height="16" rx="2"/><rect class="av-charge" x="30" y="38" width="38" height="24" rx="3"/><path class="av-bolt" d="M148 18l-16 34h13l-6 26 25-38h-13z"/><g class="av-bars"><rect x="136" y="72" width="5" height="8" rx="1"/><rect x="145" y="66" width="5" height="14" rx="1"/><rect x="154" y="58" width="5" height="22" rx="1"/><rect x="163" y="60" width="5" height="20" rx="1"/></g><text class="av-text" x="174" y="34">Off-peak</text></svg>
+                <span class="av-tag">Cheap energy</span>
+              </div>
               <span>08</span>
               <h4>Cheap energy window</h4>
               <p>When the tariff drops, the house runs the dishwasher, water heater or EV charger — automatically.</p>
             </article>
           </div>
-        </div>
 
         <div class="compare-block">
           <div class="compare-block__head">
@@ -2349,7 +2387,7 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261103q" defer></script>
+  <script src="site.js?v=20261103r" defer></script>
           <div class="delivery-toast" id="deliveryToast" hidden role="status" aria-live="polite">
             <span class="delivery-toast__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
             <div class="delivery-toast__copy">
