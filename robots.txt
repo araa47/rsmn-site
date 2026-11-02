@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://araa47.github.io/rsmn-site/sitemap.xml
