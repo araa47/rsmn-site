@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261103g" />
+  <link rel="stylesheet" href="styles.css?v=20261103i" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
@@ -212,48 +212,70 @@
                   <div class="app">
                     <div class="app__head">
                       <div>
-                        <div class="app__eyebrow">Wednesday, 2 November</div>
+                        <div class="app__eyebrow">Wednesday, 2 November · Mumbai</div>
                         <div class="app__title">Good evening,<br /><em>Home.</em></div>
                       </div>
-                      <span class="avatar" aria-hidden="true">R</span>
+                      <span class="avatar" aria-hidden="true">R<i class="avatar__live"></i></span>
                     </div>
                     <div class="app__body">
-                      <div class="ui-card ui-card--hero">
-                        <div class="ui-row"><span class="ui-label">Status</span><span class="pill">Away</span></div>
-                        <div class="u-flex u-mt">
-                          <span class="ui-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
-                          <div>
-                            <div class="ui-title">All secure</div>
-                            <div class="ui-sub">3 cameras · doors locked</div>
-                          </div>
+                      <div class="app-hero">
+                        <div class="app-hero__ring" aria-hidden="true">
+                          <span data-phone-temp>21°</span>
+                          <small>inside</small>
+                        </div>
+                        <div class="app-hero__copy">
+                          <span class="app-hero__label">Home state</span>
+                          <strong data-phone-state>Evening at home</strong>
+                          <span class="app-hero__sync"><i></i> Synced · local hub</span>
                         </div>
                       </div>
-                      <div class="scenes">
-                        <span class="scene is-on"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg> Arrive</span>
-                        <span class="scene"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg> Focus</span>
-                        <span class="scene"><svg class="icon" aria-hidden="true"><use href="#i-film"/></svg> Cinema</span>
-                        <span class="scene"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg> Sleep</span>
+
+                      <div class="app-security">
+                        <i class="app-security__dot" aria-hidden="true"></i>
+                        <div>
+                          <strong data-phone-secure>All secure</strong>
+                          <span data-phone-secure-sub>3 cameras · door locked</span>
+                        </div>
+                        <span class="pill" data-phone-pill>Home</span>
                       </div>
+
+                      <div class="scenes">
+                        <span class="scene" data-phone-scene="morning"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg> Morning</span>
+                        <span class="scene is-on" data-phone-scene="evening"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg> Evening</span>
+                        <span class="scene" data-phone-scene="cinema"><svg class="icon" aria-hidden="true"><use href="#i-film"/></svg> Cinema</span>
+                        <span class="scene" data-phone-scene="away"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg> Away</span>
+                      </div>
+
                       <div class="room-grid">
                         <div class="room room--warm">
-                          <span class="room__name">Living room</span>
-                          <span class="room__meta"><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg> 40% · 24°</span>
+                          <span class="room__name">Living</span>
+                          <span class="room__meta" data-phone-living>Lights 40% · Quiet</span>
+                          <span class="room__bar" aria-hidden="true"><i style="width:72%"></i></span>
                         </div>
                         <div class="room">
-                          <span class="room__name">Bedroom</span>
-                          <span class="room__meta"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg> AC on · 24°</span>
+                          <span class="room__name">Master</span>
+                          <span class="room__meta" data-phone-master>AC 24° · blinds down</span>
+                          <span class="room__bar" aria-hidden="true"><i style="width:55%"></i></span>
                         </div>
                       </div>
-                      <div class="ui-card">
+
+                      <div class="ui-card app-activity">
                         <div class="activity">
                           <span class="activity__thumb" aria-hidden="true"></span>
                           <div>
-                            <div class="activity__label">7:41 PM · Doorbell</div>
-                            <p class="activity__text"><b>Courier, blue jacket.</b> Left a parcel at the door. Local AI description, no cloud.</p>
+                            <div class="activity__label" data-phone-activity-label>Now · Home Assistant</div>
+                            <p class="activity__text" data-phone-activity><b>Evening at home.</b> Lights low, door locked, the house is settled.</p>
                           </div>
                         </div>
                       </div>
                     </div>
+
+                    <div class="app-notify" id="phoneNotify" hidden>
+                      <span class="app-notify__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
+                      <div><strong>Food delivery</strong><span>Rider outside · Gate 1</span></div>
+                      <span class="app-notify__dot"></span>
+                    </div>
+
                     <div class="app-nav" aria-hidden="true">
                       <span class="is-on"><svg class="icon"><use href="#i-home"/></svg> Home</span>
                       <span><svg class="icon"><use href="#i-shield"/></svg> Secure</span>
@@ -1187,9 +1209,9 @@
             </a>
           </div>
           <div class="motion__media">
-            <video width="1200" height="728" autoplay muted loop playsinline preload="metadata" poster="assets/video/scene-loop-poster.jpg?v=8" aria-label="Seven second loop of the home plan changing between Evening, Cinema and Away scenes; lights, air conditioning, projector, awning and lock update together." data-autoplay>
-              <source src="assets/video/scene-loop.mp4?v=8" type="video/mp4" />
-              Your browser can’t play the loop. <a href="assets/video/scene-loop.mp4?v=8">Download it here</a>.
+            <video width="1200" height="728" autoplay muted loop playsinline preload="metadata" poster="assets/video/scene-loop-poster.jpg?v=9" aria-label="Seven second loop of the home plan changing between Evening, Cinema and Away scenes; lights, air conditioning, projector, awning and lock update together." data-autoplay>
+              <source src="assets/video/scene-loop.mp4?v=9" type="video/mp4" />
+              Your browser can’t play the loop. <a href="assets/video/scene-loop.mp4?v=9">Download it here</a>.
             </video>
             <span class="motion__tag">7.8s loop · demo</span>
           </div>
@@ -2059,7 +2081,7 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261103g" defer></script>
+  <script src="site.js?v=20261103i" defer></script>
           <div class="delivery-toast" id="deliveryToast" hidden role="status" aria-live="polite">
             <span class="delivery-toast__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
             <div class="delivery-toast__copy">

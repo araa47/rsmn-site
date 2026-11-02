@@ -26,6 +26,9 @@ can be switched in the header; the choice is stored locally.
   venetian and roller blinds, awning, animated projector and the entry door/lock are
   interactive. A Delivery alert shows a rider outside with an unlock action. Morning /
   Evening / Cinema / Away scenes run the whole plan. The live HA plan stays behind HA auth.
+- **Live hero phone app** — comfort ring, security state, scene chips, room cards
+  and an activity feed that all update when the floor plan changes. Delivery alerts
+  also surface inside the phone.
 - **Pre-programmed voice demo** immediately after the plan — five examples with
   self-hosted audio. The replies follow the home assistant’s Rocky-style voice notes:
   short, literal, warm, “buddy”, occasional “Amaze.” — no fixed “Good good” opener.

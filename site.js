@@ -228,6 +228,71 @@
       }
     };
 
+    var phoneState = document.querySelector("[data-phone-state]");
+    var phoneSecure = document.querySelector("[data-phone-secure]");
+    var phoneSecureSub = document.querySelector("[data-phone-secure-sub]");
+    var phoneSecurity = document.querySelector(".app-security");
+    var phonePill = document.querySelector("[data-phone-pill]");
+    var phoneLiving = document.querySelector("[data-phone-living]");
+    var phoneMaster = document.querySelector("[data-phone-master]");
+    var phoneTemp = document.querySelector("[data-phone-temp]");
+    var phoneActivity = document.querySelector("[data-phone-activity]");
+    var phoneActivityLabel = document.querySelector("[data-phone-activity-label]");
+    var phoneNotify = document.getElementById("phoneNotify");
+    var phoneScenes = Array.prototype.slice.call(document.querySelectorAll("[data-phone-scene]"));
+    var currentScene = "evening";
+    var deliveryActive = false;
+    var phoneSceneLabels = { morning: "Morning", evening: "Home", cinema: "Cinema", away: "Away" };
+
+    function updatePhone(activeKey) {
+      var scene = currentScene && planScenes[currentScene];
+      var living = planState.living ? "Lights 40%" : "Lights off";
+      if (planState.projector) living += " · Cinema";
+      else if (planState.venetian) living += " · Daylight";
+      else living += " · Quiet";
+      if (phoneLiving) phoneLiving.textContent = living;
+
+      var master = planState.ac ? "AC 24°" : "AC off";
+      master += planState.roller ? " · blinds up" : " · blinds down";
+      if (phoneMaster) phoneMaster.textContent = master;
+      if (phoneTemp) phoneTemp.textContent = planState.ac ? "24°" : "21°";
+
+      if (phoneState) {
+        var stateLabel = scene ? scene.title.replace(/\.$/, "") : "Home, mapped.";
+        if (!scene && activeKey && planData[activeKey]) stateLabel = planData[activeKey].name;
+        phoneState.textContent = stateLabel;
+      }
+      if (phoneSecure) phoneSecure.textContent = planState.lock ? "All secure" : "Door unlocked";
+      if (phoneSecureSub) phoneSecureSub.textContent = planState.lock ? "3 cameras · door locked" : "Front door open · entry light on";
+      if (phoneSecurity) phoneSecurity.classList.toggle("is-open", !planState.lock);
+      if (phonePill) phonePill.textContent = currentScene ? phoneSceneLabels[currentScene] : (planState.lock ? "Home" : "Open");
+
+      phoneScenes.forEach(function (button) {
+        button.classList.toggle("is-on", button.getAttribute("data-phone-scene") === currentScene);
+      });
+
+      if (phoneActivityLabel) phoneActivityLabel.textContent = deliveryActive ? "Now · Doorbell" : "Now · Home Assistant";
+      if (phoneActivity) {
+        if (deliveryActive) {
+          phoneActivity.textContent = "Food delivery. Rider outside at Gate 1.";
+        } else if (activeKey && planData[activeKey]) {
+          var data = planData[activeKey];
+          phoneActivity.textContent = data.name + " " + (planState[activeKey] ? data.on.toLowerCase() : data.off.toLowerCase()) + ".";
+        } else if (scene) {
+          var sceneCopy = {
+            morning: "Blinds up, lights off. Morning light in.",
+            evening: "Lights low, bedroom cooling, door locked.",
+            cinema: "Projector on, lights down, blinds shut.",
+            away: "Everything off, door locked, house settled."
+          };
+          phoneActivity.textContent = sceneCopy[currentScene] || "Scene applied.";
+        } else {
+          phoneActivity.textContent = "All quiet. Local automations running.";
+        }
+      }
+      if (phoneNotify) phoneNotify.hidden = !deliveryActive;
+    }
+
     var planState = {
       living: true,
       projector: false,
@@ -339,6 +404,7 @@
         planTitle.textContent = title;
         planDesc.textContent = desc;
       }
+      updatePhone(activeKey);
     }
 
     planDevices.forEach(function (button) {
@@ -346,6 +412,7 @@
         var key = button.getAttribute("data-device");
         if (!planData[key]) return;
         planState[key] = !planState[key];
+        currentScene = null;
         sceneButtons.forEach(function (scene) {
           scene.classList.remove("is-active");
         });
@@ -358,6 +425,7 @@
         var name = button.getAttribute("data-scene");
         var scene = planScenes[name];
         if (!scene) return;
+        currentScene = name;
         Object.keys(scene.state).forEach(function (key) {
           planState[key] = scene.state[key];
         });
@@ -399,8 +467,10 @@
     }
 
     function setDelivery(open) {
+      deliveryActive = open;
       if (deliveryToast) deliveryToast.hidden = !open;
       if (deliveryRider) deliveryRider.style.opacity = open ? "1" : "0";
+      updatePhone(null);
     }
 
     if (deliveryDemo) {

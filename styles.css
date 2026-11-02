@@ -863,6 +863,232 @@ ol {
   border-radius: 50%;
   background: currentColor;
 }
+.avatar {
+  position: relative;
+}
+.avatar__live {
+  position: absolute;
+  right: -1px;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lime);
+  border: 2px solid #16251e;
+}
+.app-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px;
+  border: 1px solid rgba(215, 232, 184, 0.14);
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(30, 65, 51, 0.9), rgba(15, 28, 23, 0.9));
+  position: relative;
+  overflow: hidden;
+}
+.app-hero::after {
+  content: "";
+  position: absolute;
+  right: -25px;
+  top: -35px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 232, 184, 0.16), transparent 68%);
+  pointer-events: none;
+}
+.app-hero__ring {
+  position: relative;
+  flex: none;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0;
+  background: conic-gradient(from 220deg, var(--lime) 0 64%, rgba(247, 242, 232, 0.13) 64% 100%);
+  font: 600 16px/1 var(--serif);
+  color: #f4f5ed;
+}
+.app-hero__ring::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #172b22;
+}
+.app-hero__ring span,
+.app-hero__ring small {
+  position: relative;
+  z-index: 1;
+  display: block;
+  text-align: center;
+}
+.app-hero__ring small {
+  margin-top: 2px;
+  font: 500 6.5px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ab0a2;
+}
+.app-hero__copy {
+  min-width: 0;
+}
+.app-hero__label {
+  display: block;
+  margin-bottom: 4px;
+  font: 650 6.8px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8fa198;
+}
+.app-hero__copy strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 600 12.5px/1.25 var(--sans);
+  color: #f0f4ee;
+}
+.app-hero__sync {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+  font: 500 7.5px/1 var(--sans);
+  letter-spacing: 0.04em;
+  color: #93a99b;
+}
+.app-hero__sync i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 3px rgba(215, 232, 184, 0.08);
+}
+.app-security {
+  display: grid;
+  grid-template-columns: 7px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+.app-security__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 4px rgba(215, 232, 184, 0.08);
+  animation: security-pulse 2.6s ease-in-out infinite;
+}
+.app-security.is-open .app-security__dot {
+  background: var(--clay);
+  box-shadow: 0 0 0 4px rgba(224, 138, 95, 0.1);
+}
+.app-security strong,
+.app-security span:not(.pill) {
+  display: block;
+}
+.app-security strong {
+  font: 600 9.5px/1.2 var(--sans);
+  color: #edf2ec;
+}
+.app-security span:not(.pill) {
+  margin-top: 2px;
+  font: 400 8px/1.3 var(--sans);
+  color: #91a398;
+}
+.app-security .pill {
+  padding: 4px 7px;
+  font-size: 6.5px;
+}
+.app-notify {
+  position: absolute;
+  z-index: 9;
+  top: 77px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border: 1px solid rgba(215, 232, 184, 0.18);
+  border-radius: 13px;
+  background: rgba(12, 27, 21, 0.96);
+  box-shadow: 0 12px 25px -14px #000;
+  animation: phone-notify-in 0.35s var(--ease) both;
+}
+.app-notify[hidden] {
+  display: none;
+}
+.app-notify__icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--clay);
+  color: var(--cream);
+}
+.app-notify__icon .icon {
+  width: 13px;
+  height: 13px;
+}
+.app-notify strong,
+.app-notify span:not(.app-notify__icon):not(.app-notify__dot) {
+  display: block;
+}
+.app-notify strong {
+  font: 600 9.5px/1.2 var(--sans);
+  color: #f3f6f0;
+}
+.app-notify span:not(.app-notify__icon):not(.app-notify__dot) {
+  margin-top: 2px;
+  font: 400 8px/1.2 var(--sans);
+  color: #9caf9f;
+}
+.app-notify__dot {
+  width: 5px;
+  height: 5px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: var(--clay);
+  flex: none;
+}
+@keyframes security-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+}
+@keyframes phone-notify-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.room__bar {
+  display: block;
+  height: 3px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+.room__bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--lime);
+}
+.room--warm .room__bar i {
+  background: #e9a17c;
+}
+.app-activity {
+  padding: 10px;
+}
 .ui-card {
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid rgba(255, 255, 255, 0.07);
