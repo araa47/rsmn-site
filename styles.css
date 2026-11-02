@@ -3803,14 +3803,42 @@ ol {
 .roller .fabric {
   transition: opacity 0.45s var(--ease);
 }
+.venetian__slats {
+  transition: transform 0.55s var(--ease), opacity 0.45s var(--ease);
+}
+.venetian.is-open .venetian__slats {
+  transform: translateY(-30px);
+  opacity: 0.3;
+}
 .venetian.is-open .slat {
   opacity: 0.12;
 }
 .venetian.is-open .glass {
   opacity: 0.55;
 }
-.roller.is-open .fabric {
-  opacity: 0;
+.roller__cloth {
+  transition: transform 0.6s var(--ease);
+}
+.roller.is-open .roller__cloth {
+  transform: scaleY(0.06);
+}
+.roller.is-open .glass {
+  opacity: 0.65;
+}
+.screen-bands {
+  animation: screenPan 6s ease-in-out infinite alternate;
+}
+.screen-scan {
+  animation: screenScan 3.2s linear infinite;
+}
+@keyframes screenPan {
+  from { transform: translateX(-9px); }
+  to { transform: translateX(9px); }
+}
+@keyframes screenScan {
+  0% { transform: translateY(-12px); opacity: 0; }
+  45% { opacity: 0.35; }
+  100% { transform: translateY(12px); opacity: 0; }
 }
 .entry-door {
   transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -4847,5 +4875,12 @@ ol {
   .js .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen-bands,
+  .screen-scan {
+    animation: none;
   }
 }
