@@ -513,8 +513,8 @@
     },
     morning: {
       heard: "“Good morning.”",
-      reply: "Good morning, buddy. Blinds up, lights off. Kettle has the floor.",
-      src: "assets/voice/morning.mp3?v=7"
+      reply: "Good morning, buddy. Blinds up, lights off. Coffee maker is brewing you a cup right now.",
+      src: "assets/voice/morning.mp3?v=8"
     },
     home: {
       heard: "“I’m home.”",

@@ -7,7 +7,7 @@ These are **pre-programmed** examples used by the website voice player:
 | `awning.mp3` | Done. Awning closed. Rain is twenty minutes out, buddy. |
 | `cinema.mp3` | Movie mode. Lights down, blinds shut, projector on. Amaze. |
 | `lock.mp3` | The main door is locked. You are all secure, buddy. |
-| `morning.mp3` | Good morning, buddy. Blinds up, lights off. Kettle has the floor. |
+| `morning.mp3` | Good morning, buddy. Blinds up, lights off. Coffee maker is brewing you a cup right now. |
 | `home.mp3` | Welcome back, buddy. Lights waking up. AC on your side. Door locked behind you. |
 
 The current files are a generic PocketTTS `alba` preset sample, not a
