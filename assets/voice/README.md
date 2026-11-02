@@ -4,11 +4,11 @@ These are **pre-programmed** examples used by the website voice player:
 
 | File | Assistant line |
 | --- | --- |
-| `awning.mp3` | Good, good. Awning’s in. Let the rain throw its best shot. |
-| `cinema.mp3` | Good, good. Movie mode. Lights down, blinds shut, projector warming up. Popcorn is your department. |
-| `lock.mp3` | Good, good. Door’s locked. I checked twice, so you can stop patting your pocket. |
-| `morning.mp3` | Good, good. Morning. Blinds are up, lights are off, and the kettle has the floor. |
-| `home.mp3` | Good, good. Welcome back. Lights waking up, AC on your side, and the door locked behind you. |
+| `awning.mp3` | Done. Awning closed. Rain is twenty minutes out, buddy. |
+| `cinema.mp3` | Movie mode. Lights down, blinds shut, projector on. Amaze. |
+| `lock.mp3` | The main door is locked. You are all secure, buddy. |
+| `morning.mp3` | Good morning, buddy. Blinds up, lights off. Kettle has the floor. |
+| `home.mp3` | Welcome back, buddy. Lights waking up. AC on your side. Door locked behind you. |
 
 The current files are a generic PocketTTS `alba` preset sample, not a
 celebrity clone. To replace them with PocketTTS, a licensed voice, or a Rocky

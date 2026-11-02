@@ -12,6 +12,7 @@
   --ink-2: #1a231e;
   --muted: #5a665e;
   --forest: #123c31;
+  --forest-ink: #123c31;
   --forest-deep: #092a22;
   --forest-soft: #1d4c3e;
   --clay: #a84622;
@@ -311,6 +312,28 @@ ol {
   background: var(--clay);
   vertical-align: 3px;
 }
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--forest-ink);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.theme-toggle:hover {
+  border-color: var(--forest-ink);
+  background: rgba(18, 60, 49, 0.06);
+}
+.theme-toggle .icon {
+  width: 15px;
+  height: 15px;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -490,7 +513,7 @@ ol {
 .hero__proof .icon {
   width: 14px;
   height: 14px;
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 
 /* hero scene */
@@ -553,7 +576,7 @@ ol {
   bottom: -18px;
   width: 118%;
   transform: translateX(-50%);
-  color: var(--forest);
+  color: var(--forest-ink);
   opacity: 0.12;
   pointer-events: none;
 }
@@ -632,7 +655,7 @@ ol {
   font-weight: 650;
 }
 .float-card--status .float-card__label {
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .float-card__rows {
   display: grid;
@@ -648,7 +671,7 @@ ol {
 .float-card__rows .icon {
   width: 12px;
   height: 12px;
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 @keyframes bob {
   0%,
@@ -1235,7 +1258,7 @@ ol {
   font: 650 8px/1 var(--sans);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .ha-note p {
   max-width: 90ch;
@@ -1244,7 +1267,7 @@ ol {
   color: #5f6b63;
 }
 .ha-note strong {
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 
 /* ---------- manifesto ---------- */
@@ -1499,7 +1522,7 @@ ol {
   border: 1px solid var(--line-strong);
   display: grid;
   place-items: center;
-  color: var(--forest);
+  color: var(--forest-ink);
   margin-bottom: 28px;
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
@@ -1509,7 +1532,7 @@ ol {
 }
 .auto-card:hover .auto-card__icon {
   background: var(--forest);
-  border-color: var(--forest);
+  border-color: var(--forest-ink);
   color: var(--cream);
 }
 .auto-card--accent {
@@ -1733,7 +1756,7 @@ ol {
   height: 17px;
 }
 .compare__card--local h3 .icon {
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .compare__card ul {
   list-style: none;
@@ -1757,7 +1780,7 @@ ol {
   color: #b8745b;
 }
 .compare__card--local li .icon {
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .ai-fineprint {
   margin-top: 22px;
@@ -1869,7 +1892,7 @@ ol {
 .kit__item .icon {
   width: 16px;
   height: 16px;
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .kit__note {
   display: flex;
@@ -1880,7 +1903,7 @@ ol {
   border-radius: 12px;
   background: rgba(18, 60, 49, 0.06);
   font: 550 0.78rem/1.4 var(--sans);
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .kit__note .icon {
   width: 15px;
@@ -1951,7 +1974,7 @@ ol {
 .voice__chips button.is-active {
   background: var(--lime);
   border-color: var(--lime);
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .voice__fine {
   margin-top: 16px;
@@ -2291,7 +2314,7 @@ ol {
   font: 650 8.5px/1 var(--sans);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .process-foot {
   display: flex;
@@ -2326,7 +2349,7 @@ ol {
   background: var(--paper-2);
 }
 .pricing-card--featured {
-  border-color: var(--forest);
+  border-color: var(--forest-ink);
   background: var(--forest);
   color: var(--cream);
   transform: translateY(-6px);
@@ -2441,18 +2464,18 @@ ol {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: transparent;
-  color: var(--forest);
+  color: var(--forest-ink);
   font: 650 9px/1 var(--sans);
   letter-spacing: 0.08em;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .region-switch button:hover {
-  border-color: var(--forest);
+  border-color: var(--forest-ink);
 }
 .region-switch button.is-active {
   background: var(--forest);
-  border-color: var(--forest);
+  border-color: var(--forest-ink);
   color: var(--cream);
 }
 .coverage {
@@ -2486,7 +2509,7 @@ ol {
   margin-top: 8px;
   padding-bottom: 3px;
   border-bottom: 1px solid rgba(18, 60, 49, 0.3);
-  color: var(--forest);
+  color: var(--forest-ink);
   font: 650 9px/1 var(--sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2505,7 +2528,7 @@ ol {
   max-width: 80ch;
 }
 .pricing-note a {
-  color: var(--forest);
+  color: var(--forest-ink);
   text-underline-offset: 3px;
 }
 
@@ -2526,7 +2549,7 @@ ol {
 }
 .price--featured {
   background: var(--forest);
-  border-color: var(--forest);
+  border-color: var(--forest-ink);
   color: var(--cream);
   transform: translateY(-8px);
   box-shadow: 0 34px 60px -40px rgba(9, 42, 34, 0.8);
@@ -2686,7 +2709,7 @@ ol {
 .included .icon {
   width: 14px;
   height: 14px;
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .fineprint {
   margin-top: 18px;
@@ -2740,7 +2763,7 @@ ol {
   color: var(--muted);
 }
 .faq details p a {
-  color: var(--forest);
+  color: var(--forest-ink);
   text-underline-offset: 3px;
 }
 
@@ -2953,7 +2976,7 @@ ol {
   font-weight: 600;
 }
 .legal__body a {
-  color: var(--forest);
+  color: var(--forest-ink);
   text-underline-offset: 3px;
 }
 .legal__back {
@@ -3201,7 +3224,7 @@ ol {
 }
 .tenure__card--dark {
   background: var(--forest);
-  border-color: var(--forest);
+  border-color: var(--forest-ink);
   color: var(--cream);
 }
 .tenure__label {
@@ -3343,7 +3366,7 @@ ol {
 }
 .stage--fresh {
   background: var(--forest);
-  border-color: var(--forest);
+  border-color: var(--forest-ink);
   color: var(--cream);
 }
 .stage__top {
@@ -3409,7 +3432,7 @@ ol {
   width: 13px;
   height: 13px;
   margin-top: 2px;
-  color: var(--forest);
+  color: var(--forest-ink);
   flex: none;
 }
 .stage--fresh .stage__list .icon {
@@ -3425,7 +3448,7 @@ ol {
   padding-bottom: 4px;
   border-bottom: 1px solid rgba(18, 60, 49, 0.3);
   font: 600 11px/1 var(--sans);
-  color: var(--forest);
+  color: var(--forest-ink);
   text-decoration: none;
 }
 .stage__link .icon {
@@ -3561,7 +3584,7 @@ ol {
   color: var(--muted);
 }
 .spaces-note a {
-  color: var(--forest);
+  color: var(--forest-ink);
   text-underline-offset: 3px;
 }
 @media (hover: hover) {
@@ -3596,7 +3619,7 @@ ol {
   margin-bottom: 22px;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .scenario__icon .icon {
   width: 18px;
@@ -3629,7 +3652,7 @@ ol {
   padding-bottom: 4px;
   border-bottom: 1px solid rgba(18, 60, 49, 0.3);
   font: 600 11px/1 var(--sans);
-  color: var(--forest);
+  color: var(--forest-ink);
   text-decoration: none;
 }
 .scenario__link .icon {
@@ -3760,7 +3783,7 @@ ol {
   font: 650 8px/1 var(--sans);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--forest-ink);
   white-space: nowrap;
 }
 .plan-badge span {
@@ -3917,7 +3940,7 @@ ol {
   border: 1px solid var(--forest);
   border-radius: 50%;
   background: #f8f4ec;
-  color: var(--forest);
+  color: var(--forest-ink);
   cursor: pointer;
   box-shadow: 0 7px 16px -9px rgba(9, 42, 34, 0.8);
   transition: transform 0.2s var(--ease), background 0.2s, color 0.2s,
@@ -4140,7 +4163,7 @@ ol {
 .plan-scenes__buttons button.is-active {
   background: var(--lime);
   border-color: var(--lime);
-  color: var(--forest);
+  color: var(--forest-ink);
 }
 .plan-note {
   display: flex;
@@ -4166,7 +4189,7 @@ ol {
   margin-top: 10px;
   padding-bottom: 3px;
   border-bottom: 1px solid rgba(18, 60, 49, 0.3);
-  color: var(--forest);
+  color: var(--forest-ink);
   font: 650 10px/1 var(--sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -4297,7 +4320,7 @@ ol {
   }
   .tab.is-active {
     background: var(--forest);
-    border-color: var(--forest);
+    border-color: var(--forest-ink);
   }
   .tab.is-active .tab__title {
     color: var(--cream);
@@ -4883,4 +4906,121 @@ ol {
   .screen-scan {
     animation: none;
   }
+}
+
+
+/* ==========================================================================
+   dark theme
+   ========================================================================== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0d1714;
+  --paper-2: #14221d;
+  --sand: #1a2a23;
+  --ink: #f4eee2;
+  --ink-2: #e7dfd1;
+  --muted: #a7b4ab;
+  --forest: #123c31;
+  --forest-deep: #071d17;
+  --forest-soft: #1d4c3e;
+  --forest-ink: #d7e8b8;
+  --clay: #e2a175;
+  --clay-deep: #d98d60;
+  --gold: #e0b56b;
+  --lime: #d7e8b8;
+  --cream: #f7f2e8;
+  --line: rgba(247, 242, 232, 0.14);
+  --line-strong: rgba(247, 242, 232, 0.26);
+}
+html[data-theme="dark"] body {
+  background: var(--paper);
+  color: var(--ink);
+}
+html[data-theme="dark"] .site-header.is-scrolled,
+html[data-theme="dark"] .site-header.is-open {
+  background: rgba(13, 23, 20, 0.9);
+}
+html[data-theme="dark"] .hero::before {
+  background-image: linear-gradient(to right, rgba(215, 232, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(215, 232, 184, 0.07) 1px, transparent 1px);
+}
+html[data-theme="dark"] .protocols {
+  background: rgba(20, 35, 30, 0.7);
+}
+html[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(215, 232, 184, 0.1);
+}
+html[data-theme="dark"] .btn {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #0d1714;
+}
+html[data-theme="dark"] .btn:hover {
+  background: #e6f2cf;
+}
+html[data-theme="dark"] .btn--ghost {
+  background: transparent;
+  border-color: rgba(215, 232, 184, 0.4);
+  color: var(--lime);
+}
+html[data-theme="dark"] .btn--ghost:hover {
+  background: rgba(215, 232, 184, 0.08);
+}
+html[data-theme="dark"] .btn--light,
+html[data-theme="dark"] .price--featured .btn,
+html[data-theme="dark"] .pricing-card--featured .btn {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: #101613;
+}
+html[data-theme="dark"] .btn--light:hover,
+html[data-theme="dark"] .price--featured .btn:hover,
+html[data-theme="dark"] .pricing-card--featured .btn:hover {
+  background: #fff;
+}
+html[data-theme="dark"] .pricing-card--featured {
+  border-color: rgba(215, 232, 184, 0.34);
+}
+html[data-theme="dark"] .price--featured {
+  border-color: rgba(215, 232, 184, 0.3);
+}
+html[data-theme="dark"] .region-switch button.is-active {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #0d1714;
+}
+html[data-theme="dark"] .float-card,
+html[data-theme="dark"] .compare__card--local,
+html[data-theme="dark"] .agent-chat__bubble,
+html[data-theme="dark"] .plan-card {
+  color: #101613;
+}
+html[data-theme="dark"] .float-card p,
+html[data-theme="dark"] .float-card__rows,
+html[data-theme="dark"] .float-card__time,
+html[data-theme="dark"] .compare__card--local,
+html[data-theme="dark"] .agent-chat__bubble,
+html[data-theme="dark"] .plan-card h3,
+html[data-theme="dark"] .plan-card__eyebrow {
+  color: #101613;
+}
+html[data-theme="dark"] .float-card__rows,
+html[data-theme="dark"] .float-card__time,
+html[data-theme="dark"] .plan-card__eyebrow {
+  color: #5a665e;
+}
+html[data-theme="dark"] .float-card__label,
+html[data-theme="dark"] .float-card--status .float-card__label,
+html[data-theme="dark"] .float-card__rows .icon,
+html[data-theme="dark"] .plan-badge {
+  color: #123c31;
+}
+html[data-theme="dark"] .plan-badge {
+  border-color: rgba(18, 60, 49, 0.22);
+}
+html[data-theme="dark"] .pricing-note {
+  color: var(--muted);
+}
+html[data-theme="dark"] .mobile-menu .btn {
+  color: #0d1714;
 }

@@ -15,7 +15,8 @@ from the private Home Assistant configuration; no HA URL, token or internal path
 referenced here.
 
 No build step. No frameworks, no external fonts, no CDN, no analytics, no cookies.
-Everything is served from this repository.
+Everything is served from this repository. Dark mode follows the OS by default and
+can be switched in the header; the choice is stored locally.
 
 ## What is here
 
@@ -24,8 +25,9 @@ Everything is served from this repository.
   awning, projector and the entry door/lock are interactive. Morning / Evening /
   Cinema / Away scenes run the whole plan. The live HA plan stays behind HA auth.
 - **Pre-programmed voice demo** immediately after the plan — five examples with
-  self-hosted audio. It is a sample, not a live language model. The real assistant runs
-  locally on the hub.
+  self-hosted audio. The replies follow the home assistant’s Rocky-style voice notes:
+  short, literal, warm, “buddy”, occasional “Amaze.” — no fixed “Good good” opener.
+  It is a sample, not a live language model. The real assistant runs locally on the hub.
 - **Indicative pricing with an India / Hong Kong selector** — Mumbai INR:
   ₹2,00,000 / ₹5,00,000 / ₹12,00,000; Hong Kong HKD: HK$25,000 / HK$60,000 /
   HK$150,000. The HKD figures are indicative equivalents, exclusive of local taxes;

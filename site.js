@@ -382,28 +382,28 @@
   var voiceData = {
     awning: {
       heard: "“Close the awning.”",
-      reply: "Good, good. Awning’s in. Let the rain throw its best shot.",
-      src: "assets/voice/awning.mp3?v=6"
+      reply: "Done. Awning closed. Rain is twenty minutes out, buddy.",
+      src: "assets/voice/awning.mp3?v=7"
     },
     cinema: {
       heard: "“Movie night.”",
-      reply: "Good, good. Movie mode. Lights down, blinds shut, projector warming up. Popcorn is your department.",
-      src: "assets/voice/cinema.mp3?v=6"
+      reply: "Movie mode. Lights down, blinds shut, projector on. Amaze.",
+      src: "assets/voice/cinema.mp3?v=7"
     },
     morning: {
       heard: "“Good morning.”",
-      reply: "Good, good. Morning. Blinds are up, lights are off, and the kettle has the floor.",
-      src: "assets/voice/morning.mp3?v=6"
+      reply: "Good morning, buddy. Blinds up, lights off. Kettle has the floor.",
+      src: "assets/voice/morning.mp3?v=7"
     },
     home: {
       heard: "“I’m home.”",
-      reply: "Good, good. Welcome back. Lights waking up, AC on your side, and the door locked behind you.",
-      src: "assets/voice/home.mp3?v=6"
+      reply: "Welcome back, buddy. Lights waking up. AC on your side. Door locked behind you.",
+      src: "assets/voice/home.mp3?v=7"
     },
     lock: {
       heard: "“Is the door locked?”",
-      reply: "Good, good. Door’s locked. I checked twice, so you can stop patting your pocket.",
-      src: "assets/voice/lock.mp3?v=6"
+      reply: "The main door is locked. You are all secure, buddy.",
+      src: "assets/voice/lock.mp3?v=7"
     }
   };
 
@@ -494,6 +494,28 @@
       setRegion(button.getAttribute("data-region"));
     });
   });
+
+  /* ---------- theme ---------- */
+  var themeToggle = document.getElementById("themeToggle");
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  function applyTheme(theme) {
+    var dark = theme === "dark";
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", String(dark));
+      themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      var use = themeToggle.querySelector("use");
+      if (use) use.setAttribute("href", dark ? "#i-sun" : "#i-moon");
+    }
+    if (themeMeta) themeMeta.setAttribute("content", dark ? "#0d1714" : "#f5f0e6");
+    try { localStorage.setItem("rsmn-theme", dark ? "dark" : "light"); } catch (e) {}
+  }
+  if (themeToggle) {
+    applyTheme(document.documentElement.dataset.theme || "light");
+    themeToggle.addEventListener("click", function () {
+      applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+    });
+  }
 
   /* ---------- year ---------- */
   var year = document.getElementById("year");

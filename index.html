@@ -9,7 +9,7 @@
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261103d" />
+  <link rel="stylesheet" href="styles.css?v=20261103e" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
@@ -27,7 +27,16 @@
   <meta name="twitter:description" content="Full interior design, renovation integration or a minimal-change retrofit. One studio, one app, local-first." />
   <meta name="twitter:image" content="https://araa47.github.io/rsmn-site/assets/og.png" />
 
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('rsmn-theme');
+        var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {}
+    })();
+  </script>
 
   <script type="application/ld+json">
     {
@@ -103,6 +112,9 @@
         <a href="#blueprint">Blueprint</a>
         <a href="#local-ai">Local AI</a>
       </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
       <div class="header__cta">
         <a class="btn btn--sm" href="https://wa.me/85293177819?text=Hi%20RSMN%2C%20I%27d%20like%20to%20discuss%20automation%20for%20a%20project." target="_blank" rel="noopener">
           Start a project
@@ -685,7 +697,7 @@
               <span class="voice__eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
             </div>
             <p class="voice__heard" id="voiceHeard">“Close the awning.”</p>
-            <p class="voice__reply" id="voiceReply">Good, good. Awning’s in. Let the rain throw its best shot.</p>
+            <p class="voice__reply" id="voiceReply">Done. Awning closed. Rain is twenty minutes out, buddy.</p>
             <audio id="voiceAudio" preload="none"></audio>
             <button class="voice__play" type="button" id="voicePlay">
               Play voice
@@ -2021,6 +2033,6 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261103d"></script>
+  <script src="site.js?v=20261103e"></script>
 </body>
 </html>
