@@ -5536,3 +5536,35 @@ html[data-theme="dark"] .plan-demo:hover {
   background: #123c31;
   color: var(--cream);
 }
+
+/* dark-mode surface fixes */
+html[data-theme="dark"] .cta {
+  background: #7a3b25;
+}
+html[data-theme="dark"] .cta__card {
+  background: rgba(247, 242, 232, 0.13);
+  border-color: rgba(247, 242, 232, 0.22);
+}
+html[data-theme="dark"] .section--ink {
+  background: #071d17;
+}
+html[data-theme="dark"] .footer {
+  background: #071d17;
+  color: #c2cec5;
+}
+html[data-theme="dark"] .footer h3,
+html[data-theme="dark"] .footer__bottom {
+  color: #8fa398;
+}
+html[data-theme="dark"] .footer__tagline,
+html[data-theme="dark"] .footer__bottom a {
+  color: #a7b8ad;
+}
+html[data-theme="dark"] .hotspot__label {
+  background: #071d17;
+  color: var(--cream);
+}
+html[data-theme="dark"] .skip {
+  background: var(--lime);
+  color: #0d1714;
+}
