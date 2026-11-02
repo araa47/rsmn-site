@@ -21,9 +21,11 @@ can be switched in the header; the choice is stored locally.
 ## What is here
 
 - **Interactive 2BHK floor plan** directly after the hero — a representative isometric
-  cutaway, not a scan of the client's home. Lights, AC, venetian and roller blinds,
-  awning, projector and the entry door/lock are interactive. Morning / Evening /
-  Cinema / Away scenes run the whole plan. The live HA plan stays behind HA auth.
+  cutaway, not a scan of the client's home. The balcony sits outside the facade;
+  the kitchen has a hob/sink; there is a common bath and a master ensuite. Lights, AC,
+  venetian and roller blinds, awning, animated projector and the entry door/lock are
+  interactive. A Delivery alert shows a rider outside with an unlock action. Morning /
+  Evening / Cinema / Away scenes run the whole plan. The live HA plan stays behind HA auth.
 - **Pre-programmed voice demo** immediately after the plan — five examples with
   self-hosted audio. The replies follow the home assistant’s Rocky-style voice notes:
   short, literal, warm, “buddy”, occasional “Amaze.” — no fixed “Good good” opener.
