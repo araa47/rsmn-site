@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RSMN — Interior design &amp; automation, Mumbai</title>
-  <meta name="description" content="RSMN is an interior design and automation studio in Mumbai. From a blank shell to a finished home — or a retrofit that barely touches a wall — we design lighting, climate, security, cinema and local AI as one system." />
+  <title>RSMN — Interior design &amp; automation, Mumbai &amp; Hong Kong</title>
+  <meta name="description" content="RSMN is an interior design and automation studio working across Mumbai and Hong Kong. From a blank shell to a finished home — or a retrofit that barely touches a wall — we design lighting, climate, security, cinema and local AI as one system." />
   <meta name="theme-color" content="#f5f0e6" />
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/" />
-  <link rel="stylesheet" href="styles.css?v=20261103c" />
+  <link rel="stylesheet" href="styles.css?v=20261103d" />
 
   <meta name="author" content="RSMN" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://araa47.github.io/rsmn-site/" />
   <meta property="og:site_name" content="RSMN" />
-  <meta property="og:title" content="RSMN — Interior design &amp; automation, Mumbai" />
+  <meta property="og:title" content="RSMN — Interior design &amp; automation, Mumbai &amp; Hong Kong" />
   <meta property="og:description" content="Full interior design, renovation integration or a minimal-change retrofit. One studio, one app, local-first." />
   <meta property="og:image" content="https://araa47.github.io/rsmn-site/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="RSMN — Your interiors, quietly intelligent. Interior design and automation, Mumbai." />
+  <meta property="og:image:alt" content="RSMN — Your interiors, quietly intelligent. Interior design and automation, Mumbai and Hong Kong." />
   <meta property="og:locale" content="en_IN" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="RSMN — Interior design &amp; automation, Mumbai" />
+  <meta name="twitter:title" content="RSMN — Interior design &amp; automation, Mumbai &amp; Hong Kong" />
   <meta name="twitter:description" content="Full interior design, renovation integration or a minimal-change retrofit. One studio, one app, local-first." />
   <meta name="twitter:image" content="https://araa47.github.io/rsmn-site/assets/og.png" />
 
@@ -35,10 +35,11 @@
       "@type": "ProfessionalService",
       "name": "RSMN",
       "url": "https://araa47.github.io/rsmn-site/",
-      "description": "Interior design and automation studio in Mumbai. RSMN designs from a blank shell, joins renovations, or retrofits finished homes with lighting, climate, security, cinema and local AI.",
+      "description": "Interior design and automation studio in Mumbai and Hong Kong. RSMN designs from a blank shell, joins renovations, or retrofits finished homes with lighting, climate, security, cinema and local AI.",
       "areaServed": [
         { "@type": "City", "name": "Mumbai" },
-        { "@type": "AdministrativeArea", "name": "Mumbai Metropolitan Region" }
+        { "@type": "AdministrativeArea", "name": "Mumbai Metropolitan Region" },
+        { "@type": "City", "name": "Hong Kong" }
       ],
       "serviceType": [
         "Interior design",
@@ -139,11 +140,11 @@
       <div class="wrap">
         <div class="hero__grid">
           <div class="hero__copy">
-            <p class="eyebrow">Mumbai · Interior design &amp; automation</p>
+            <p class="eyebrow">Mumbai &amp; Hong Kong · Interior design &amp; automation</p>
             <h1>Your interiors,<br /><em>quietly intelligent.</em></h1>
             <p class="hero__sub">
-              RSMN is an interior design and automation studio in Mumbai. From a blank
-              shell to a finished home — or a retrofit that barely touches a wall — we
+              RSMN is an interior design and automation studio working across Mumbai and Hong
+              Kong. From a blank shell to a finished home — or a retrofit that barely touches a wall — we
               plan, install and tune lighting, climate, security, cinema and the devices
               that were <strong>never smart to begin with</strong> — as one system.
             </p>
@@ -693,6 +694,10 @@
           <li>ESPHome</li>
           <li>Home Assistant</li>
         </ul>
+      </div>
+      <div class="wrap ha-note">
+        <span class="ha-note__label">Home Assistant</span>
+        <p><strong>Most of the stack runs on Home Assistant.</strong> Open source, on a hub inside the home — local automations, local voice and local AI, with the cloud optional.</p>
       </div>
     </section>
 
@@ -1664,9 +1669,16 @@
             <h2>Start with one system. Or the whole home.</h2>
           </div>
           <p class="lede">
-            Indicative launch pricing for Mumbai. Final scope and quote after a
-            walkthrough; hardware and site work are itemised before you approve anything.
+            Indicative launch pricing for Mumbai and Hong Kong. Other locations by
+            arrangement — start with a video call, then a walkthrough or site visit
+            once the scope is clear.
           </p>
+        </div>
+
+        <div class="region-switch" role="group" aria-label="Choose pricing region">
+          <span class="region-switch__label">Pricing region</span>
+          <button type="button" class="is-active" data-region="india" aria-pressed="true">Mumbai · INR</button>
+          <button type="button" data-region="hong-kong" aria-pressed="false">Hong Kong · HKD</button>
         </div>
 
         <div class="pricing-grid">
@@ -1675,7 +1687,7 @@
               <span class="pricing-card__label">Lights + presence</span>
               <span class="pricing-card__meta">1–2 BHK</span>
             </div>
-            <div class="pricing-card__price"><small>From</small>₹2,00,000</div>
+            <div class="pricing-card__price"><small>From</small><span data-price="lights">₹2,00,000</span></div>
             <p>Start with the layer you feel every day: light that follows the room and the people in it.</p>
             <ul>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Smart lighting &amp; dimming</li>
@@ -1695,7 +1707,7 @@
               <span class="pricing-card__label">Whole home</span>
               <span class="pricing-card__meta">2–3 BHK</span>
             </div>
-            <div class="pricing-card__price"><small>From</small>₹5,00,000</div>
+            <div class="pricing-card__price"><small>From</small><span data-price="whole-home">₹5,00,000</span></div>
             <p>The full layer: light, climate, shade, security, media and voice, running as one system.</p>
             <ul>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Lighting, AC &amp; curtains/awning</li>
@@ -1715,7 +1727,7 @@
               <span class="pricing-card__label">Full design + automation</span>
               <span class="pricing-card__meta">3 BHK+</span>
             </div>
-            <div class="pricing-card__price"><small>From</small>₹12,00,000</div>
+            <div class="pricing-card__price"><small>From</small><span data-price="full-design">₹12,00,000</span></div>
             <p>For a new home or full redo: the interior and the technology designed together, from first sketch to handover.</p>
             <ul>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Space planning &amp; materials</li>
@@ -1731,10 +1743,25 @@
           </article>
         </div>
 
+        <div class="coverage">
+          <div class="coverage__item">
+            <span class="coverage__place">Mumbai</span>
+            <p>Home visits, site supervision and commissioning — our home base.</p>
+          </div>
+          <div class="coverage__item">
+            <span class="coverage__place">Hong Kong</span>
+            <p>Design and retrofit projects; site visits scheduled around the scope.</p>
+          </div>
+          <div class="coverage__item">
+            <span class="coverage__place">Elsewhere</span>
+            <p>Remote-first. A video call to understand the home, then a site visit or local partner if needed.</p>
+            <a class="coverage__link" href="https://wa.me/85293177819?text=Hi%20RSMN%2C%20I%27m%20outside%20Mumbai%2FHong%20Kong%20and%20would%20like%20to%20start%20with%20a%20video%20call." target="_blank" rel="noopener">Book a video call <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+
         <p class="pricing-note">
-          Indicative launch pricing, exclusive of GST. Every home is different: final
-          quote after a free walkthrough, with hardware and site work line-itemed before
-          you approve. Studios: see the <a href="#engagement">engagement models</a> for trade terms.
+          <span data-pricing-note>Indicative launch pricing for Mumbai, exclusive of GST. Final scope and quote after a walkthrough; hardware and site work line-itemed before you approve.</span>
+          Studios: see the <a href="#engagement">engagement models</a> for trade terms.
         </p>
       </div>
     </section>
@@ -1882,7 +1909,11 @@
           </details>
           <details>
             <summary>Do you work outside Mumbai?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <p>We’re based in Mumbai and work across the city, with MMR projects on request. Projects outside the region are possible for the right scope — travel and site supervision are quoted separately.</p>
+            <p>Mumbai and Hong Kong are our home markets. Other locations work too, depending on the scope: we start with a video call to understand the home, then decide whether a site visit, a local installation partner, or both make sense. Travel and site supervision are quoted separately.</p>
+          </details>
+          <details>
+            <summary>What runs the system?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Most of it runs on <strong>Home Assistant</strong> on a hub inside the home — open source, local automations, local voice and local AI. The cloud is optional, not the foundation.</p>
           </details>
           <details>
             <summary>Can we visit a live project?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
@@ -1974,6 +2005,6 @@
     </div>
   </footer>
 
-  <script src="site.js?v=20261103c"></script>
+  <script src="site.js?v=20261103d"></script>
 </body>
 </html>

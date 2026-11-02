@@ -105,7 +105,7 @@
   /* ---------- scroll reveal ---------- */
   var revealItems = Array.prototype.slice.call(
     document.querySelectorAll(
-      ".section__head, .stages-grid, .partner-grid, .auto-grid, .scenario-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .voice, .agent, .proof-grid, .steps, .pricing-grid, .price-grid, .care, .faq"
+      ".section__head, .stages-grid, .partner-grid, .auto-grid, .scenario-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .voice, .agent, .proof-grid, .steps, .pricing-grid, .coverage, .price-grid, .care, .faq"
     )
   );
 
@@ -448,6 +448,52 @@
       });
     });
   }
+
+  /* ---------- pricing region ---------- */
+  var regionButtons = Array.prototype.slice.call(
+    document.querySelectorAll("[data-region]")
+  );
+  var priceNodes = Array.prototype.slice.call(document.querySelectorAll("[data-price]"));
+  var priceNote = document.querySelector("[data-pricing-note]");
+  var regions = {
+    india: {
+      note: "Indicative launch pricing for Mumbai, exclusive of GST. Final scope and quote after a walkthrough; hardware and site work line-itemed before you approve.",
+      prices: {
+        lights: "₹2,00,000",
+        "whole-home": "₹5,00,000",
+        "full-design": "₹12,00,000"
+      }
+    },
+    "hong-kong": {
+      note: "Indicative launch pricing for Hong Kong, exclusive of local taxes. Final scope and quote after a walkthrough; hardware and site work line-itemed before you approve.",
+      prices: {
+        lights: "HK$25,000",
+        "whole-home": "HK$60,000",
+        "full-design": "HK$150,000"
+      }
+    }
+  };
+
+  function setRegion(key) {
+    var region = regions[key];
+    if (!region) return;
+    regionButtons.forEach(function (button) {
+      var on = button.getAttribute("data-region") === key;
+      button.classList.toggle("is-active", on);
+      button.setAttribute("aria-pressed", String(on));
+    });
+    priceNodes.forEach(function (node) {
+      var price = region.prices[node.getAttribute("data-price")];
+      if (price) node.textContent = price;
+    });
+    if (priceNote) priceNote.textContent = region.note;
+  }
+
+  regionButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      setRegion(button.getAttribute("data-region"));
+    });
+  });
 
   /* ---------- year ---------- */
   var year = document.getElementById("year");

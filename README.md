@@ -6,6 +6,10 @@ minimal-change retrofit, with one calm app for the whole home.
 
 **Live:** https://araa47.github.io/rsmn-site/
 
+The studio works across **Mumbai and Hong Kong**, with other locations by
+arrangement. Projects elsewhere start with a video call, then a site visit or local
+partner if the scope needs one.
+
 This repository is the source of truth for the site. It is a separate public repo
 from the private Home Assistant configuration; no HA URL, token or internal path is
 referenced here.
@@ -22,10 +26,13 @@ Everything is served from this repository.
 - **Pre-programmed voice demo** immediately after the plan — five examples with
   self-hosted audio. It is a sample, not a live language model. The real assistant runs
   locally on the hub.
-- **Indicative INR pricing** — Lights + mmWave from ₹2,00,000; whole home from
-  ₹5,00,000; full interior design + automation from ₹12,00,000. Exclusive of GST;
-  final scope and quote after a walkthrough. The upper tiers are indicative and should
-  be confirmed before quoting a client.
+- **Indicative pricing with an India / Hong Kong selector** — Mumbai INR:
+  ₹2,00,000 / ₹5,00,000 / ₹12,00,000; Hong Kong HKD: HK$25,000 / HK$60,000 /
+  HK$150,000. The HKD figures are indicative equivalents, exclusive of local taxes;
+  confirm both tiers before quoting a client. Final scope and quote follow a
+  walkthrough.
+- **Home Assistant at the core** — most of the stack runs on an open-source HA hub
+  inside the home: local automations, local voice and local AI, with the cloud optional.
 - **Voice samples** in `assets/voice/`, generated locally with **PocketTTS**
   (`alba` preset). They are a sample, not a live model call. The live hub can clone
   any voice the client has the rights to; see `assets/voice/README.md` to replace the

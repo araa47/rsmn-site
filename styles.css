@@ -1219,6 +1219,34 @@ ol {
   margin-bottom: 2px;
 }
 
+.ha-note {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(18, 60, 49, 0.14);
+}
+.ha-note__label {
+  flex: none;
+  padding: 5px 8px;
+  border: 1px solid rgba(18, 60, 49, 0.22);
+  border-radius: 999px;
+  font: 650 8px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+.ha-note p {
+  max-width: 90ch;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: #5f6b63;
+}
+.ha-note strong {
+  color: var(--forest);
+}
+
 /* ---------- manifesto ---------- */
 .manifesto {
   background: var(--paper-2);
@@ -2394,6 +2422,81 @@ ol {
   background: var(--cream);
   color: var(--ink);
 }
+.region-switch {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 22px 0 18px;
+}
+.region-switch__label {
+  margin-right: 4px;
+  font: 650 8px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.region-switch button {
+  padding: 8px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--forest);
+  font: 650 9px/1 var(--sans);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.region-switch button:hover {
+  border-color: var(--forest);
+}
+.region-switch button.is-active {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--cream);
+}
+.coverage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.coverage__item {
+  padding-right: 16px;
+}
+.coverage__place {
+  display: block;
+  margin-bottom: 6px;
+  font: 650 10px/1 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+.coverage__item p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.coverage__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(18, 60, 49, 0.3);
+  color: var(--forest);
+  font: 650 9px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.coverage__link .icon {
+  width: 11px;
+  height: 11px;
+}
+
 .pricing-note {
   margin-top: 20px;
   font-size: 0.74rem;
@@ -4202,6 +4305,18 @@ ol {
 @media (max-width: 900px) {
   .voice {
     grid-template-columns: 1fr;
+  }
+  .coverage {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .coverage__item {
+    padding-right: 0;
+  }
+  .ha-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
   .pricing-grid {
     grid-template-columns: 1fr;
