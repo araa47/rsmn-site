@@ -17,12 +17,13 @@ Everything is served from this repository.
 
 ## Notes
 
-- **Photography is reference imagery, not client projects.** The five interiors and
-  the retrofit detail are used under the [Pexels license](https://www.pexels.com/license/).
-  Replace them with real project photography, with permission, when available.
-- **The interactive floor plan is a demo.** It uses local browser state to toggle
-  lights, AC, awning, projector and lock and to run Evening / Cinema / Away scenes.
-  It is not connected to Home Assistant and has no path into any live home.
+- **Photography is reference imagery, not client projects.** The four interiors, the
+  wall control panel and the retrofit detail are used under the
+  [Pexels license](https://www.pexels.com/license/). Replace them with real project
+  photography, with permission, when available.
+- **The scene loop and floor plan are demos.** The 7.8-second MP4 shows the plan
+  moving through Evening → Cinema → Away. It uses local browser state, not a live
+  Home Assistant instance, and has no path into any home.
 
 ## Image credits
 
@@ -31,7 +32,7 @@ Everything is served from this repository.
 | Living room | [Pexels 33452539](https://www.pexels.com/photo/33452539/) — Liva Kitchens And Interiors |
 | Bedroom | [Pexels 13041939](https://www.pexels.com/photo/13041939/) — Pușcaș Adryan |
 | Cinema | [Pexels 30647348](https://www.pexels.com/photo/30647348/) — Curt Hubner |
-| Entrance | [Pexels 30311345](https://www.pexels.com/photo/30311345/) — Paul Raymond |
+| Control panel | [Pexels 16423103](https://www.pexels.com/photo/16423103/) |
 | Retrofit switch | [Pexels 7746038](https://www.pexels.com/photo/7746038/) — Max Vakhtbovych |
 | Balcony | [Pexels 35123428](https://www.pexels.com/photo/35123428/) — Murun. E |
 
@@ -39,9 +40,9 @@ Everything is served from this repository.
 
 - `index.html` — the full site
 - `privacy.html` — privacy note
-- `styles.css` — styles, stages, gallery and floor-plan UI
-- `site.js` — mobile menu, app tabs, floor plan, scroll reveal
-- `assets/` — mark, social preview and local images
+- `styles.css` — styles, stages, gallery, motion loop and floor-plan UI
+- `site.js` — mobile menu, app tabs, floor plan, reduced-motion video handling
+- `assets/` — mark, social preview, local images and scene loop
 - `robots.txt`, `sitemap.xml` — crawler metadata
 
 Published with GitHub Pages from the `main` branch.

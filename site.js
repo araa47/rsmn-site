@@ -9,6 +9,14 @@
   var pageFooter = document.querySelector("footer");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  if (reduceMotion) {
+    document.querySelectorAll("video[data-autoplay]").forEach(function (video) {
+      video.autoplay = false;
+      video.pause();
+      video.setAttribute("controls", "");
+    });
+  }
+
   /* ---------- header state on scroll ---------- */
   function onScroll() {
     if (!header) return;
