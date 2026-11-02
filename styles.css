@@ -299,7 +299,7 @@ ol {
   font-size: 15px;
   font-weight: 750;
   line-height: 1;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.04em;
   padding-left: 1px;
 }
 .brand__word::after {
