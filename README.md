@@ -21,12 +21,22 @@ Everything is served from this repository.
   wall control panel and the retrofit detail are used under the
   [Pexels license](https://www.pexels.com/license/). Replace them with real project
   photography, with permission, when available.
-- **The scene loop and floor plan are demos.** The 7.8-second MP4 shows the plan
-  moving through Evening → Cinema → Away. It uses local browser state, not a live
-  Home Assistant instance, and has no path into any home.
+- **The scene loop and floor plan are demos.** The 7.8-second MP4 shows a
+  representative 2BHK plan — not a scan of the client’s home — moving through
+  Evening → Cinema → Away. It uses local browser state, not a live Home Assistant
+  instance, and has no path into any home.
+- **Pricing is indicative.** ₹2,00,000 / ₹5,00,000 / ₹12,00,000 are starting points,
+  exclusive of GST; the final quote comes after a walkthrough. Confirm before quoting
+  a client.
+- **The voice is a generic local TTS sample.** It is not a celebrity voice clone.
+  Replace it with a licensed voice, or the client’s own Rocky sample, before treating
+  it as the live assistant voice.
 - **Sun/shade examples and the local-agent chat are illustrative.** Confirm the
   actual triggers and what the local agent can safely change for each installation
   before publishing hard guarantees.
+- **Voice and pricing need a final check.** The voice files are generic samples; the
+  high price tiers are placeholders. Neither should be treated as a client commitment
+  without review.
 
 ## Image credits
 

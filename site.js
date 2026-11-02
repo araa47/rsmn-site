@@ -105,7 +105,7 @@
   /* ---------- scroll reveal ---------- */
   var revealItems = Array.prototype.slice.call(
     document.querySelectorAll(
-      ".section__head, .stages-grid, .partner-grid, .auto-grid, .scenario-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .agent, .proof-grid, .steps, .price-grid, .care, .faq"
+      ".section__head, .stages-grid, .partner-grid, .auto-grid, .scenario-grid, .retrofit-grid, .tenure, .spaces-grid, .app-grid, .blueprint, .ai-flow, .ai-grid, .voice, .agent, .proof-grid, .steps, .pricing-grid, .price-grid, .care, .faq"
     )
   );
 
@@ -166,14 +166,24 @@
         onDesc: "Projector on, blinds closed, soundbar at movie level.",
         offDesc: "Projector off, blinds open."
       },
+      bedroomLight: {
+        room: "Master bedroom",
+        name: "Master bedroom light",
+        on: "On",
+        off: "Off",
+        onSub: "30% · warm",
+        offSub: "Off",
+        onDesc: "Master bedroom at 30% — enough to read, not enough to wake anyone.",
+        offDesc: "Master bedroom light off. Blackout still down."
+      },
       ac: {
-        room: "Bedroom",
-        name: "Bedroom AC",
+        room: "Master bedroom",
+        name: "Master bedroom AC",
         on: "On",
         off: "Off",
         onSub: "24° · cooling",
         offSub: "Off",
-        onDesc: "Bedroom cooling to 24°, fan on auto.",
+        onDesc: "Master bedroom cooling to 24°, fan on auto.",
         offDesc: "AC off. Window sensor says the window is open."
       },
       awning: {
@@ -193,14 +203,15 @@
         off: "Unlocked",
         onSub: "Auto-locked 7:41 PM",
         offSub: "Unlocked for arrival",
-        onDesc: "Main door locked. Entry light off.",
-        offDesc: "Main door unlocked. Entry light on."
+        onDesc: "Main door locked. The entrance is secure.",
+        offDesc: "Main door unlocked. The door swings open."
       }
     };
 
     var planState = {
       living: true,
       projector: false,
+      bedroomLight: true,
       ac: true,
       awning: true,
       lock: true
@@ -210,17 +221,17 @@
       evening: {
         title: "Evening at home",
         desc: "The lights are low, the bedroom is cooling, and the door is locked. The house is ready for the night.",
-        state: { living: true, projector: false, ac: true, awning: true, lock: true }
+        state: { living: true, projector: false, bedroomLight: true, ac: true, awning: true, lock: true }
       },
       cinema: {
         title: "Cinema, ready.",
         desc: "Projector on, blinds closed, lights down to 8%. One tap and the room changes.",
-        state: { living: false, projector: true, ac: true, awning: true, lock: true }
+        state: { living: false, projector: true, bedroomLight: false, ac: true, awning: true, lock: true }
       },
       away: {
         title: "Away mode.",
         desc: "Everything off, the awning in, the door locked. The house looks after itself.",
-        state: { living: false, projector: false, ac: false, awning: true, lock: true }
+        state: { living: false, projector: false, bedroomLight: false, ac: false, awning: true, lock: true }
       }
     };
 
@@ -248,6 +259,28 @@
         var subEl = button.querySelector("[data-sub]");
         if (subEl) subEl.textContent = on ? data.onSub : data.offSub;
       });
+
+      document.querySelectorAll("[data-light-wash]").forEach(function (wash) {
+        var lightKey = wash.getAttribute("data-light-wash");
+        wash.style.opacity = planState[lightKey] ? "0.85" : "0";
+      });
+      document.querySelectorAll("[data-fixture]").forEach(function (fixture) {
+        fixture.classList.toggle("is-on", !!planState[fixture.getAttribute("data-fixture")]);
+      });
+      var awningEl = document.querySelector("[data-awning]");
+      if (awningEl) awningEl.classList.toggle("is-open", !planState.awning);
+      var doorEl = document.querySelector("[data-door]");
+      if (doorEl) doorEl.classList.toggle("is-open", !planState.lock);
+      var sensorEl = document.querySelector("[data-door-sensor]");
+      if (sensorEl) sensorEl.classList.toggle("is-open", !planState.lock);
+      var sensorText = document.querySelector("[data-door-sensor-text]");
+      if (sensorText) sensorText.textContent = planState.lock ? "DOOR CLOSED" : "DOOR OPEN";
+      var lockText = document.querySelector("[data-door-lock-text]");
+      if (lockText) lockText.textContent = planState.lock ? "LOCKED" : "UNLOCKED";
+      var projectorEl = document.querySelector("[data-projector]");
+      if (projectorEl) projectorEl.classList.toggle("is-on", planState.projector);
+      var acEl = document.querySelector("[data-ac]");
+      if (acEl) acEl.classList.toggle("is-on", planState.ac);
 
       if (activeKey && planData[activeKey]) {
         var current = planData[activeKey];
@@ -292,6 +325,73 @@
     });
 
     renderPlan(null);
+  }
+
+  /* ---------- voice demo ---------- */
+  var voiceAudio = document.getElementById("voiceAudio");
+  var voiceHeard = document.getElementById("voiceHeard");
+  var voiceReply = document.getElementById("voiceReply");
+  var voicePlayer = document.querySelector("[data-voice-player]");
+  var voicePlay = document.getElementById("voicePlay");
+  var voiceButtons = Array.prototype.slice.call(document.querySelectorAll("[data-voice]"));
+  var voiceData = {
+    awning: {
+      heard: "“Close the awning.”",
+      reply: "Done. Awning closed. Rain is still twenty minutes away.",
+      src: "assets/voice/awning.mp3"
+    },
+    cinema: {
+      heard: "“Movie night.”",
+      reply: "Cinema ready. Lights at eight percent, blinds closed, projector on.",
+      src: "assets/voice/cinema.mp3"
+    },
+    lock: {
+      heard: "“Is the door locked?”",
+      reply: "Yes. The main door is locked. Locked at seven forty-one.",
+      src: "assets/voice/lock.mp3"
+    }
+  };
+
+  function setVoice(key, play) {
+    var data = voiceData[key];
+    if (!data || !voiceAudio) return;
+    voiceButtons.forEach(function (button) {
+      var on = button.getAttribute("data-voice") === key;
+      button.classList.toggle("is-active", on);
+      button.setAttribute("aria-pressed", String(on));
+    });
+    if (voiceHeard) voiceHeard.textContent = data.heard;
+    if (voiceReply) voiceReply.textContent = data.reply;
+    voiceAudio.src = data.src;
+    if (play) {
+      voiceAudio.currentTime = 0;
+      var attempt = voiceAudio.play();
+      if (attempt && typeof attempt.catch === "function") attempt.catch(function () {});
+    }
+  }
+
+  if (voiceAudio && voiceButtons.length) {
+    voiceButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        setVoice(button.getAttribute("data-voice"), true);
+      });
+    });
+    if (voicePlay) {
+      voicePlay.addEventListener("click", function () {
+        if (!voiceAudio.src) setVoice("awning", false);
+        voiceAudio.currentTime = 0;
+        var attempt = voiceAudio.play();
+        if (attempt && typeof attempt.catch === "function") attempt.catch(function () {});
+      });
+    }
+    voiceAudio.addEventListener("play", function () {
+      if (voicePlayer) voicePlayer.classList.add("is-playing");
+    });
+    ["pause", "ended"].forEach(function (eventName) {
+      voiceAudio.addEventListener(eventName, function () {
+        if (voicePlayer) voicePlayer.classList.remove("is-playing");
+      });
+    });
   }
 
   /* ---------- year ---------- */
