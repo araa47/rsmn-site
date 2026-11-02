@@ -4,11 +4,11 @@ These are **pre-programmed** examples used by the website voice player:
 
 | File | Assistant line |
 | --- | --- |
-| `awning.mp3` | Done. Awning closed. Rain is still twenty minutes away. |
-| `cinema.mp3` | Cinema ready. Lights at eight percent, blinds closed, projector on. |
-| `lock.mp3` | Yes. The main door is locked. Locked at seven forty-one. |
+| `awning.mp3` | Done — the awning’s closed. Rain’s still about twenty minutes out. |
+| `cinema.mp3` | Movie night. Lights down to eight, blinds shut, projector on. |
+| `lock.mp3` | Yes — the main door’s locked. Locked at seven forty-one. |
 
-The current files are a generic macOS `Rishi` Indian-English TTS sample, not a
+The current files are a generic macOS `Tara` Indian-English TTS sample, not a
 celebrity clone. To replace them with PocketTTS, a licensed voice, or a Rocky
 sample from the client's HA:
 

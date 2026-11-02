@@ -14,7 +14,8 @@ Mumbai. The site covers three entry points equally:
 
 No build step. No frameworks, no external fonts, no CDN, no analytics, no cookies.
 Everything is served from this repository. The interactive 2BHK plan and the voice
-demo sit immediately after the hero.
+demo sit immediately after the hero, and the plan’s lights visibly brighten the 3D
+rooms.
 
 ## Notes
 

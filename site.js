@@ -337,18 +337,18 @@
   var voiceData = {
     awning: {
       heard: "“Close the awning.”",
-      reply: "Done. Awning closed. Rain is still twenty minutes away.",
-      src: "assets/voice/awning.mp3"
+      reply: "Done — the awning’s closed. Rain’s still about twenty minutes out.",
+      src: "assets/voice/awning.mp3?v=3"
     },
     cinema: {
       heard: "“Movie night.”",
-      reply: "Cinema ready. Lights at eight percent, blinds closed, projector on.",
-      src: "assets/voice/cinema.mp3"
+      reply: "Movie night. Lights down to eight, blinds shut, projector on.",
+      src: "assets/voice/cinema.mp3?v=3"
     },
     lock: {
       heard: "“Is the door locked?”",
-      reply: "Yes. The main door is locked. Locked at seven forty-one.",
-      src: "assets/voice/lock.mp3"
+      reply: "Yes — the main door’s locked. Locked at seven forty-one.",
+      src: "assets/voice/lock.mp3?v=3"
     }
   };
 
