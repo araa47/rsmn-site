@@ -394,6 +394,10 @@
                 <div><h4>Check-out reset</h4><p>One event resets AC, lights, TV, sockets and curtains. The room flips to “ready” for housekeeping at the same moment.</p></div>
               </div>
               <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg></span>
+                <div><h4>Shade before the sun arrives</h4><p>Blinds or curtains close ahead of direct sun on the glass and open again when it passes — the AC never has to remove heat that never got in.</p></div>
+              </div>
+              <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg></span>
                 <div><h4>Lighting by state</h4><p>Welcome, reading, sleep, cleaning and master-off scenes. No switch left on for the next guest, no lamp left burning.</p></div>
               </div>
@@ -805,21 +809,174 @@
             </div>
 
             <div class="model__mix">
-              <span class="model__mix-label">Where the base-case saving comes from</span>
+              <span class="model__mix-label">Base case, by area</span>
               <div class="model__mix-bar" aria-hidden="true">
-                <i style="width:74%"></i><i style="width:13%"></i><i style="width:13%"></i>
+                <i style="width:74%"></i><i style="width:12%"></i><i style="width:14%"></i>
               </div>
               <ul>
                 <li><i aria-hidden="true"></i> Room controls <b>74%</b></li>
-                <li><i aria-hidden="true"></i> Plant &amp; AHUs <b>13%</b></li>
-                <li><i aria-hidden="true"></i> Public areas <b>13%</b></li>
+                <li><i aria-hidden="true"></i> Plant &amp; AHUs <b>12%</b></li>
+                <li><i aria-hidden="true"></i> Lighting &amp; back of house <b>14%</b></li>
               </ul>
+              <a class="model__mix-link" href="#levers">
+                What makes up the sixteen points
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
             </div>
 
             <p class="model__fine">
               Grid factor 0.71 kgCO₂e/kWh. Savings exclude demand-charge reduction, maintenance
               avoidance and any tariff change — all of which are upside, and all of which we
               model separately after the audit.
+            </p>
+          </div>
+        </div>
+
+        <div class="levers" id="levers">
+          <div class="levers__head">
+            <div>
+              <p class="kicker">Mechanism</p>
+              <h3>Where the sixteen points actually come from.</h3>
+            </div>
+            <p class="levers__lede">
+              Most of the saving is not clever. It is a building that stops cooling rooms
+              nobody is in, and stops letting the afternoon sun in for free. The rest is
+              plant and lighting discipline — and together it is the whole model.
+            </p>
+          </div>
+
+          <div class="levers__key">
+            <span><i class="is-cool" aria-hidden="true"></i> <b>11.8</b> cooling</span>
+            <span><i class="is-plant" aria-hidden="true"></i> <b>1.9</b> plant</span>
+            <span><i class="is-light" aria-hidden="true"></i> <b>2.3</b> lighting, kitchen &amp; hot water</span>
+            <span class="levers__total">16.0 points of the base case</span>
+          </div>
+
+          <div class="levers__grid">
+            <article class="lever lever--cool">
+              <div class="lever__top">
+                <span class="lever__tag">Cooling</span>
+                <span class="lever__pts">4.8<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:30%"></i></div>
+              <h4>Not cooling rooms nobody is in</h4>
+              <p>Check-out drops the room to 26.5°C and holds it there until a reservation or a door event says otherwise. The room a fixed schedule would have run for fourteen hours runs for four.</p>
+              <span class="lever__need">controller + door sensor</span>
+            </article>
+
+            <article class="lever lever--cool">
+              <div class="lever__top">
+                <span class="lever__tag">Cooling</span>
+                <span class="lever__pts">3.4<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:21%"></i></div>
+              <h4>Keeping the sun out of the room</h4>
+              <p>Direct afternoon sun through a west window is worth roughly 1–1.5 kW of heat. Close the blind before it arrives, open it after, and the AC never has to remove it. The guest gets a cooler room and nobody has to remember.</p>
+              <span class="lever__need">blind motor + solar sensor</span>
+            </article>
+
+            <article class="lever lever--cool">
+              <div class="lever__top">
+                <span class="lever__tag">Cooling</span>
+                <span class="lever__pts">2.2<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:14%"></i></div>
+              <h4>24°C, not 22°C</h4>
+              <p>Every degree below 24 costs roughly 6–8% more cooling in a humid climate. A 24°C room with a fan reads as comfortable; a 22°C room is expensive. Set the default and leave the override with the guest.</p>
+              <span class="lever__need">logic only</span>
+            </article>
+
+            <article class="lever lever--cool">
+              <div class="lever__top">
+                <span class="lever__tag">Cooling</span>
+                <span class="lever__pts">1.4<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:9%"></i></div>
+              <h4>Windows, balcony doors, bathrooms</h4>
+              <p>The AC stops when a balcony door opens and resumes when it closes. Bathroom exhaust runs on humidity, not on the light switch. Two interlocks that kill the most common waste in a coastal city.</p>
+              <span class="lever__need">contact + humidity sensors</span>
+            </article>
+
+            <article class="lever lever--plant">
+              <div class="lever__top">
+                <span class="lever__tag">Plant</span>
+                <span class="lever__pts">0.8<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:5%"></i></div>
+              <h4>Chilled-water reset</h4>
+              <p>As the building’s load falls, raise the supply temperature. The compressor does less work for the same room temperature — the most reliable plant saving there is.</p>
+              <span class="lever__need">valve control / BMS</span>
+            </article>
+
+            <article class="lever lever--plant">
+              <div class="lever__top">
+                <span class="lever__tag">Plant</span>
+                <span class="lever__pts">0.6<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:4%"></i></div>
+              <h4>Run the efficient machine first</h4>
+              <p>Chillers stage on load and efficiency rather than a rota: the best combination runs, the worst waits. On a part-loaded day that is most of the difference.</p>
+              <span class="lever__need">BMS write access</span>
+            </article>
+
+            <article class="lever lever--plant">
+              <div class="lever__top">
+                <span class="lever__tag">Plant</span>
+                <span class="lever__pts">0.5<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:3%"></i></div>
+              <h4>AHUs and pumps on the zone’s clock</h4>
+              <p>Zones run when their zone is occupied. Valves and VFDs follow the load instead of sitting wide open on a schedule written at handover.</p>
+              <span class="lever__need">BMS / VFD</span>
+            </article>
+
+            <article class="lever lever--light">
+              <div class="lever__top">
+                <span class="lever__tag">Lighting</span>
+                <span class="lever__pts">1.0<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:6%"></i></div>
+              <h4>Light on presence and daylight</h4>
+              <p>Guest corridors at 30% and up on presence; the lobby dimmed as the sun climbs; back of house dark when empty — with a floor that never leaves a guest path dark.</p>
+              <span class="lever__need">dimmers + PIR</span>
+            </article>
+
+            <article class="lever lever--light">
+              <div class="lever__top">
+                <span class="lever__tag">Kitchen</span>
+                <span class="lever__pts">0.8<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:5%"></i></div>
+              <h4>Exhaust on demand</h4>
+              <p>Kitchen hoods and make-up air follow the cooking load, not the shift. It is one of the largest single loads in the building and almost never metered.</p>
+              <span class="lever__need">VFD + hood probe</span>
+            </article>
+
+            <article class="lever lever--light">
+              <div class="lever__top">
+                <span class="lever__tag">Hot water</span>
+                <span class="lever__pts">0.5<small>pts</small></span>
+              </div>
+              <div class="lever__bar" aria-hidden="true"><i style="width:3%"></i></div>
+              <h4>Steam and hot water</h4>
+              <p>Generation follows actual demand, and return temperatures expose the losses in the line. The cheapest kilowatt-hour is the one you never make.</p>
+              <span class="lever__need">valve + return probe</span>
+            </article>
+          </div>
+
+          <div class="levers__fine">
+            <p>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+              <span>All ten levers are kilowatt-hours. Demand-charge reduction and moving
+              laundry or pumping off the peak are worth real money as well — they are
+              deliberately <em>not</em> counted in the sixteen points, so the model can only
+              under-promise.</span>
+            </p>
+            <p>
+              <svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg>
+              <span>The split is a base case. It shifts with climate, plant and how the hotel
+              is already run — not with the sliders above, which move the size of the saving,
+              not its shape.</span>
             </p>
           </div>
         </div>

@@ -81,6 +81,12 @@ What is on it:
 - **The money** — sliders for keys, occupancy and tariff, three capex paths
   (retrofit now / at replacement / new build), modelled saving, capex band and
   payback, plus the honest version of payback.
+- **Where the 16% comes from** — ten named mechanisms with the physics and the
+  hardware each needs (empty-room setback, shuttering the sun before it lands,
+  24°C not 22°C, door/window interlocks, chilled-water reset, chiller staging,
+  AHU scheduling, presence/daylight lighting, kitchen exhaust, hot water). The
+  points sum to the base-case saving, and the mix stays consistent with the
+  model and the room demo.
 - **The data loop** — "days to understand, months to compound": instrument, baseline,
   detect, predict, tune; a day-1 to month-3 milestone strip; three worked findings.
 - **At scale** — the four-layer on-site architecture, integrations read from rather
