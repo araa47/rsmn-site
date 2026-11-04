@@ -65,34 +65,33 @@ the studio site. Share the URL directly.
 
 **Live:** https://araa47.github.io/rsmn-site/hotels/
 
-It is written for a representative 200-key property in Chennai and deliberately does
-not name a prospect. Every figure is a model, not a quote: the savings model's inputs
-live in `MODEL` in `hotels/hotels.js`, the assumptions are stated on the page and
-expandable under "Read the model's assumptions", and a real engagement replaces them
-with a metered audit.
+It is written for a representative 200-key property and names neither the prospect nor
+a city. Every figure is a model, not a quote: the inputs live in `MODEL` in
+`hotels/hotels.js`, the assumptions are on the page, and a real engagement replaces
+them with a metered audit.
+
+The economics are built on the HT-III commercial tariff — ₹9.40/unit, ₹608/kVA/month
+demand, 5% electricity tax, about ₹11.50 all-in — and a hotel that already has key
+cards and manual thermostats. That baseline is what makes the page honest: 94 kWh per
+occupied room-night, a ₹5.35 crore bill, a base-case saving of 20% (₹1.07 crore) and a
+1.1–2.1 year payback on a ₹1.2–2.2 crore retrofit. Change those inputs and the whole
+page should be re-checked, not just the calculator.
 
 What is on it:
 
-- **The bill** — where hotel electricity goes, and six ways it leaks.
-- **Scope** — six tabbed areas (guest rooms, public areas and F&B, plant, back of
-  house, guests and staff, safety), each with a "what changes" note.
-- **One room, three states** — an interactive occupied / checked-out / arriving room
-  that changes temperature, chips, energy and the trigger-and-action log.
-- **The money** — sliders for keys, occupancy and tariff, three capex paths
-  (retrofit now / at replacement / new build), modelled saving, capex band and
-  payback, plus the honest version of payback.
-- **Where the 16% comes from** — ten named mechanisms with the physics and the
-  hardware each needs (empty-room setback, shuttering the sun before it lands,
-  24°C not 22°C, door/window interlocks, chilled-water reset, chiller staging,
-  AHU scheduling, presence/daylight lighting, kitchen exhaust, hot water). The
-  points sum to the base-case saving, and the mix stays consistent with the
-  model and the room demo.
-- **The data loop** — "days to understand, months to compound": instrument, baseline,
-  detect, predict, tune; a day-1 to month-3 milestone strip; three worked findings.
-- **At scale** — the four-layer on-site architecture, integrations read from rather
-  than replaced, and the local-first / fail-safe / segmented / open principles.
-- **Rollout, guardrails, comparison, FAQ** — five phases with gates, what the studio
-  will not do, and the questions a GM asks after the price.
+- **The bill** — the three numbers that matter (₹11.50/unit, 94 kWh, 58% air-con),
+  where the bill goes, and what the hotel already does (key cards, manual thermostats,
+  fixed plant schedules, housekeeping by phone).
+- **Where the 20% comes from** — one table, ten changes, one line each, with the points
+  they contribute and what each one needs installed. Cooling is 11.8 of 20.
+- **Scope** — six tabbed areas, five or six one-line automations each.
+- **One room, three states** — interactive occupied / checked-out / arriving room.
+- **The money** — keys, occupancy and all-in tariff sliders, three capex paths,
+  saving, payback, capex band, and three things to check before believing it.
+- **The data** — four steps, a day-1 to month-3 milestone strip, three worked findings,
+  and how savings are measured.
+- **At scale, rollout, guardrails, comparison, FAQ** — architecture, four phases with
+  gates, what the studio will not do, and the questions that follow the price.
 
 ```
 hotels/index.html      the proposal

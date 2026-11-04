@@ -165,8 +165,8 @@
       temp: "24.1",
       set: "24.0",
       fill: "51%",
-      kwh: "24.0",
-      delta: "−25% vs fixed 22°",
+      kwh: "30.4",
+      delta: "−21% vs fixed 22°",
       neutral: false,
       chips: {
         ac: "AC cooling",
@@ -174,17 +174,17 @@
         blinds: "Curtains open",
         door: "Door closed"
       },
-      trigger: "Door contact open, 3 minutes · presence confirmed · thermostat at 24.1°C.",
-      action: "Held the guest’s setpoint, kept the fan on auto, left the curtains where the guest put them.",
-      cost: "About ₹216 for the day at ₹9 a unit. A fixed 22°C setpoint would have used 32 kWh — ₹288."
+      trigger: "Door contact open, three minutes. Presence confirmed.",
+      action: "Held the guest’s setpoint. No setback while someone is in the room.",
+      cost: "About ₹350 for the day at ₹11.50 a unit. A fixed 22°C room would be ₹442."
     },
     vacant: {
       badge: "Checked out",
       temp: "26.6",
       set: "26.5",
       fill: "72%",
-      kwh: "6.6",
-      delta: "−79% vs fixed 22°",
+      kwh: "7.2",
+      delta: "−81% vs fixed 22°",
       neutral: false,
       chips: {
         ac: "AC in setback",
@@ -192,16 +192,16 @@
         blinds: "Curtains closed",
         door: "Door closed · armed"
       },
-      trigger: "PMS check-out at 11:40 · door contact closed · no presence for four hours.",
-      action: "Dropped cooling to setback, turned off the lights and TV, closed the curtains, and flagged the room to housekeeping.",
-      cost: "About ₹59 for the day. Comfortable to clean, not to sleep in — which is the point."
+      trigger: "Check-out at 11:40. No presence for four hours.",
+      action: "Dropped to 26.5°C, lights off, curtains closed, room flagged ready.",
+      cost: "About ₹83 for the day. Comfortable to clean, not to sleep in."
     },
     arriving: {
       badge: "Arriving 14:00",
       temp: "23.8",
       set: "23.5",
       fill: "48%",
-      kwh: "14.2",
+      kwh: "16.8",
       delta: "−56% vs fixed 22°",
       neutral: false,
       chips: {
@@ -210,9 +210,9 @@
         blinds: "Curtains open",
         door: "Door closed"
       },
-      trigger: "Reservation on the PMS · arrival 14:00 · outside 33°C and 68% humidity.",
-      action: "Started cooling at 13:20, set the welcome scene at 13:55, and stopped the moment the door opened.",
-      cost: "About ₹128 for the day — forty minutes of pre-cooling instead of a whole morning of it."
+      trigger: "Reservation on the PMS. Arrival 14:00, outside 33°C.",
+      action: "Cooling from 13:20. Welcome scene at 13:55. Stops when the door opens.",
+      cost: "About ₹193 for the day — forty minutes of pre-cooling, not a morning."
     }
   };
 
@@ -275,16 +275,16 @@
 
   /* ---------- savings model ---------- */
   var MODEL = {
-    roomKwh: 24,
-    sharedKwh: 18,
-    low: 0.1,
-    base: 0.16,
-    high: 0.24,
+    roomKwh: 32,
+    sharedKwh: 42,
+    low: 0.12,
+    base: 0.2,
+    high: 0.28,
     grid: 0.71,
     capex: {
-      retrofit: [45000, 80000],
-      replace: [22000, 38000],
-      newbuild: [14000, 26000]
+      retrofit: [60000, 110000],
+      replace: [30000, 55000],
+      newbuild: [20000, 40000]
     }
   };
 
@@ -345,10 +345,11 @@
 
       outputs.keys.textContent = String(keys);
       outputs.occ.textContent = Math.round(occ * 100) + "%";
-      outputs.tariff.textContent = "₹" + Number(tariff).toFixed(1);
+      outputs.tariff.textContent = "₹" + Number(tariff).toFixed(2);
       outputs.save.textContent = money(save);
       outputs.saveKwh.textContent = kwhLabel(saveKwh);
       outputs.co2.textContent = Math.round(co2).toLocaleString("en-IN");
+      if (outputs.perKey) outputs.perKey.textContent = money(Math.round(save / keys / 500) * 500);
       outputs.spend.textContent = money(spend);
       outputs.range.textContent = Math.round(MODEL.low * 100) + "–" + Math.round(MODEL.high * 100) + "%";
       outputs.payback.textContent =
@@ -368,7 +369,7 @@
   /* ---------- scroll reveal ---------- */
   var revealItems = Array.prototype.slice.call(
     document.querySelectorAll(
-      ".section__head, .bill, .leaks, .pull, .interfaces, .scope, .roomdemo, .mathstrip, .model, .truth, .wheel, .signals, .mv, .gov, .arch, .principles, .retrofit-note, .phase, .guard, .h-stats, .matrix-wrap, .why-copy, .faq"
+      ".section__head, .statrow, .bill, .baseline, .lset, .scope, .roomdemo, .mathstrip, .model, .truth, .wheel, .milestones, .signals, .mv, .gov, .arch, .principles, .retrofit-line, .phase, .guard, .why-b, .matrix-panel, .faq"
     )
   );
 
