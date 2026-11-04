@@ -57,10 +57,51 @@ can be switched in the header; the choice is stored locally.
   the [Pexels license](https://www.pexels.com/license/) and stored locally in
   `assets/img/`. Replace with real project photography, with permission, when available.
 
+## The hotels proposal
+
+`hotels/` is a separate, unlisted pitch page for hotel operators — a proposal, not a
+service page. It is `noindex, nofollow`, absent from the sitemap, and not linked from
+the studio site. Share the URL directly.
+
+**Live:** https://araa47.github.io/rsmn-site/hotels/
+
+It is written for a representative 200-key property in Chennai and deliberately does
+not name a prospect. Every figure is a model, not a quote: the savings model's inputs
+live in `MODEL` in `hotels/hotels.js`, the assumptions are stated on the page and
+expandable under "Read the model's assumptions", and a real engagement replaces them
+with a metered audit.
+
+What is on it:
+
+- **The bill** — where hotel electricity goes, and six ways it leaks.
+- **Scope** — six tabbed areas (guest rooms, public areas and F&B, plant, back of
+  house, guests and staff, safety), each with a "what changes" note.
+- **One room, three states** — an interactive occupied / checked-out / arriving room
+  that changes temperature, chips, energy and the trigger-and-action log.
+- **The money** — sliders for keys, occupancy and tariff, three capex paths
+  (retrofit now / at replacement / new build), modelled saving, capex band and
+  payback, plus the honest version of payback.
+- **The data loop** — "days to understand, months to compound": instrument, baseline,
+  detect, predict, tune; a day-1 to month-3 milestone strip; three worked findings.
+- **At scale** — the four-layer on-site architecture, integrations read from rather
+  than replaced, and the local-first / fail-safe / segmented / open principles.
+- **Rollout, guardrails, comparison, FAQ** — five phases with gates, what the studio
+  will not do, and the questions a GM asks after the price.
+
+```
+hotels/index.html      the proposal
+hotels/hotels.css      proposal components, layered on styles.css
+hotels/hotels.js       tabs, room demo, savings model, theme, menu
+```
+
+It reuses `styles.css` tokens, the icon sprite and the header/footer pattern from the
+studio site. Design tokens stay in `styles.css`; nothing external is loaded.
+
 ## Files
 
 ```
 index.html              the one-page site
+hotels/                 unlisted hotel proposal (see above)
 privacy.html            plain-language privacy note
 styles.css              design system, layout, phone UI, gallery, plan
 site.js                 mobile menu, app tabs, floor plan, voice demo, reveal, year

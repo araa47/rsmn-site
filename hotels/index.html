@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel automation — a proposal for a 200-key property in Chennai | Ambient Form Studio</title>
+  <meta name="description" content="A proposal for a 200-key hotel in Chennai: what can be automated room by room and plant by plant, what it is worth against a metered baseline, and how the building learns from its own data. Local-first, phased from a 20-key pilot." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="theme-color" content="#f5f0e6" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://araa47.github.io/rsmn-site/hotels/" />
+  <link rel="stylesheet" href="../styles.css?v=20261103t" />
+  <link rel="stylesheet" href="hotels.css?v=20261104a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://araa47.github.io/rsmn-site/hotels/" />
+  <meta property="og:site_name" content="Ambient Form Studio" />
+  <meta property="og:title" content="Hotel automation — a proposal for a 200-key property in Chennai" />
+  <meta property="og:description" content="What can be automated, what it is worth, and what a year of building data is actually good for. A local-first proposal from Ambient Form Studio." />
+  <meta property="og:image" content="https://araa47.github.io/rsmn-site/assets/og.png?v=2" />
+  <meta property="og:image:alt" content="Ambient Form Studio — hotel automation proposal, Chennai." />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hotel automation — a proposal for a 200-key property in Chennai" />
+  <meta name="twitter:description" content="What can be automated, what it is worth, and what a year of building data is actually good for." />
+  <meta name="twitter:image" content="https://araa47.github.io/rsmn-site/assets/og.png?v=2" />
+
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('rsmn-theme');
+        var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- icon sprite: no external requests -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/><path d="M19 16l.7 1.9L21.5 19l-1.8.7L19 21.5l-.7-1.8L16.5 19l1.8-1.1L19 16Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.6V17h8v-2.4A7 7 0 0 0 12 2Z"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.2 6.5l15.6 11M19.8 6.5l-15.6 11M9 4l3 3 3-3M9 20l3-3 3 3"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+    <symbol id="i-blinds" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M7 3v6M13 3v6M9 15v6M15 15v6"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3M8 22h8"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H8l-5 3 1.2-5.2A8.5 8.5 0 1 1 21 11.5Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0V8ZM12 17v5"/></symbol>
+    <symbol id="i-remote" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M10 6h4M10 9h4M10 13h.01M14 13h.01M10 16h.01M14 16h.01"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 9 9M17 17l2-2M14 14l2-2"/></symbol>
+    <symbol id="i-router" viewBox="0 0 24 24"><rect x="2" y="13" width="20" height="7" rx="2"/><path d="M6 16h.01M10 16h.01M12 13V9"/><path d="M8 6a6 6 0 0 1 8 0"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-door" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16M2 21h20M15 12h.01"/></symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></symbol>
+    <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.7 6.3 9a7.7 7.7 0 1 0 11.4 0L12 2.7Z"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M20.5 15a8.5 8.5 0 1 0-17 0"/><path d="m12 12 4-4"/><path d="M4 19h16"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M18 20a6.4 6.4 0 0 0-2.6-5.1"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22a6 6 0 0 0 6-6c0-4-3-6-4.5-9.5C12.9 4.5 13 2 13 2S8 6 8 11c-1.6.6-2.5 2-2.5 3.6C5.5 18.5 8 22 12 22Z"/></symbol>
+  </svg>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap header__inner">
+      <a class="brand" href="../index.html" aria-label="Ambient Form Studio — back to the studio site">
+        <img class="brand__mark" src="../assets/mark.svg" width="27" height="27" alt="" />
+        <span class="brand__word">Ambient Form</span>
+        <span class="brand__tag">Hotels</span>
+      </a>
+      <nav class="nav" aria-label="Sections of this proposal">
+        <a href="#case">The case</a>
+        <a href="#scope">Automate</a>
+        <a href="#money">The money</a>
+        <a href="#data">The data</a>
+        <a href="#rollout">Rollout</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <div class="header__cta">
+        <a class="btn btn--sm" href="https://wa.me/85293177819?text=Hi%20Ambient%20Form%2C%20I%27d%20like%20to%20talk%20about%20automation%20for%20a%20hotel%20in%20Chennai." target="_blank" rel="noopener">
+          Book a walkthrough
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a href="#case">The case</a>
+    <a href="#scope">What we automate</a>
+    <a href="#room">One room, three states</a>
+    <a href="#money">The money</a>
+    <a href="#data">The data loop</a>
+    <a href="#scale">At scale</a>
+    <a href="#rollout">Rollout</a>
+    <a href="#guardrails">Guardrails</a>
+    <a href="#faq">Questions</a>
+    <a href="../index.html">Studio site</a>
+    <a class="btn" href="https://wa.me/85293177819?text=Hi%20Ambient%20Form%2C%20I%27d%20like%20to%20talk%20about%20automation%20for%20a%20hotel%20in%20Chennai." target="_blank" rel="noopener">
+      Book a walkthrough
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
+  </nav>
+
+  <main id="main">
+    <!-- ============================== hero ============================== -->
+    <section class="h-hero" id="top">
+      <div class="wrap">
+        <div class="h-hero__grid">
+          <div class="h-hero__copy">
+            <p class="eyebrow">Hotel edition · Chennai · November 2026</p>
+            <h1>The building<br />already knows.<br /><em>It just isn’t<br />listening.</em></h1>
+            <p class="h-hero__sub">
+              A 200-key hotel in Chennai already produces more data in a week than its
+              engineering team can read in a year — room temperatures, door events, meter
+              readings, chiller hours, complaints. This is a proposal for what happens when
+              that data is wired back into the building: what we automate, what it is worth,
+              and why the return should improve every month instead of eroding.
+            </p>
+            <div class="h-hero__actions">
+              <a class="btn" href="#case">
+                Read the case
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <a class="text-link" href="#money">
+                Skip to the numbers
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+            </div>
+            <ul class="h-hero__proof">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Pilot first — one floor, not the tower</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> No floor closed during retrofit</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Local-first, no mandatory cloud</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Modelled, then measured</li>
+            </ul>
+          </div>
+
+          <div class="h-hero__visual">
+            <figure class="ops-fig">
+              <div class="ops">
+                <div class="ops__bar">
+                  <span class="ops__live"><i aria-hidden="true"></i> Live</span>
+                  <span class="ops__title">Wing B · floors 4–10</span>
+                  <span class="ops__time">20:42 IST</span>
+                </div>
+
+                <div class="ops__kpis">
+                  <div class="ops__kpi">
+                    <span>Load now</span>
+                    <strong>412<small> kW</small></strong>
+                    <em class="is-good">−11.4% vs baseline</em>
+                  </div>
+                  <div class="ops__kpi">
+                    <span>Today</span>
+                    <strong>₹84,200</strong>
+                    <em>₹9.0 / unit</em>
+                  </div>
+                  <div class="ops__kpi">
+                    <span>Occupied</span>
+                    <strong>139<small>/200</small></strong>
+                    <em>69.5% · 24 arrivals</em>
+                  </div>
+                </div>
+
+                <div class="ops__map">
+                  <div class="ops__legend">
+                    <span><i class="is-occ" aria-hidden="true"></i> Occupied</span>
+                    <span><i class="is-ready" aria-hidden="true"></i> Ready</span>
+                    <span><i class="is-vac" aria-hidden="true"></i> Vacant</span>
+                    <span><i class="is-svc" aria-hidden="true"></i> Service</span>
+                    <span><i class="is-alert" aria-hidden="true"></i> Alert</span>
+                  </div>
+                  <div class="ops__floors">
+          <div class="ops__floor"><span class="ops__flabel">10</span><div class="ops__rooms"><i class="rm is-occ" data-room="1001" aria-hidden="true"></i><i class="rm is-occ" data-room="1002" aria-hidden="true"></i><i class="rm is-vac" data-room="1003" aria-hidden="true"></i><i class="rm is-occ" data-room="1004" aria-hidden="true"></i><i class="rm is-occ" data-room="1005" aria-hidden="true"></i><i class="rm is-occ" data-room="1006" aria-hidden="true"></i><i class="rm is-occ" data-room="1007" aria-hidden="true"></i><i class="rm is-occ" data-room="1008" aria-hidden="true"></i><i class="rm is-occ" data-room="1009" aria-hidden="true"></i><i class="rm is-vac" data-room="1010" aria-hidden="true"></i><i class="rm is-occ" data-room="1011" aria-hidden="true"></i><i class="rm is-occ" data-room="1012" aria-hidden="true"></i><i class="rm is-occ" data-room="1013" aria-hidden="true"></i><i class="rm is-occ" data-room="1014" aria-hidden="true"></i></div></div>
+          <div class="ops__floor"><span class="ops__flabel">9</span><div class="ops__rooms"><i class="rm is-occ" data-room="901" aria-hidden="true"></i><i class="rm is-occ" data-room="902" aria-hidden="true"></i><i class="rm is-vac" data-room="903" aria-hidden="true"></i><i class="rm is-vac" data-room="904" aria-hidden="true"></i><i class="rm is-occ" data-room="905" aria-hidden="true"></i><i class="rm is-occ" data-room="906" aria-hidden="true"></i><i class="rm is-occ" data-room="907" aria-hidden="true"></i><i class="rm is-occ" data-room="908" aria-hidden="true"></i><i class="rm is-occ" data-room="909" aria-hidden="true"></i><i class="rm is-occ" data-room="910" aria-hidden="true"></i><i class="rm is-occ" data-room="911" aria-hidden="true"></i><i class="rm is-occ" data-room="912" aria-hidden="true"></i><i class="rm is-occ" data-room="913" aria-hidden="true"></i><i class="rm is-occ" data-room="914" aria-hidden="true"></i></div></div>
+          <div class="ops__floor"><span class="ops__flabel">8</span><div class="ops__rooms"><i class="rm is-occ" data-room="801" aria-hidden="true"></i><i class="rm is-vac" data-room="802" aria-hidden="true"></i><i class="rm is-occ" data-room="803" aria-hidden="true"></i><i class="rm is-occ" data-room="804" aria-hidden="true"></i><i class="rm is-occ" data-room="805" aria-hidden="true"></i><i class="rm is-occ" data-room="806" aria-hidden="true"></i><i class="rm is-occ" data-room="807" aria-hidden="true"></i><i class="rm is-occ" data-room="808" aria-hidden="true"></i><i class="rm is-vac" data-room="809" aria-hidden="true"></i><i class="rm is-vac" data-room="810" aria-hidden="true"></i><i class="rm is-vac" data-room="811" aria-hidden="true"></i><i class="rm is-ready" data-room="812" aria-hidden="true"></i><i class="rm is-occ" data-room="813" aria-hidden="true"></i><i class="rm is-occ" data-room="814" aria-hidden="true"></i></div></div>
+          <div class="ops__floor"><span class="ops__flabel">7</span><div class="ops__rooms"><i class="rm is-occ" data-room="701" aria-hidden="true"></i><i class="rm is-occ" data-room="702" aria-hidden="true"></i><i class="rm is-vac" data-room="703" aria-hidden="true"></i><i class="rm is-occ" data-room="704" aria-hidden="true"></i><i class="rm is-vac" data-room="705" aria-hidden="true"></i><i class="rm is-occ" data-room="706" aria-hidden="true"></i><i class="rm is-vac" data-room="707" aria-hidden="true"></i><i class="rm is-vac" data-room="708" aria-hidden="true"></i><i class="rm is-occ" data-room="709" aria-hidden="true"></i><i class="rm is-occ" data-room="710" aria-hidden="true"></i><i class="rm is-vac" data-room="711" aria-hidden="true"></i><i class="rm is-occ" data-room="712" aria-hidden="true"></i><i class="rm is-vac" data-room="713" aria-hidden="true"></i><i class="rm is-occ" data-room="714" aria-hidden="true"></i></div></div>
+          <div class="ops__floor"><span class="ops__flabel">6</span><div class="ops__rooms"><i class="rm is-occ" data-room="601" aria-hidden="true"></i><i class="rm is-svc" data-room="602" aria-hidden="true"></i><i class="rm is-vac" data-room="603" aria-hidden="true"></i><i class="rm is-occ" data-room="604" aria-hidden="true"></i><i class="rm is-occ" data-room="605" aria-hidden="true"></i><i class="rm is-occ" data-room="606" aria-hidden="true"></i><i class="rm is-vac" data-room="607" aria-hidden="true"></i><i class="rm is-vac" data-room="608" aria-hidden="true"></i><i class="rm is-occ" data-room="609" aria-hidden="true"></i><i class="rm is-occ" data-room="610" aria-hidden="true"></i><i class="rm is-occ" data-room="611" aria-hidden="true"></i><i class="rm is-occ" data-room="612" aria-hidden="true"></i><i class="rm is-vac" data-room="613" aria-hidden="true"></i><i class="rm is-occ" data-room="614" aria-hidden="true"></i></div></div>
+          <div class="ops__floor"><span class="ops__flabel">5</span><div class="ops__rooms"><i class="rm is-vac" data-room="501" aria-hidden="true"></i><i class="rm is-ready" data-room="502" aria-hidden="true"></i><i class="rm is-occ" data-room="503" aria-hidden="true"></i><i class="rm is-vac" data-room="504" aria-hidden="true"></i><i class="rm is-occ" data-room="505" aria-hidden="true"></i><i class="rm is-vac" data-room="506" aria-hidden="true"></i><i class="rm is-occ" data-room="507" aria-hidden="true"></i><i class="rm is-ready" data-room="508" aria-hidden="true"></i><i class="rm is-occ" data-room="509" aria-hidden="true"></i><i class="rm is-occ" data-room="510" aria-hidden="true"></i><i class="rm is-vac" data-room="511" aria-hidden="true"></i><i class="rm is-vac" data-room="512" aria-hidden="true"></i><i class="rm is-occ" data-room="513" aria-hidden="true"></i><i class="rm is-vac" data-room="514" aria-hidden="true"></i></div></div>
+          <div class="ops__floor"><span class="ops__flabel">4</span><div class="ops__rooms"><i class="rm is-occ" data-room="401" aria-hidden="true"></i><i class="rm is-ready" data-room="402" aria-hidden="true"></i><i class="rm is-vac" data-room="403" aria-hidden="true"></i><i class="rm is-vac" data-room="404" aria-hidden="true"></i><i class="rm is-occ" data-room="405" aria-hidden="true"></i><i class="rm is-vac" data-room="406" aria-hidden="true"></i><i class="rm is-occ" data-room="407" aria-hidden="true"></i><i class="rm is-occ" data-room="408" aria-hidden="true"></i><i class="rm is-vac" data-room="409" aria-hidden="true"></i><i class="rm is-ready" data-room="410" aria-hidden="true"></i><i class="rm is-occ" data-room="411" aria-hidden="true"></i><i class="rm is-alert" data-room="412" aria-hidden="true"></i><i class="rm is-occ" data-room="413" aria-hidden="true"></i><i class="rm is-vac" data-room="414" aria-hidden="true"></i></div></div>
+                  </div>
+                </div>
+
+                <div class="ops__detail" aria-live="polite">
+                  <span class="ops__detail-room">412</span>
+                  <span class="ops__detail-state">Occupied · 24.1°C · 3.4 kW</span>
+                  <span class="ops__detail-note">2.1× peer load, six days</span>
+                </div>
+
+                <div class="ops__alert">
+                  <svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg>
+                  <div>
+                    <strong>Chilled-water valve suspect — room 412</strong>
+                    <span>Ticket #4821 raised to engineering · no guest complaint</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="ops__caption">A view of one wing, not a render. Every state is a signal the building already produces.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="h-hero__note">
+          <span class="h-hero__note-tag">Private proposal</span>
+          <p>
+            Prepared for the general manager and the chief engineer of a 200-key city hotel
+            in Chennai. Nothing here comes from your building yet — the figures are modelled
+            for a representative property and are replaced by your meters in the first
+            two weeks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== the case ============================== -->
+    <section class="section" id="case">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">01 — The bill</p>
+            <h2>Hotel energy is not one cost. It’s ten thousand small decisions.</h2>
+          </div>
+          <p class="lede">
+            A hotel doesn’t waste energy in one place. It wastes it a room at a time, a
+            corridor at a time, a chiller-hour at a time — and almost none of it appears
+            anywhere until the monthly bill, by which point it is history.
+          </p>
+        </div>
+
+        <div class="bill">
+          <div class="bill__bar" role="img" aria-label="Indicative split of hotel electricity use: guest rooms 38 percent, central plant 24 percent, kitchens and laundry 16 percent, public areas 13 percent, other 9 percent.">
+            <span class="bill__seg bill__seg--rooms" style="--w:38"></span>
+            <span class="bill__seg bill__seg--plant" style="--w:24"></span>
+            <span class="bill__seg bill__seg--kitchen" style="--w:16"></span>
+            <span class="bill__seg bill__seg--public" style="--w:13"></span>
+            <span class="bill__seg bill__seg--other" style="--w:9"></span>
+          </div>
+          <div class="bill__legend">
+            <div class="bill__item bill__item--rooms">
+              <span class="bill__pct">38%</span>
+              <strong>Guest rooms</strong>
+              <p>Air-conditioning, lighting, sockets, TVs, minibars. The largest load, the smallest unit of control.</p>
+            </div>
+            <div class="bill__item bill__item--plant">
+              <span class="bill__pct">24%</span>
+              <strong>Central plant</strong>
+              <p>Chillers, AHUs, pumps, cooling towers. Where the biggest single number sits.</p>
+            </div>
+            <div class="bill__item bill__item--kitchen">
+              <span class="bill__pct">16%</span>
+              <strong>Kitchens &amp; laundry</strong>
+              <p>Exhaust, cold rooms, steam, washing and drying — much of it on a schedule nobody owns.</p>
+            </div>
+            <div class="bill__item bill__item--public">
+              <span class="bill__pct">13%</span>
+              <strong>Public areas</strong>
+              <p>Lobby, corridors, restaurants, banquet, pool, facade. Small in units, large in visibility.</p>
+            </div>
+            <div class="bill__item bill__item--other">
+              <span class="bill__pct">9%</span>
+              <strong>Everything else</strong>
+              <p>Lifts, water pumping, STP, offices, IT, external lighting.</p>
+            </div>
+          </div>
+          <p class="bill__note">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+            Indicative split for a full-service property. In week two you get your own — from sub-metering, not from a benchmark.
+          </p>
+        </div>
+
+        <div class="leaks">
+          <article class="leak">
+            <span class="leak__num">01</span>
+            <h3>Empty rooms, fully cooled</h3>
+            <p>A room holds 22°C for fourteen hours with nobody in it. Across 200 keys that is the largest avoidable load in the building — and the least visible, because no guest complains about a room that is too cold when they walk in.</p>
+          </article>
+          <article class="leak">
+            <span class="leak__num">02</span>
+            <h3>Corridors lit for the photograph</h3>
+            <p>Lobby, corridor and landscape lighting is commissioned once, at handover, to look its best in the shoot. It then runs that way at three in the morning on a Tuesday in September.</p>
+          </article>
+          <article class="leak">
+            <span class="leak__num">03</span>
+            <h3>A plant on a calendar</h3>
+            <p>Chillers, AHUs and pumps stage on a schedule written before anyone had a load profile. When occupancy falls, or the sea breeze arrives, the plant doesn’t notice.</p>
+          </article>
+          <article class="leak">
+            <span class="leak__num">04</span>
+            <h3>The banquet that cools for four hours</h3>
+            <p>Events start at eight. The hall is cooled from four, because that is when somebody can walk over and switch it on. Nobody is wrong here; nobody can see the cost either.</p>
+          </article>
+          <article class="leak">
+            <span class="leak__num">05</span>
+            <h3>The first symptom is a complaint</h3>
+            <p>A valve stuck open, a condenser fouling, a filter blocking. None of it is visible until a guest notices — and by then it has usually been costing money for weeks.</p>
+          </article>
+          <article class="leak">
+            <span class="leak__num">06</span>
+            <h3>Nobody owns the number</h3>
+            <p>Energy is everyone’s concern and nobody’s KPI. The bill arrives monthly and whole; no floor, no outlet, no plant item is ever accountable for its share.</p>
+          </article>
+        </div>
+
+        <blockquote class="pull">
+          <p>None of this is a maintenance failure. It is a visibility failure. The fix is not more discipline — it is instrumentation, a control layer, and a loop that closes every month.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============================== scope ============================== -->
+    <section class="section section--paper2" id="scope">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">02 — Scope</p>
+            <h2>Everything that can be sensed can be scheduled.</h2>
+          </div>
+          <p class="lede">
+            Not a gadget per room. One control layer that runs the building in states —
+            occupied, vacant, arriving, servicing, closing — and one data layer that knows
+            which state the building is actually in.
+          </p>
+        </div>
+
+        <div class="interfaces">
+          <span class="interfaces__label">Already in the building, already speaking</span>
+          <ul>
+            <li>PMS</li><li>BMS</li><li>Access control</li><li>CCTV</li><li>Fire panel <em>(read-only)</em></li>
+            <li>Energy meters</li><li>Chillers</li><li>AHUs</li><li>Pumps</li><li>Lifts</li>
+            <li>Laundry</li><li>Kitchen exhaust</li><li>Water &amp; STP</li><li>DG &amp; transformer</li>
+          </ul>
+        </div>
+
+        <div class="scope">
+          <div class="scope__tabs" role="tablist" aria-label="Areas of the hotel">
+            <button class="scope__tab is-active" id="tab-rooms" role="tab" aria-selected="true" aria-controls="panel-rooms" data-tab="rooms">
+              <svg class="icon" aria-hidden="true"><use href="#i-door"/></svg> Guest rooms
+            </button>
+            <button class="scope__tab" id="tab-public" role="tab" aria-selected="false" aria-controls="panel-public" data-tab="public" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg> Public areas &amp; F&amp;B
+            </button>
+            <button class="scope__tab" id="tab-plant" role="tab" aria-selected="false" aria-controls="panel-plant" data-tab="plant" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg> Plant
+            </button>
+            <button class="scope__tab" id="tab-back" role="tab" aria-selected="false" aria-controls="panel-back" data-tab="back" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg> Back of house
+            </button>
+            <button class="scope__tab" id="tab-guest" role="tab" aria-selected="false" aria-controls="panel-guest" data-tab="guest" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg> Guests &amp; staff
+            </button>
+            <button class="scope__tab" id="tab-safety" role="tab" aria-selected="false" aria-controls="panel-safety" data-tab="safety" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Safety
+            </button>
+          </div>
+
+          <section class="scope__panel" id="panel-rooms" role="tabpanel" aria-labelledby="tab-rooms" data-panel="rooms">
+            <div class="scope__intro">
+              <h3>The room is the biggest load and the smallest unit of control.</h3>
+              <p>Today it is ruled by a wall thermostat and the guest’s best guess. We make it follow occupancy, the PMS and the weather instead.</p>
+            </div>
+            <div class="auto">
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></span>
+                <div><h4>Occupancy-aware cooling</h4><p>Unoccupied setback, window-open cut-off, and a return to setpoint only when somebody is actually in the room.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><h4>Pre-arrival cooling from the PMS</h4><p>Cool the room 30–45 minutes before check-in, not all morning. Empty rooms stay at setback until a reservation says otherwise.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg></span>
+                <div><h4>Check-out reset</h4><p>One event resets AC, lights, TV, sockets and curtains. The room flips to “ready” for housekeeping at the same moment.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg></span>
+                <div><h4>Lighting by state</h4><p>Welcome, reading, sleep, cleaning and master-off scenes. No switch left on for the next guest, no lamp left burning.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-door"/></svg></span>
+                <div><h4>Door, lock and window events</h4><p>Every entry is an event. A door left ajar, a window open with the AC running, a balcony left open in the rain.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span>
+                <div><h4>DND and make-up room as live data</h4><p>Room status reaches housekeeping without a knock and without a phone call. The board is right because the room said so.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-droplet"/></svg></span>
+                <div><h4>Bathroom humidity and exhaust</h4><p>Exhaust runs on humidity, not on the light switch — less mould, less rework, less smell in the corridor.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+                <div><h4>Guest preference memory, opt-in</h4><p>A returning guest finds the room at their temperature and light level — stored locally against the profile, not sold on.</p></div>
+              </div>
+            </div>
+            <p class="scope__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <span><b>What changes:</b> the saving comes from empty rooms and open windows, not from making guests warmer. Room-temperature excursions are reported next to every saving.</span>
+            </p>
+          </section>
+
+          <section class="scope__panel" id="panel-public" role="tabpanel" aria-labelledby="tab-public" data-panel="public" hidden>
+            <div class="scope__intro">
+              <h3>Public areas are designed to look right at eight and then left running at two.</h3>
+              <p>This layer is as much about consistency as cost: the lobby at 3 a.m. should look intentional, and cost less.</p>
+            </div>
+            <div class="auto">
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></span>
+                <div><h4>Daylight-linked dimming</h4><p>Lobby, corridor and lift-lobby lighting follows the sun and the footfall, not a fixed schedule written at handover.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg></span>
+                <div><h4>A real night state</h4><p>30% baseline on guest corridors, 100% on presence — with a floor that never leaves a guest path dark.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><h4>Banquet pre-cool tied to the BEO</h4><p>Start 45 minutes before doors, ramp-controlled by the room’s own temperature, and stop when the event runs late instead of going dark at eleven.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-film"/></svg></span>
+                <div><h4>Service-period scenes</h4><p>Breakfast, lunch, bar, close. Restaurants and lounges change light and temperature by service, not by someone remembering.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg></span>
+                <div><h4>Pool, facade and landscape</h4><p>On solar time and astronomical clock. Facade and signage off after the last arrival, not at a fixed hour in summer and winter alike.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+                <div><h4>Occupancy-led overflow</h4><p>When the ballroom sells out, the pre-function area and cloakroom follow. When it doesn’t, they don’t.</p></div>
+              </div>
+            </div>
+            <p class="scope__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <span><b>What changes:</b> smaller kWh, better reviews. The measure of success here is that nobody can tell the difference except on the bill.</span>
+            </p>
+          </section>
+
+          <section class="scope__panel" id="panel-plant" role="tabpanel" aria-labelledby="tab-plant" data-panel="plant" hidden>
+            <div class="scope__intro">
+              <h3>The plant is where the biggest number lives — and where most control stops at monitoring.</h3>
+              <p>We tune to the actual load curve, then watch the curves for drift. Your BMS stays; we make it earn more.</p>
+            </div>
+            <div class="auto">
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></span>
+                <div><h4>Chiller sequencing and staging</h4><p>Machines start on load and efficiency, not on a rota. The most efficient combination runs first; the least efficient becomes the standby.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
+                <div><h4>Chilled-water temperature reset</h4><p>Raise supply temperature as load falls. The compressor does less work for the same comfort — the single most reliable plant saving there is.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+                <div><h4>AHU scheduling per zone</h4><p>Valve and VFD positions, filter differential pressure, fresh-air fractions. Zones run when their zone needs them.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></span>
+                <div><h4>DG, transformer and changeover</h4><p>Changeover logs, run-hours, fuel, load on each source. The thing you find out about at 2 a.m. becomes a line in a report.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span>
+                <div><h4>Sub-metering without new cabling</h4><p>Clamp meters where the panel can’t give a reading. Per floor, per outlet, per plant item — the accountability the monthly bill never had.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-droplet"/></svg></span>
+                <div><h4>Water and pumping</h4><p>Tank levels, flow, leak detection, STP cycles. Pumping moves to the cheaper hours; a burst line pages somebody at 3 a.m.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+                <div><h4>Read-only where it matters</h4><p>Fire, lifts and life-safety systems are integrated for visibility only. We never put automation in the path of a certified system.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
+                <div><h4>Continuous commissioning</h4><p>The plant is re-tuned monthly against its baseline, not annually against a memory. Drift is caught in weeks.</p></div>
+              </div>
+            </div>
+            <p class="scope__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <span><b>What changes:</b> typically 5–12% of plant energy without touching guest comfort — plus the failures you see before they become emergencies.</span>
+            </p>
+          </section>
+
+          <section class="scope__panel" id="panel-back" role="tabpanel" aria-labelledby="tab-back" data-panel="back" hidden>
+            <div class="scope__intro">
+              <h3>Back of house is where the quick wins hide.</h3>
+              <p>Exhaust, cold rooms, laundry and after-hours lighting are rarely metered, rarely scheduled, and almost always running.</p>
+            </div>
+            <div class="auto">
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg></span>
+                <div><h4>Demand-controlled kitchen exhaust</h4><p>Hoods and make-up air follow the cooking load rather than running flat out through service and after it.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></span>
+                <div><h4>Cold room and freezer alarms</h4><p>Temperature drift, door-left-open, defrost failure — before the stock is lost rather than after.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><h4>Laundry off-peak</h4><p>Wash and dry cycles shifted into cheaper hours and away from the evening peak, with linen stock still where it needs to be.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg></span>
+                <div><h4>Staff areas after hours</h4><p>Changing rooms, canteen, admin and stores off when empty — the same logic as a guest floor, without the guest.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
+                <div><h4>Stores and receiving</h4><p>Access events, door-held alarms and temperature logs where stock is sensitive.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-droplet"/></svg></span>
+                <div><h4>Steam and hot water</h4><p>Boiler or heat-pump scheduling against actual demand, with return-temperature monitoring for losses in the line.</p></div>
+              </div>
+            </div>
+            <p class="scope__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <span><b>What changes:</b> kitchen exhaust alone can be 5–10% of a hotel’s electricity. It is usually the fastest payback in the building.</span>
+            </p>
+          </section>
+
+          <section class="scope__panel" id="panel-guest" role="tabpanel" aria-labelledby="tab-guest" data-panel="guest" hidden>
+            <div class="scope__intro">
+              <h3>The system earns twice: once on the bill, once on the calls your team doesn’t take.</h3>
+              <p>Guest-facing control is optional. The staff-facing layer is not — it is where most of the operating value sits.</p>
+            </div>
+            <div class="auto">
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg></span>
+                <div><h4>In-room control, no app required</h4><p>Tablet, TV or a QR code on the desk. Lights, AC, DND, housekeeping, room service and folio — through the guest’s own browser.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
+                <div><h4>Requests routed with an SLA</h4><p>“Extra towel” goes to housekeeping with a clock on it. Nothing lands in a WhatsApp group and dies there.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span>
+                <div><h4>A housekeeping board that is true</h4><p>Occupied, vacant, cleaning, ready, DND — from door and presence events, not from a walk-round. Fewer knocks, fewer surprises at check-in.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
+                <div><h4>Tickets from anomalies</h4><p>“AC in 512 not reaching setpoint for three days” becomes a job with an owner, not a note in a logbook.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><h4>Shift handover, written down</h4><p>What changed, what failed, what was reset — and who did it. The 11 p.m. shift stops re-learning the 7 a.m. shift’s lesson.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+                <div><h4>One report for the owner</h4><p>kWh per occupied room-night, per outlet, per floor, per month — the metric a GM can be measured on and an owner can compare year on year.</p></div>
+              </div>
+            </div>
+            <p class="scope__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <span><b>What changes:</b> the front desk stops being the routing layer for the building. That is worth more than it looks on a spreadsheet.</span>
+            </p>
+          </section>
+
+          <section class="scope__panel" id="panel-safety" role="tabpanel" aria-labelledby="tab-safety" data-panel="safety" hidden>
+            <div class="scope__intro">
+              <h3>We read from life safety. We never write to it.</h3>
+              <p>Certified systems and certified vendors stay exactly where they are. What we add is the layer that notices things at 3 a.m.</p>
+            </div>
+            <div class="auto">
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg></span>
+                <div><h4>Access control and door-held alarms</h4><p>Every opening logged, every held door raised. Staff and contractor access on a time window, not a master key.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg></span>
+                <div><h4>CCTV analytics, on premise</h4><p>Perimeter and after-hours presence, processed in the building. Footage stays in the building.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-droplet"/></svg></span>
+                <div><h4>Water leak and tank overflow</h4><p>The most expensive quiet failure in an Indian hotel. A flow meter and a rule catch it in minutes.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+                <div><h4>Lone-worker and panic</h4><p>A housekeeper on a closed floor can call for help without a radio and without explaining where they are.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
+                <div><h4>Guest privacy as a rule, not a setting</h4><p>No cameras in rooms. No microphones in rooms. Presence is mmWave or a door contact — never a lens.</p></div>
+              </div>
+              <div class="auto__item">
+                <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg></span>
+                <div><h4>Network separation</h4><p>Guest Wi-Fi, room control, CCTV and BMS on separate VLANs. No inbound ports; outbound-only management.</p></div>
+              </div>
+            </div>
+            <p class="scope__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              <span><b>What changes:</b> the things nobody watches at 3 a.m. get watched. Fire detection and suppression remain untouched and certified.</span>
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== one room ============================== -->
+    <section class="section" id="room">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">03 — The unit</p>
+            <h2>One room, three states. Multiply by two hundred.</h2>
+          </div>
+          <p class="lede">
+            This is the smallest unit of the whole proposal. A room that knows whether it is
+            occupied behaves differently — and the difference is measured, not assumed.
+          </p>
+        </div>
+
+        <div class="roomdemo">
+          <div class="roomdemo__states" role="group" aria-label="Choose a room state">
+            <button class="state-btn is-active" type="button" data-state="occupied" aria-pressed="true">
+              <span class="state-btn__dot"></span>
+              <strong>Occupied</strong>
+              <small>Guest in the room, curtains open, AC at their setting.</small>
+            </button>
+            <button class="state-btn" type="button" data-state="vacant" aria-pressed="false">
+              <span class="state-btn__dot"></span>
+              <strong>Checked out</strong>
+              <small>Empty since 11:40. Nobody to be comfortable for.</small>
+            </button>
+            <button class="state-btn" type="button" data-state="arriving" aria-pressed="false">
+              <span class="state-btn__dot"></span>
+              <strong>Arriving 14:00</strong>
+              <small>Reservation on the PMS. Cool it before they open the door.</small>
+            </button>
+            <p class="roomdemo__hint"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg> Change the state, watch the room.</p>
+          </div>
+
+          <div class="roomcard">
+            <div class="roomcard__head">
+              <span class="roomcard__no">Room 412</span>
+              <span class="roomcard__badge" data-room-badge>Occupied</span>
+            </div>
+            <div class="roomcard__gauge">
+              <div class="roomcard__temp"><span data-room-temp>24.1</span><small>°C</small></div>
+              <div class="roomcard__setpoint">Set <b data-room-set>24.0</b>°C</div>
+              <div class="roomcard__track" aria-hidden="true"><i data-room-fill style="width:51%"></i><span class="roomcard__band"></span></div>
+              <div class="roomcard__scale" aria-hidden="true"><span>18</span><span>Comfort band</span><span>30</span></div>
+            </div>
+            <div class="roomcard__chips">
+              <span class="chip" data-room-ac><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg> <span class="chip__t">AC cooling</span></span>
+              <span class="chip" data-room-lights><svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg> <span class="chip__t">Lights 60%</span></span>
+              <span class="chip" data-room-blinds><svg class="icon" aria-hidden="true"><use href="#i-blinds"/></svg> <span class="chip__t">Curtains open</span></span>
+              <span class="chip" data-room-door><svg class="icon" aria-hidden="true"><use href="#i-door"/></svg> <span class="chip__t">Door closed</span></span>
+            </div>
+            <div class="roomcard__foot">
+              <span class="roomcard__kwh"><b data-room-kwh>24.0</b> kWh in a day</span>
+              <span class="roomcard__delta" data-room-delta>−25% vs fixed 22°</span>
+            </div>
+          </div>
+
+          <div class="roomdemo__readout">
+            <div class="readout">
+              <span class="readout__label">What triggered it</span>
+              <p data-room-trigger>Door contact open, 3 minutes · presence confirmed · thermostat at 24.1°C.</p>
+            </div>
+            <div class="readout">
+              <span class="readout__label">What the system did</span>
+              <p data-room-action>Held the guest’s setpoint, kept the fan on auto, left the curtains where the guest put them.</p>
+            </div>
+            <div class="readout">
+              <span class="readout__label">What it costs</span>
+              <p data-room-cost>About ₹216 for the day at ₹9 a unit. A fixed 22°C setpoint would have used 32 kWh — ₹288.</p>
+            </div>
+            <div class="readout readout--muted">
+              <span class="readout__label">Across the property</span>
+              <p>Split roughly 70 / 20 / 10 between occupied, vacant and arriving rooms on a normal night.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mathstrip">
+          <div class="mathstrip__item">
+            <span class="mathstrip__num">25%</span>
+            <p>conservative <b>room-HVAC saving</b> we model — not the 79% a single empty room shows</p>
+          </div>
+          <div class="mathstrip__item">
+            <span class="mathstrip__num">6 kWh</span>
+            <p>off every occupied room-night, against a fixed-setpoint baseline</p>
+          </div>
+          <div class="mathstrip__item">
+            <span class="mathstrip__num">2.98 lakh</span>
+            <p>kWh a year at 200 keys and 68% occupancy — about <b>₹27 lakh</b> at ₹9 a unit</p>
+          </div>
+          <div class="mathstrip__item">
+            <span class="mathstrip__num">before</span>
+            <p>any public-area, plant or demand-charge change. Those are separate lines in the model.</p>
+          </div>
+        </div>
+
+        <p class="roomdemo__fine">
+          <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+          Why 25% and not the 79% an empty room shows: not every key is empty at once, many
+          hotels already have key-card cutoffs, and a room that is too warm on arrival costs
+          more in complaints than it saves in units. We model the conservative average, then
+          measure the real one.
+        </p>
+      </div>
+    </section>
+    <!-- ============================== money ============================== -->
+    <section class="section section--sand" id="money">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">04 — The money</p>
+            <h2>What it is worth, with the assumptions left visible.</h2>
+          </div>
+          <p class="lede">
+            Move the sliders. This is a model for a representative 200-key property — not a
+            quote, and not a promise. The metered audit replaces every assumption here with
+            your building’s own numbers.
+          </p>
+        </div>
+
+        <div class="model">
+          <div class="model__controls">
+            <div class="field">
+              <div class="field__row">
+                <label for="keys">Keys</label>
+                <output class="field__val" data-out="keys" for="keys">200</output>
+              </div>
+              <input id="keys" type="range" min="60" max="400" step="10" value="200" data-input="keys" />
+              <div class="field__scale" aria-hidden="true"><span>60</span><span>400</span></div>
+            </div>
+
+            <div class="field">
+              <div class="field__row">
+                <label for="occ">Occupancy</label>
+                <output class="field__val" data-out="occ" for="occ">68%</output>
+              </div>
+              <input id="occ" type="range" min="40" max="95" step="1" value="68" data-input="occ" />
+              <div class="field__scale" aria-hidden="true"><span>40%</span><span>95%</span></div>
+            </div>
+
+            <div class="field">
+              <div class="field__row">
+                <label for="tariff">All-in tariff</label>
+                <output class="field__val" data-out="tariff" for="tariff">₹9.0</output>
+              </div>
+              <input id="tariff" type="range" min="6" max="14" step="0.25" value="9" data-input="tariff" />
+              <div class="field__scale" aria-hidden="true"><span>₹6</span><span>₹14 / unit</span></div>
+              <p class="field__hint">All-in: energy + demand + duty. Chennai HT commercial, indicative.</p>
+            </div>
+
+            <fieldset class="path">
+              <legend>When you do it</legend>
+              <label class="path__opt">
+                <input type="radio" name="path" value="retrofit" checked />
+                <span class="path__body">
+                  <b>Retrofit now</b>
+                  <small>₹45k–₹80k per key · rooms, public areas, plant</small>
+                </span>
+              </label>
+              <label class="path__opt">
+                <input type="radio" name="path" value="replace" />
+                <span class="path__body">
+                  <b>At the next AC / BMS replacement</b>
+                  <small>₹22k–₹38k per key · marginal cost only</small>
+                </span>
+              </label>
+              <label class="path__opt">
+                <input type="radio" name="path" value="newbuild" />
+                <span class="path__body">
+                  <b>New build or major renovation</b>
+                  <small>₹14k–₹26k per key · designed in, no retrofit labour</small>
+                </span>
+              </label>
+            </fieldset>
+          </div>
+
+          <div class="model__out" aria-live="polite">
+            <p class="model__label">Modelled annual saving</p>
+            <p class="model__big"><span data-out="save">₹36.1 lakh</span></p>
+            <p class="model__sub"><span data-out="saveKwh">4.0 lakh</span> kWh · <span data-out="co2">285</span> tCO₂e a year</p>
+
+            <div class="model__rows">
+              <div><span>Electricity spend today</span><strong data-out="spend">₹2.25 crore</strong></div>
+              <div><span>Saving range</span><strong data-out="range">10–24%</strong></div>
+              <div><span>Payback, base case</span><strong data-out="payback">2.5–4.4 years</strong></div>
+              <div><span>Capex band</span><strong data-out="capex">₹0.9–1.6 crore</strong></div>
+            </div>
+
+            <div class="model__mix">
+              <span class="model__mix-label">Where the base-case saving comes from</span>
+              <div class="model__mix-bar" aria-hidden="true">
+                <i style="width:74%"></i><i style="width:13%"></i><i style="width:13%"></i>
+              </div>
+              <ul>
+                <li><i aria-hidden="true"></i> Room controls <b>74%</b></li>
+                <li><i aria-hidden="true"></i> Plant &amp; AHUs <b>13%</b></li>
+                <li><i aria-hidden="true"></i> Public areas <b>13%</b></li>
+              </ul>
+            </div>
+
+            <p class="model__fine">
+              Grid factor 0.71 kgCO₂e/kWh. Savings exclude demand-charge reduction, maintenance
+              avoidance and any tariff change — all of which are upside, and all of which we
+              model separately after the audit.
+            </p>
+          </div>
+        </div>
+
+        <details class="assumptions">
+          <summary>Read the model’s assumptions <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <div class="assumptions__body">
+            <dl>
+              <div><dt>Room energy</dt><dd>24 kWh per occupied room-night at a fixed setpoint — a room with a 1.5 TR inverter unit averaging about 1 kW, plus lighting, TV and plug loads.</dd></div>
+              <div><dt>Shared energy</dt><dd>18 kWh per key per night for public areas, kitchens, laundry, pumping and plant — roughly constant with occupancy.</dd></div>
+              <div><dt>Savings</dt><dd>10% low, 16% base, 24% high, applied to the whole bill. The low case is controls only; the high case includes plant recommissioning and demand management.</dd></div>
+              <div><dt>Capex</dt><dd>Planning bands, not a quote. Hardware at actuals, vendor-neutral, itemised before approval. Excludes civil work, GST and any AC replacement.</dd></div>
+              <div><dt>Not included</dt><dd>Demand-charge reduction, avoided emergency call-outs, extended asset life, guest-satisfaction effects, green-certification value.</dd></div>
+            </dl>
+            <p class="assumptions__note">If your building already has key-card cutoffs, room-level savings start lower — that is exactly what the audit is for.</p>
+          </div>
+        </details>
+
+        <div class="truth">
+          <div class="truth__copy">
+            <h3>The honest version of payback</h3>
+            <p>
+              Energy alone rarely pays back a full retrofit inside two years. Anyone who tells
+              you otherwise is selling you a number rather than a building. The case that works
+              has four parts, and only the first two show up on the electricity bill.
+            </p>
+            <p class="truth__close">
+              If the numbers don’t work for your property, we will say so before you buy
+              hardware. That is a cheaper outcome for both of us than a bad project.
+            </p>
+          </div>
+          <ol class="truth__list">
+            <li><span>01</span><div><b>Energy</b><p>10–24% of the bill, verified monthly against a weather-normalised baseline.</p></div></li>
+            <li><span>02</span><div><b>Demand</b><p>Peak clipping and load shifting cut the fixed component too. Worth modelling separately, because it is where the fastest money often is.</p></div></li>
+            <li><span>03</span><div><b>Maintenance avoided</b><p>A valve found in week two instead of after a complaint; a condenser cleaned on schedule instead of an emergency call-out at 11 p.m.</p></div></li>
+            <li><span>04</span><div><b>Asset life</b><p>Controls bought inside a planned AC or BMS replacement cost a fraction of a standalone retrofit. The replacement cycle is the cheapest door into this.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== data ============================== -->
+    <section class="section section--dark" id="data">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker kicker--light">05 — The loop</p>
+            <h2>Days to understand. Months to compound.</h2>
+          </div>
+          <p class="lede lede--light">
+            The first useful findings arrive inside a week — a room against the rooms beside
+            it, a chiller against its own last month. A hotel repeats the same day 365 times,
+            so the model sharpens with every one of them. You just don’t have to wait a year
+            for the first answer.
+          </p>
+        </div>
+
+        <ol class="wheel">
+          <li class="wheel__step">
+            <span class="wheel__num">01</span>
+            <h3>Instrument</h3>
+            <p>Every room, panel, pump and tank. A few thousand readings a minute at 200 keys — temperature, humidity, door, presence, power, flow — with the plant on top. Stored locally.</p>
+          </li>
+          <li class="wheel__step">
+            <span class="wheel__num">02</span>
+            <h3>Baseline</h3>
+            <p>You don’t need a year of history to begin. A peer baseline is ready on day three — room 512 against the fourteen rooms beside it, same hour, same weather. The seasonal model takes a year; it is an improvement, not a prerequisite.</p>
+          </li>
+          <li class="wheel__step">
+            <span class="wheel__num">03</span>
+            <h3>Detect</h3>
+            <p>Peer comparison and drift, from the first week. A room at twice its neighbours’ load for six days. A chiller losing 9% of its COP across five weeks. A pump starting harder each month.</p>
+          </li>
+          <li class="wheel__step">
+            <span class="wheel__num">04</span>
+            <h3>Predict</h3>
+            <p>Booking pace, arrival times, weather and the event calendar become a 72-hour forecast — so you cool the floors you will sell and move laundry and pumping into cheaper hours. A few weeks of arrivals is enough to start; every month after that sharpens it.</p>
+          </li>
+          <li class="wheel__step">
+            <span class="wheel__num">05</span>
+            <h3>Tune</h3>
+            <p>The first tuning pass is in week two, not at the end of the year. Rules that misfire get fixed; savings are reported against a weather-normalised baseline, so a mild month cannot flatter them.</p>
+          </li>
+        </ol>
+        <p class="wheel__return"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg> Then it runs again — day three, week two, month six — with a better model each time.</p>
+
+        <ol class="milestones" aria-label="What the data tells you, and when">
+          <li>
+            <span class="milestones__when">Day 1</span>
+            <p>Rooms and floors come online. Every room is already being compared with every other room.</p>
+          </li>
+          <li>
+            <span class="milestones__when">Day 3</span>
+            <p>The first anomaly list: which rooms are using more than their neighbours, and which are using less.</p>
+          </li>
+          <li>
+            <span class="milestones__when">Week 2</span>
+            <p>The first plant drift — a chiller, pump or AHU measured against its own recent past.</p>
+          </li>
+          <li>
+            <span class="milestones__when">Month 1</span>
+            <p>The first full measurement report, against the baseline you agreed before switch-on.</p>
+          </li>
+          <li>
+            <span class="milestones__when">Month 3</span>
+            <p>Chennai’s summer and monsoon behaviour are modelled. The system starts predicting, not just describing.</p>
+          </li>
+        </ol>
+
+        <h3 class="signals__head">What the first week actually produces</h3>
+        <div class="signals">
+          <article class="signal">
+            <span class="signal__tag">Anomaly · room</span>
+            <svg class="signal__chart" viewBox="0 0 260 90" role="img" aria-label="A room's load rising away from its neighbours over six days.">
+              <line x1="0" y1="74" x2="260" y2="74" class="ch-axis"/>
+              <path d="M0 58 C30 57 40 59 64 58 C88 57 96 59 120 58 C144 57 152 59 176 58 C200 57 216 58 260 57" class="ch-dash"/>
+              <path d="M0 58 C24 57 34 50 58 47 C82 44 92 40 116 35 C140 30 150 27 174 25 C198 23 220 22 260 21" class="ch-line"/>
+              <circle cx="252" cy="21" r="4" class="ch-dot"/>
+              <text x="8" y="86" class="ch-label">peer rooms</text>
+              <text x="196" y="14" class="ch-label ch-label--alert">room 412</text>
+            </svg>
+            <h3>Room 412, six days.</h3>
+            <p>2.1× the load of the rooms around it, same occupancy, same setpoint. A chilled-water valve stuck partly open. Found on a Tuesday, fixed before the guest called.</p>
+            <p class="signal__metric">Before a complaint, not after</p>
+          </article>
+
+          <article class="signal">
+            <span class="signal__tag">Drift · plant</span>
+            <svg class="signal__chart" viewBox="0 0 260 90" role="img" aria-label="Chiller efficiency drifting down over five weeks, then recovering after cleaning.">
+              <line x1="0" y1="74" x2="260" y2="74" class="ch-axis"/>
+              <path d="M0 30 C30 33 48 37 72 42 C96 47 112 51 136 55 C160 59 172 62 188 64" class="ch-line"/>
+              <path d="M188 64 C204 62 218 52 236 44 C246 40 252 38 260 36" class="ch-line ch-line--good"/>
+              <line x1="188" y1="12" x2="188" y2="74" class="ch-mark"/>
+              <circle cx="188" cy="64" r="3.5" class="ch-dot"/>
+              <text x="146" y="10" class="ch-label">tubes cleaned</text>
+              <text x="8" y="86" class="ch-label">5 weeks · COP</text>
+            </svg>
+            <h3>Chiller 2, five weeks.</h3>
+            <p>COP drifting down 9% on a flat load. Condenser tubes fouling. Cleaned inside a scheduled window instead of an emergency call-out in June.</p>
+            <p class="signal__metric">Planned, not panicked</p>
+          </article>
+
+          <article class="signal">
+            <span class="signal__tag">Schedule · banquet</span>
+            <svg class="signal__chart signal__chart--bars" viewBox="0 0 260 90" role="img" aria-label="Banquet pre-cooling reduced from four hours to 45 minutes.">
+              <text x="0" y="26" class="ch-label">was</text>
+              <rect x="44" y="12" width="196" height="18" rx="4" class="ch-bar ch-bar--dim"/>
+              <text x="0" y="62" class="ch-label">now</text>
+              <rect x="44" y="48" width="38" height="18" rx="4" class="ch-bar"/>
+              <line x1="44" y1="8" x2="44" y2="74" class="ch-mark"/>
+              <line x1="240" y1="8" x2="240" y2="74" class="ch-mark ch-mark--dim"/>
+              <text x="44" y="86" class="ch-label">16:00</text>
+              <text x="212" y="86" class="ch-label">20:00</text>
+            </svg>
+            <h3>Banquet Hall A, every event.</h3>
+            <p>Pre-cooled from 16:00 for a 20:00 start. Now 19:15, ramp-controlled, with the room’s own temperature deciding when to stop. About 40 kWh an event.</p>
+            <p class="signal__metric">Same comfort, a quarter of the hours</p>
+          </article>
+        </div>
+
+        <p class="signals__fine">
+          These are the kinds of findings the loop produces. They are not results from your
+          building — we haven’t met it yet, and we would rather show you the method than
+          borrow someone else’s case study.
+        </p>
+
+        <div class="mv">
+          <div class="mv__copy">
+            <p class="kicker kicker--light">Measurement</p>
+            <h3>How we prove it, month by month</h3>
+            <p>
+              Savings claims are where these projects usually lose credibility. Ours are
+              reported the boring way, which is the only way that survives a finance review.
+            </p>
+          </div>
+          <ul class="mv__list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> A weather-normalised baseline agreed before switch-on, in the spirit of IPMVP Option C.</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Avoided kWh and rupees per floor, per outlet and per plant item.</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Room-temperature excursions and guest complaints reported next to the savings — savings that come from discomfort don’t count.</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> One page a month for the general manager; a quarterly review for the owner.</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> The months that miss are published too. A trend with a bad month in it is more believable than one without.</li>
+          </ul>
+        </div>
+
+        <div class="gov">
+          <div class="gov__item"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg><div><b>On premise by default</b><p>The historian and the models run in the building. Nothing needs to leave to work.</p></div></div>
+          <div class="gov__item"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><b>DPDP Act 2023</b><p>Consent, purpose limitation, retention limits and a named grievance contact — designed in, not appended.</p></div></div>
+          <div class="gov__item"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg><div><b>No lenses, no ears</b><p>No cameras or microphones in guest rooms. Presence is mmWave and door events.</p></div></div>
+          <div class="gov__item"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><b>Room IDs, not names</b><p>Analytics work on room numbers and anonymous profiles. Guest identity stays in the PMS, where it belongs.</p></div></div>
+          <div class="gov__item"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><div><b>No resale, no adtech</b><p>No enrichment, no data brokerage, no “anonymised partner insights”. It is your data or it is nobody’s.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== scale ============================== -->
+    <section class="section" id="scale">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">06 — At scale</p>
+            <h2>Two hundred keys is not two hundred apps.</h2>
+          </div>
+          <p class="lede">
+            It is one hierarchy. Rooms report to floors, floors to a local server, the server
+            to the people who need it — and every layer degrades gracefully instead of taking
+            the building with it.
+          </p>
+        </div>
+
+        <div class="arch">
+          <div class="arch__main">
+            <div class="arch__layer arch__layer--people">
+              <span class="arch__label">04 · People</span>
+              <div class="arch__row">
+                <span class="arch__box">Guest room control<small>tablet · TV · QR</small></span>
+                <span class="arch__box">Housekeeping board<small>rooms, not walk-rounds</small></span>
+                <span class="arch__box">Engineering alerts<small>tickets with an owner</small></span>
+                <span class="arch__box">Owner report<small>kWh / occupied room-night</small></span>
+              </div>
+            </div>
+            <div class="arch__layer arch__layer--brain">
+              <span class="arch__label">03 · The brain, on site</span>
+              <div class="arch__row">
+                <span class="arch__box arch__box--key">Automation engine<small>states, schedules, rules</small></span>
+                <span class="arch__box arch__box--key">Historian<small>every signal, kept locally</small></span>
+                <span class="arch__box arch__box--key">Anomaly models<small>peer and drift detection</small></span>
+                <span class="arch__box arch__box--key">M&amp;V baseline<small>weather-normalised</small></span>
+              </div>
+            </div>
+            <div class="arch__layer">
+              <span class="arch__label">02 · Language</span>
+              <div class="arch__row arch__row--chips">
+                <span class="chip-mini">MQTT</span><span class="chip-mini">Modbus</span><span class="chip-mini">BACnet</span>
+                <span class="chip-mini">KNX</span><span class="chip-mini">Zigbee</span><span class="chip-mini">Wi-Fi</span>
+                <span class="chip-mini">IR</span><span class="chip-mini">Dry contacts</span><span class="chip-mini">REST</span>
+              </div>
+            </div>
+            <div class="arch__layer">
+              <span class="arch__label">01 · Devices</span>
+              <div class="arch__row">
+                <span class="arch__box">Room controllers &amp; sensors</span>
+                <span class="arch__box">Energy meters</span>
+                <span class="arch__box">Chillers &amp; AHUs</span>
+                <span class="arch__box">VFDs &amp; pumps</span>
+                <span class="arch__box">Locks &amp; cameras</span>
+              </div>
+            </div>
+          </div>
+          <aside class="arch__side">
+            <div class="arch__aside">
+              <span class="arch__aside-label">Read from, not replace</span>
+              <ul>
+                <li>PMS — reservations, occupancy, arrivals</li>
+                <li>BMS — plant status and setpoints</li>
+                <li>Access control — door events</li>
+                <li>CCTV — presence, after hours</li>
+                <li>Fire panel — read-only</li>
+                <li>Lifts &amp; DG — status, alarms</li>
+              </ul>
+            </div>
+            <div class="arch__aside arch__aside--cloud">
+              <span class="arch__aside-label"><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg> Optional cloud</span>
+              <p>Dashboards, alerts and backups for a group office. Never in the control path — if it disappears, the hotel doesn’t notice.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="principles">
+          <article><h3>Local-first</h3><p>If the internet drops, rooms keep running on local schedules. Guests never learn that anything happened.</p></article>
+          <article><h3>Fail-safe</h3><p>If the server dies, each floor falls back to its own schedule. No room goes dark or hot because of a software fault.</p></article>
+          <article><h3>Segmented</h3><p>Guest Wi-Fi, room control, CCTV and BMS on separate VLANs. No inbound ports; outbound-only management.</p></article>
+          <article><h3>Open</h3><p>MQTT, Modbus, BACnet, KNX, Zigbee, dry contacts. Exportable data and documented design. Any competent integrator can take over.</p></article>
+        </div>
+
+        <div class="retrofit-note">
+          <span class="retrofit-note__kicker">Retrofit without closing a floor</span>
+          <p>
+            A room takes about ninety minutes and is sellable the same night. We work 09:00–17:00
+            in vacant inventory, one floor at a time, never two floors at once, and never a floor
+            that isn’t already carrying maintenance. Plant and public-area work happens in
+            low-occupancy windows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== rollout ============================== -->
+    <section class="section section--paper2" id="rollout">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">07 — Rollout</p>
+            <h2>Floor by floor, with the hotel open.</h2>
+          </div>
+          <p class="lede">
+            Five phases, five gates. Nothing scales until the pilot proves itself on your own
+            numbers — not ours.
+          </p>
+        </div>
+
+        <ol class="rollout">
+          <li class="phase">
+            <div class="phase__meta"><span class="phase__num">01</span><span class="phase__when">Week 0–2</span></div>
+            <div class="phase__body">
+              <h3>Metered audit</h3>
+              <p>Clamp meters on the mains and the big plant, fourteen days of metered data, tariff analysis and a room-by-room survey. No hardware bought, no promises made.</p>
+              <ul>
+                <li>Baseline and savings model from your meters</li>
+                <li>Pilot floor chosen and priced</li>
+                <li>A one-page business case for the owner</li>
+              </ul>
+            </div>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gate: you see the numbers before committing to hardware.</p>
+          </li>
+
+          <li class="phase">
+            <div class="phase__meta"><span class="phase__num">02</span><span class="phase__when">Week 3–8</span></div>
+            <div class="phase__body">
+              <h3>Pilot floor</h3>
+              <p>Twenty keys: room controllers, sensors, lighting, network, local server. Housekeeping board and engineering alerts from day one, measured against the floor’s own baseline.</p>
+              <ul>
+                <li>Controls, sensors and a local hub</li>
+                <li>Housekeeping board in live use</li>
+                <li>Six weeks of measured results</li>
+              </ul>
+            </div>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gate: no guest complaint attributable to the system; at least 15% saving on the floor; housekeeping prefers the new board.</p>
+          </li>
+
+          <li class="phase">
+            <div class="phase__meta"><span class="phase__num">03</span><span class="phase__when">Week 9–20</span></div>
+            <div class="phase__body">
+              <h3>Guest wings</h3>
+              <p>Floor by floor, ninety minutes a room, in vacant inventory. Same controllers, same dashboard, no new architecture — the pilot is simply repeated with the lessons in it.</p>
+              <ul>
+                <li>Roughly one floor a week</li>
+                <li>Rooms back in service the same day</li>
+                <li>Commissioning sign-off per floor</li>
+              </ul>
+            </div>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gate: every floor signed off before the next one starts.</p>
+          </li>
+
+          <li class="phase">
+            <div class="phase__meta"><span class="phase__num">04</span><span class="phase__when">Week 12–24</span></div>
+            <div class="phase__body">
+              <h3>Plant and public areas</h3>
+              <p>Chiller sequencing, AHU schedules, pumps, kitchen exhaust, lobby, banquet and landscape. Runs in parallel with the wings. This is where the biggest single number lives.</p>
+              <ul>
+                <li>Chiller and AHU optimisation</li>
+                <li>Kitchen exhaust and laundry</li>
+                <li>Banquet and facade schedules</li>
+              </ul>
+            </div>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gate: comfort verified at the guest-facing end, not just at the plant.</p>
+          </li>
+
+          <li class="phase">
+            <div class="phase__meta"><span class="phase__num">05</span><span class="phase__when">Month 6 onward</span></div>
+            <div class="phase__body">
+              <h3>Operate and tune</h3>
+              <p>Monthly tuning and measurement, quarterly owner review, annual re-commissioning. Alerts routed to a named person with an SLA, not to a shared inbox.</p>
+              <ul>
+                <li>Monthly savings report</li>
+                <li>Quarterly owner review</li>
+                <li>Annual re-commission</li>
+              </ul>
+            </div>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gate: savings stay inside the band after the novelty wears off — the only test that matters.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== guardrails ============================== -->
+    <section class="section" id="guardrails">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker">08 — Guardrails</p>
+            <h2>What we won’t do.</h2>
+          </div>
+          <p class="lede">
+            A pitch is also a list of promises. These are the ones we won’t break, even when
+            breaking them would make the numbers look better.
+          </p>
+        </div>
+
+        <div class="guard">
+          <article class="guard__card">
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+            <h3>Won’t touch life safety</h3>
+            <p>Fire detection, suppression, lifts and emergency lighting stay with certified systems and certified vendors. We read from them, at most.</p>
+          </article>
+          <article class="guard__card">
+            <svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg>
+            <h3>Won’t trade comfort for a number</h3>
+            <p>If a room is too warm when the guest walks in, the saving doesn’t count. Temperature excursions are reported beside the savings, every month.</p>
+          </article>
+          <article class="guard__card">
+            <svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg>
+            <h3>Won’t claim what we can’t measure</h3>
+            <p>Every number sits against an agreed, weather-normalised baseline. We publish the months that miss, not just the ones that flatter.</p>
+          </article>
+          <article class="guard__card">
+            <svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>
+            <h3>Won’t put a lens in a room</h3>
+            <p>No camera or microphone in a guest room — not for occupancy, not for voice, not for “experience”. Presence is mmWave or a door contact.</p>
+          </article>
+          <article class="guard__card">
+            <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>
+            <h3>Won’t rent you your own building</h3>
+            <p>The local system keeps running without us. Data exports. Documentation is handed over. No mandatory subscription to keep the basics alive.</p>
+          </article>
+          <article class="guard__card">
+            <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>
+            <h3>Won’t scale before the pilot</h3>
+            <p>No 200-key rollout before a 20-key pilot. If it doesn’t perform on your building, you stop after one floor and we have both lost a little, not a lot.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== why us ============================== -->
+    <section class="section section--ink" id="why">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="kicker kicker--light">09 — The team</p>
+            <h2>We built this for a home. A hotel is the same discipline at scale.</h2>
+          </div>
+          <p class="lede lede--light">
+            We’re a studio that designs interiors and automation together, and we run a live
+            local-first system every day. We are not a BMS major — and we’re not going to
+            pretend to be one.
+          </p>
+        </div>
+
+        <div class="h-stats">
+          <div class="h-stat"><span class="h-stat__num">85</span><span class="h-stat__label">Automations in daily use</span></div>
+          <div class="h-stat"><span class="h-stat__num">12</span><span class="h-stat__label">Dashboards on one hub</span></div>
+          <div class="h-stat"><span class="h-stat__num">3</span><span class="h-stat__label">Camera feeds, processed locally</span></div>
+          <div class="h-stat"><span class="h-stat__num">1</span><span class="h-stat__label">Interface for all of it</span></div>
+          <div class="h-stat"><span class="h-stat__num">0</span><span class="h-stat__label">Cloud accounts needed to open a door</span></div>
+        </div>
+        <p class="h-stats__fine">That is the home system, in daily use — not a hotel. What transfers is the discipline, not the room count.</p>
+
+        <div class="matrix-wrap">
+          <table class="matrix">
+            <caption class="sr-only">How this proposal compares with a conventional building management system and per-room gadget vendors</caption>
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Capability</span></th>
+                <th scope="col">Typical BMS</th>
+                <th scope="col">Per-room gadget vendor</th>
+                <th scope="col" class="matrix__us">This proposal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Room-level control</th>
+                <td>Schedules by floor; rarely by room</td>
+                <td>One brand’s app per room</td>
+                <td class="matrix__us">Per-room state from sensors and the PMS</td>
+              </tr>
+              <tr>
+                <th scope="row">Plant optimisation</th>
+                <td class="matrix__good">Strong — it is the core of the product</td>
+                <td>None</td>
+                <td class="matrix__us">Sequencing and reset, on top of your BMS</td>
+              </tr>
+              <tr>
+                <th scope="row">Guest experience</th>
+                <td>Out of scope</td>
+                <td>A tablet that ages badly</td>
+                <td class="matrix__us">TV, tablet or QR — one backend, no app</td>
+              </tr>
+              <tr>
+                <th scope="row">Learning from data</th>
+                <td>Alarms and trends; tuning is a project</td>
+                <td>None</td>
+                <td class="matrix__us">Anomaly detection, forecasting, monthly tuning</td>
+              </tr>
+              <tr>
+                <th scope="row">Openness</th>
+                <td>Often closed, licensed per point</td>
+                <td>A cloud account you don’t control</td>
+                <td class="matrix__us">MQTT, Modbus, BACnet, exportable</td>
+              </tr>
+              <tr>
+                <th scope="row">Who holds it</th>
+                <td>The vendor holds the system</td>
+                <td>The vendor holds the account</td>
+                <td class="matrix__us">You hold the local system</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="why-copy">
+          <div>
+            <h3>What transfers</h3>
+            <p>
+              Local-first control. One interface. Real devices brought in through the protocols
+              they already speak. An owner who can see what the building is doing without
+              asking three people.
+            </p>
+          </div>
+          <div>
+            <h3>What we would have to learn from you</h3>
+            <p>
+              The plant, the PMS, the union, the service standards and the guest promise. We’d
+              rather say that out loud than imply we have done two hundred keys before. The
+              pilot is how we find out together, at one floor’s risk rather than the whole
+              hotel’s.
+            </p>
+          </div>
+          <div>
+            <h3>How we work</h3>
+            <p>
+              Vendor-neutral, hardware at actuals, drawings and schedules in your hands. We work
+              alongside your electrical contractor — or bring our own, with your approval.
+              Chennai delivery, on site for commissioning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== faq ============================== -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section__head section__head--stack">
+          <div>
+            <p class="kicker">10 — Questions</p>
+            <h2>The things a GM asks second.</h2>
+          </div>
+          <p class="lede">
+            The first question is usually about cost. These are the ones that come after it,
+            and they are the ones that decide whether a project like this actually works.
+          </p>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>What does a project like this cost?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>For a 200-key retrofit, our planning band is <strong>₹0.9–1.6 crore</strong> including hardware, installation and commissioning, excluding civil work and GST. At the next AC or BMS replacement the marginal cost is roughly half that; in a new build it is lower again. The audit fee is fixed and credited against implementation. None of it is a quote until we have metered the building.</p>
+          </details>
+          <details>
+            <summary>How disruptive is it, really?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>A room takes about ninety minutes and is sellable the same night. We work in vacant inventory between nine and five, one floor at a time. Plant and public-area work happens in low-occupancy windows. No floor closes, and no guest sees a ladder in the corridor unless they are up very early.</p>
+          </details>
+          <details>
+            <summary>Will guests notice anything?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>They notice the room is right when they walk in, which is the point. The wall control is a familiar thermostat. The guest-facing app is optional; the default is no app at all — a QR code on the desk for anyone who wants it.</p>
+          </details>
+          <details>
+            <summary>Do we have to replace our air-conditioners?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>No. Room controllers and gateways work with existing splits and FCUs through IR, Modbus or dry contacts, and we audit what is there before recommending anything. Replacement is suggested only when a unit genuinely cannot be integrated — and then it is your contractor’s decision, not ours.</p>
+          </details>
+          <details>
+            <summary>Will it work with our PMS and our BMS?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>That is the assumption. Reservations, occupancy and arrivals come from the PMS through its API; plant status and setpoints come from the BMS over BACnet or Modbus. If the BMS cannot expose a reading, we clamp a meter at the panel. We have not yet met a hotel where the answer was no — but we check in the audit rather than the brochure.</p>
+          </details>
+          <details>
+            <summary>Who maintains it after handover?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Your engineering team, with a dashboard, training and a one-page runbook. We can retain for monthly tuning and measurement, and for on-site support with an SLA. Because the system is open and documented, you are not stuck with us — which is the point.</p>
+          </details>
+          <details>
+            <summary>What happens if the internet goes down?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Nothing a guest would notice. Room control, schedules and plant logic run on the local server. Only remote dashboards and off-site alerts pause, and they queue rather than disappear.</p>
+          </details>
+          <details>
+            <summary>What about guest data and privacy?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Analytics run on room numbers against anonymous profiles; guest identity stays in the PMS. No cameras or microphones in rooms. Data is held on site under the DPDP Act 2023, with defined retention and a named grievance contact. It is never resold or enriched.</p>
+          </details>
+          <details>
+            <summary>Can we phase it over two or three budgets?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>That is the plan, not a concession. One floor, then the wings, then the plant. Each phase is justified on measured savings from the one before it, so a capex committee approves a pilot rather than a programme.</p>
+          </details>
+          <details>
+            <summary>What if we sell or rebrand the hotel?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>The system is documented, exportable and transferable, and it becomes part of the technical diligence pack rather than a liability. Controls that stay with the building are worth more than a subscription that has to be renegotiated.</p>
+          </details>
+          <details>
+            <summary>Why not just buy a better BMS?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>You probably have a good one, and we would rather use it than compete with it. A BMS controls the plant; it rarely controls rooms, housekeeping or the guest, and its data usually stops at a trend graph. We layer the room-and-data layer on top and feed from the BMS. If you are replacing the BMS anyway, that is the cheapest moment to do this — and we would design into that project rather than around it.</p>
+          </details>
+          <details>
+            <summary>What’s the catch?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Time and access. A metered baseline needs a fortnight. Installs need vacant rooms. Somebody on your side has to own the number when we are not in the building. If those three things aren’t available, this doesn’t work — and we will tell you that in the first meeting rather than the third month.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== cta ============================== -->
+    <section class="h-cta" id="contact">
+      <div class="wrap h-cta__inner">
+        <div class="h-cta__copy">
+          <p class="kicker kicker--light">Next</p>
+          <h2>Start with the meter,<br /><em>not the pitch.</em></h2>
+          <p>
+            Two weeks. The mains, the plant and one floor. You get a baseline, a savings model
+            built from your own numbers, and a pilot plan you can approve or bin. If the case
+            isn’t there, you will hear that before you spend anything on hardware.
+          </p>
+          <div class="h-cta__actions">
+            <a class="btn btn--light" href="https://wa.me/85293177819?text=Hi%20Ambient%20Form%2C%20I%27d%20like%20to%20discuss%20a%20metered%20energy%20audit%20for%20a%20hotel%20in%20Chennai." target="_blank" rel="noopener">
+              Book the audit
+              <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
+            </a>
+            <a class="btn btn--outline-light" href="#money">
+              Run the model again
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <p class="h-cta__fine">Chennai · on site for commissioning · no obligation · we will tell you if we are not the right fit.</p>
+        </div>
+        <aside class="h-cta__card">
+          <h3>What to send</h3>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Twelve months of electricity bills and the tariff</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Single-line diagram, if it exists</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Typical floor plan and key count by room type</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> PMS and BMS vendors</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Occupancy by month, last year</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Two names: engineering and finance</li>
+          </ul>
+          <p class="h-cta__contact">WhatsApp <a href="https://wa.me/85293177819">+852 9317 7819</a><br />Mumbai &amp; Hong Kong · Chennai by arrangement</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="../index.html" aria-label="Ambient Form Studio home">
+            <img class="brand__mark" src="../assets/mark.svg" width="27" height="27" alt="" />
+            <span class="brand__word">Ambient Form Studio</span>
+          </a>
+          <p class="footer__tagline">
+            Interior design &amp; automation, Mumbai &amp; Hong Kong. Full design, renovation
+            or retrofit — local-first by default.
+          </p>
+        </div>
+        <div>
+          <h3>This proposal</h3>
+          <div class="footer__links">
+            <a href="#case">The case</a>
+            <a href="#scope">What we automate</a>
+            <a href="#room">One room, three states</a>
+            <a href="#money">The money</a>
+            <a href="#data">The data loop</a>
+            <a href="#scale">At scale</a>
+            <a href="#rollout">Rollout</a>
+            <a href="#guardrails">Guardrails</a>
+            <a href="#faq">Questions</a>
+          </div>
+        </div>
+        <div>
+          <h3>Studio</h3>
+          <div class="footer__links">
+            <a href="../index.html">The studio site</a>
+            <a href="../index.html#capabilities">Capabilities</a>
+            <a href="../index.html#retrofit">Retrofit</a>
+            <a href="../index.html#proof">The proof</a>
+            <a href="../privacy.html">Privacy note</a>
+            <a href="#contact">Start here</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Ambient Form Studio. Mumbai &amp; Hong Kong.</span>
+        <span>
+          <button class="print-btn" type="button" data-print>Print / save as PDF</button>
+          · Proposal for a 200-key property, Chennai · not a public page · no cookies, no trackers.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="hotels.js?v=20261104a" defer></script>
+</body>
+</html>
