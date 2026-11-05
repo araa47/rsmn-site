@@ -386,7 +386,7 @@
 
           <div class="lrow">
             <div class="lrow__copy"><b>Light on presence and daylight</b><span>Corridors 30% and up on presence. The lobby follows the sun.</span></div>
-            <span class="lrow__need">dimmers + motion sensors</span>
+            <span class="lrow__need">dimmers + mmWave</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:42%"></i></span><b>2.0</b></div>
           </div>
           <div class="lrow">
@@ -399,6 +399,19 @@
             <span class="lrow__need">hot-water controls</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:27%"></i></span><b>1.3</b></div>
           </div>
+        </div>
+
+        <div class="presence">
+          <div class="presence__head">
+            <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>
+            How we know a room is empty
+          </div>
+          <p>
+            mmWave radar, not PIR. PIR reacts to movement and can be fooled by a
+            warm draft — a guest reading in a chair or asleep drops off it, and the room
+            gets cooled for nobody. mmWave holds a still person, works in the dark, sits
+            behind a plastic panel and has no lens.
+          </p>
         </div>
 
         <p class="lset__note">
@@ -449,7 +462,7 @@
             <div class="auto">
               <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></span>
-                <div><h4>Occupancy cooling</h4><p>Setback when the room is empty. The guest’s setpoint when it isn’t.</p></div>
+                <div><h4>Occupancy cooling</h4><p>mmWave radar knows empty from still. Setback when it’s empty, the guest’s setpoint when it isn’t.</p></div>
               </div>
               <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
@@ -594,7 +607,7 @@
               </div>
               <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
-                <div><h4>No lens in a room</h4><p>A motion sensor or the door contact. Never a camera.</p></div>
+                <div><h4>No lens in a room</h4><p>mmWave presence or the door contact. Never a camera.</p></div>
               </div>
             </div>
           </section>
@@ -665,7 +678,7 @@
           <div class="roomdemo__readout">
             <div class="readout">
               <span class="readout__label">What triggered it</span>
-              <p data-room-trigger>Door contact open, three minutes. Presence confirmed.</p>
+              <p data-room-trigger>Door contact open, three minutes. mmWave confirms one person.</p>
             </div>
             <div class="readout">
               <span class="readout__label">What the system did</span>
