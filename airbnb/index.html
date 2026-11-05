@@ -140,8 +140,8 @@
               off at checkout.
             </p>
             <div class="h-hero__stats">
-              <div><b>₹5.7 lakh</b><span>a year, modelled</span></div>
-              <div><b>−25%</b><span>energy per flat</span></div>
+              <div><b>₹95,000</b><span>a year, modelled</span></div>
+              <div><b>−25%</b><span>energy</span></div>
               <div><b>0</b><span>key handovers</span></div>
             </div>
             <div class="h-hero__actions">
@@ -163,96 +163,41 @@
 
           <div class="h-hero__visual">
             <figure class="ops-fig">
-              <div class="board">
-                <div class="board__bar">
-                  <span class="board__live"><i aria-hidden="true"></i> Live</span>
-                  <span class="board__title">6 listings · one building</span>
-                  <span class="board__time">22:14 IST</span>
+              <div class="flat">
+                <div class="flat__bar">
+                  <span class="flat__live"><i aria-hidden="true"></i> Live</span>
+                  <span class="flat__title">2A · one-bedroom · tonight</span>
+                  <span class="flat__time">22:14</span>
                 </div>
 
-                <div class="board__kpis">
-                  <div class="ops__kpi">
-                    <span>Occupied</span>
-                    <strong>4<small>/6</small></strong>
-                    <em>2 arriving tomorrow</em>
-                  </div>
-                  <div class="ops__kpi">
-                    <span>Tonight</span>
-                    <strong>₹18,400</strong>
-                    <em>₹4,600 avg</em>
-                  </div>
-                  <div class="ops__kpi">
-                    <span>Energy today</span>
-                    <strong>₹1,240</strong>
-                    <em class="is-good">−22% vs last month</em>
-                  </div>
+                <div class="flat__state">
+                  <div><span>Guest</span><strong>Occupied</strong><em>in since 18:40</em></div>
+                  <div><span>Door</span><strong>Locked</strong><em>last opened 19:04</em></div>
+                  <div><span>Room</span><strong>24.1°C</strong><em>set 24.0</em></div>
                 </div>
 
-                <div class="board__grid">
-                  <article class="unit is-occ">
-                    <div class="unit__top"><b>2A</b><span class="unit__pill">Occupied</span></div>
-                    <div class="unit__rows">
-                      <span><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Locked</span>
-                      <span>24.1°C</span>
-                      <span>4.2 kWh</span>
-                    </div>
-                  </article>
-
-                  <article class="unit is-occ">
-                    <div class="unit__top"><b>4A</b><span class="unit__pill">Occupied</span></div>
-                    <div class="unit__rows">
-                      <span><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Locked</span>
-                      <span>23.8°C</span>
-                      <span>3.9 kWh</span>
-                    </div>
-                  </article>
-
-                  <article class="unit is-clean">
-                    <div class="unit__top"><b>3B</b><span class="unit__pill">Cleaning</span></div>
-                    <div class="unit__rows">
-                      <span><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Locked</span>
-                      <span>26.4°C</span>
-                      <span>0.4 kWh</span>
-                    </div>
-                  </article>
-
-                  <article class="unit is-vacant">
-                    <div class="unit__top"><b>1C</b><span class="unit__pill">Vacant</span></div>
-                    <div class="unit__rows">
-                      <span><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Locked</span>
-                      <span>27.0°C</span>
-                      <span>0.2 kWh</span>
-                    </div>
-                  </article>
-
-                  <article class="unit is-arriving">
-                    <div class="unit__top"><b>5B</b><span class="unit__pill">Arriving 16:00</span></div>
-                    <div class="unit__rows">
-                      <span><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Locked</span>
-                      <span>23.5°C</span>
-                      <span>1.8 kWh</span>
-                    </div>
-                  </article>
-
-                  <article class="unit is-alert">
-                    <div class="unit__top"><b>2C</b><span class="unit__pill">Door open</span></div>
-                    <div class="unit__rows">
-                      <span><svg class="icon" aria-hidden="true"><use href="#i-unlock"/></svg> Ajar 22 min</span>
-                      <span>26.9°C</span>
-                      <span>2.1 kWh</span>
-                    </div>
-                  </article>
-                </div>
+                <ol class="flat__log">
+                  <li><time>17:55</time><span>Code issued · valid until 11:00</span></li>
+                  <li><time>18:40</time><span>Door opened · first entry</span></li>
+                  <li><time>18:41</time><span>Arrival scene · lights 40%, AC 24°C</span></li>
+                  <li><time>19:02</time><span>Balcony opened · AC paused</span></li>
+                  <li><time>19:04</time><span>Balcony closed · AC resumed</span></li>
+                </ol>
 
                 <div class="ops__alert">
-                  <svg class="icon" aria-hidden="true"><use href="#i-door"/></svg>
+                  <svg class="icon" aria-hidden="true"><use href="#i-unlock"/></svg>
                   <div>
-                    <strong>2C · door left ajar after checkout</strong>
-                    <span>Auto-lock attempted twice · you can lock it from here</span>
+                    <strong>22:03 · door left ajar on the way out</strong>
+                    <span>Auto-lock retried twice · you were told once</span>
                   </div>
                 </div>
+
+                <div class="flat__foot">
+                  <span>Energy today <b>₹214</b></span>
+                  <span class="is-good">−22% vs last month</span>
+                </div>
               </div>
-              <figcaption class="ops__caption">Six flats, one screen. The door state is the one that matters at 22:14.</figcaption>
+              <figcaption class="ops__caption">One flat, one night. The door state is the thing you would otherwise find out about on Thursday.</figcaption>
             </figure>
           </div>
         </div>
@@ -260,8 +205,8 @@
         <div class="h-hero__note">
           <span class="h-hero__note-tag">Private proposal</span>
           <p>
-            For a short-let host or small operator. Figures are modelled for a six-listing
-            portfolio and replaced by your own numbers before anything is bought.
+            For a single flat, or a handful of them. Figures are modelled for one listing and
+            replaced by your own numbers before anything is bought.
           </p>
         </div>
       </div>
@@ -541,8 +486,8 @@
             <h2>What it’s worth.</h2>
           </div>
           <p class="lede">
-            A six-flat portfolio, modelled. Rent and energy are shown separately so you can
-            discount the premium and still see the case.
+            One flat, modelled. Rent and energy are shown separately so you can discount the
+            premium and still see the case. Move the slider if you run more than one.
           </p>
         </div>
 
@@ -551,9 +496,9 @@
             <div class="field">
               <div class="field__row">
                 <label for="listings">Listings</label>
-                <output class="field__val" data-out="listings" for="listings">6</output>
+                <output class="field__val" data-out="listings" for="listings">1</output>
               </div>
-              <input id="listings" type="range" min="1" max="20" step="1" value="6" data-input="listings" />
+              <input id="listings" type="range" min="1" max="20" step="1" value="1" data-input="listings" />
               <div class="field__scale" aria-hidden="true"><span>1</span><span>20</span></div>
             </div>
 
@@ -588,13 +533,13 @@
 
           <div class="model__out" aria-live="polite">
             <p class="model__label">Modelled gain a year</p>
-            <p class="model__big"><span data-out="total">₹5.7 lakh</span></p>
-            <p class="model__sub"><span data-out="perListing">₹95,040</span> a flat · <span data-out="handovers">36</span> check-ins a month</p>
+            <p class="model__big"><span data-out="total">₹95,040</span></p>
+            <p class="model__sub"><span data-out="perListing">₹95,040</span> a year, per flat · <span data-out="handovers">6</span> check-ins a month</p>
 
             <div class="model__rows">
-              <div><span>Rent uplift</span><strong data-out="rent">₹4.1 lakh</strong></div>
-              <div><span>Energy saved</span><strong data-out="energy">₹1.6 lakh</strong></div>
-              <div><span>Capex band</span><strong data-out="capex">₹3.3–5.7 lakh</strong></div>
+              <div><span>Rent uplift</span><strong data-out="rent">₹68,040</strong></div>
+              <div><span>Energy saved</span><strong data-out="energy">₹27,000</strong></div>
+              <div><span>Capex band</span><strong data-out="capex">₹55,000–95,000</strong></div>
               <div><span>Payback</span><strong data-out="payback">0.6–1.0 years</strong></div>
               <div><span>Energy alone</span><strong data-out="paybackEnergy">2.0–3.5 years</strong></div>
             </div>
@@ -640,17 +585,17 @@
         <div class="section__head">
           <div>
             <p class="kicker kicker--light">06 — The data</p>
-            <h2>Six flats is enough<br />to learn something.</h2>
+            <h2>One flat tells<br />you plenty.</h2>
           </div>
           <p class="lede lede--light">
-            One flat tells you about one flat. A portfolio tells you which decisions make money.
+            You don’t need a portfolio. A season of stays shows what each booking costs, what a 5.0 is worth, and what is about to break.
           </p>
         </div>
 
         <div class="learn">
           <article>
-            <h3>Which flat is expensive</h3>
-            <p>kWh per stay, by listing. The one with the old AC shows up in week two — not in the annual bill.</p>
+            <h3>What a stay costs</h3>
+            <p>kWh and rupees per booking, so you know your margin after the AC and the geyser, not before them.</p>
           </article>
           <article>
             <h3>What a 5.0 is worth</h3>
@@ -681,11 +626,11 @@
         <div class="section__head">
           <div>
             <p class="kicker">07 — Rollout</p>
-            <h2>One flat, then the portfolio.</h2>
+            <h2>Two weeks, then a month of proof.</h2>
           </div>
           <p class="lede">
-            Two weeks to install, four weeks to prove it. Nothing else changes until the first
-            flat earns its keep.
+            Your own flat, installed between two bookings. Nothing else changes until it
+            earns its keep.
           </p>
         </div>
 
@@ -693,26 +638,26 @@
           <li class="phase">
             <div class="phase__meta"><span class="phase__num">01</span><span class="phase__when">Week 1–2</span></div>
             <div class="phase__body">
-              <h3>One flat</h3>
-              <p>Lock, hub, presence sensor, AC control, door sensor. A flat you can lose for a fortnight.</p>
+              <h3>Install</h3>
+              <p>Lock, hub, presence sensor, AC control, door sensor. One flat, one afternoon.</p>
             </div>
-            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Installed without a guest noticing.</p>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Done between two bookings.</p>
           </li>
           <li class="phase">
             <div class="phase__meta"><span class="phase__num">02</span><span class="phase__when">Week 3–6</span></div>
             <div class="phase__body">
               <h3>Prove it</h3>
-              <p>Rate, reviews and kWh on that flat against the others. Same season, same city, same guests.</p>
+              <p>Rate, reviews and kWh against your own last month — same flat, same season.</p>
             </div>
             <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> It earns more or uses less — ideally both.</p>
           </li>
           <li class="phase">
             <div class="phase__meta"><span class="phase__num">03</span><span class="phase__when">Week 7–14</span></div>
             <div class="phase__body">
-              <h3>The rest</h3>
-              <p>A flat a week, same kit, same dashboard. Your cleaner learns one routine, not six.</p>
+              <h3>Tune</h3>
+              <p>Setpoints, cleaning dispatch and pricing rules. The first month is noise; the second is a pattern.</p>
             </div>
-            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Every flat signed off before the next.</p>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> The exceptions get rarer, not more frequent.</p>
           </li>
           <li class="phase">
             <div class="phase__meta"><span class="phase__num">04</span><span class="phase__when">Month 3 onward</span></div>
@@ -720,7 +665,7 @@
               <h3>Operate</h3>
               <p>Monthly energy and review report, battery and filter checks, remote support when a door sticks.</p>
             </div>
-            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> The exceptions get rarer, not more frequent.</p>
+            <p class="phase__gate"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> You stop thinking about it.</p>
           </li>
         </ol>
       </div>
@@ -817,10 +762,10 @@
       <div class="wrap h-cta__inner">
         <div class="h-cta__copy">
           <p class="kicker kicker--light">Next</p>
-          <h2>Start with one flat,<br /><em>not the portfolio.</em></h2>
+          <h2>Start with<br /><em>your flat.</em></h2>
           <p>
             Pick the flat that causes you the most trouble. We install in a two-week gap, and
-            four weeks later you have rate, reviews and kWh to compare against the others.
+            four weeks later you have rate, reviews and kWh against your own last month.
           </p>
           <div class="h-cta__actions">
             <a class="btn btn--light" href="https://wa.me/85293177819?text=Hi%20Ambient%20Form%2C%20I%27d%20like%20to%20automate%20one%20of%20my%20short-let%20flats." target="_blank" rel="noopener">
@@ -892,7 +837,7 @@
         <span>© <span id="year">2026</span> Ambient Form Studio. Mumbai &amp; Hong Kong.</span>
         <span>
           <button class="print-btn" type="button" data-print>Print / save as PDF</button>
-          · Proposal for a short-let portfolio · not a public page · no cookies, no trackers.
+          · Proposal for a short-let · not a public page · no cookies, no trackers.
         </span>
       </div>
     </div>

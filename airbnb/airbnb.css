@@ -3,8 +3,8 @@
    Shared components (hero, model, guard, phase, gov) come from proposal.css.
    ========================================================================== */
 
-/* ---------- the portfolio board in the hero ---------- */
-.board {
+/* ---------- one flat, tonight ---------- */
+.flat {
   position: relative;
   margin: 0;
   background: radial-gradient(120% 120% at 80% 0%, #16362d 0%, #0a1a15 55%, #071310 100%);
@@ -14,7 +14,7 @@
   overflow: hidden;
   box-shadow: 0 40px 80px -50px rgba(7, 19, 16, 0.9), 0 2px 0 rgba(255, 255, 255, 0.04) inset;
 }
-.board__bar {
+.flat__bar {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -25,107 +25,109 @@
   text-transform: uppercase;
   color: rgba(247, 242, 232, 0.55);
 }
-.board__live {
+.flat__live {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   color: var(--lime);
 }
-.board__live i {
+.flat__live i {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: currentColor;
   animation: ops-pulse 2.6s ease-in-out infinite;
 }
-.board__title {
+.flat__title {
   margin-left: auto;
   color: rgba(247, 242, 232, 0.7);
   letter-spacing: 0.06em;
   text-transform: none;
   font-size: 10.5px;
 }
-.board__time {
+.flat__time {
   font-variant-numeric: tabular-nums;
 }
-.board__kpis {
+.flat__state {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-bottom: 1px solid rgba(247, 242, 232, 0.1);
 }
-.board__grid {
+.flat__state > div {
+  padding: 14px 16px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 7px;
-  padding: 12px;
+  gap: 3px;
+  min-width: 0;
 }
-.unit {
-  border: 1px solid rgba(247, 242, 232, 0.1);
-  border-radius: 11px;
-  padding: 10px 12px;
-  background: rgba(247, 242, 232, 0.03);
+.flat__state > div + div {
+  border-left: 1px solid rgba(247, 242, 232, 0.08);
 }
-.unit__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-.unit__top b {
-  font: 600 12.5px/1 var(--mono);
-  letter-spacing: 0.06em;
-}
-.unit__pill {
-  font: 650 7.5px/1 var(--sans);
-  letter-spacing: 0.09em;
+.flat__state span {
+  font: 600 8.5px/1 var(--mono);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 4px 6px;
-  border-radius: 999px;
-  border: 1px solid rgba(215, 232, 184, 0.25);
-  color: var(--lime);
-  white-space: nowrap;
+  color: rgba(247, 242, 232, 0.45);
 }
-.unit__rows {
+.flat__state strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.flat__state em {
+  font-style: normal;
+  font: 500 9px/1.25 var(--sans);
+  color: rgba(247, 242, 232, 0.42);
+}
+.flat__log {
+  list-style: none;
+  margin: 0;
+  padding: 8px 17px;
+}
+.flat__log li {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(247, 242, 232, 0.06);
+}
+.flat__log li:last-child {
+  border-bottom: 0;
+}
+.flat__log time {
+  font: 500 9.5px/1.3 var(--mono);
+  color: rgba(247, 242, 232, 0.35);
+  font-variant-numeric: tabular-nums;
+}
+.flat__log span {
+  font: 500 10.5px/1.45 var(--sans);
+  color: rgba(247, 242, 232, 0.68);
+}
+.flat__foot {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 6px;
-  font: 500 9px/1.2 var(--mono);
-  color: rgba(247, 242, 232, 0.5);
+  gap: 12px;
+  padding: 11px 17px 13px;
+  border-top: 1px solid rgba(247, 242, 232, 0.1);
+  font: 500 9.5px/1 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(247, 242, 232, 0.45);
 }
-.unit__rows span {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
+.flat__foot b {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  margin-left: 3px;
 }
-.unit__rows .icon {
-  width: 10px;
-  height: 10px;
-}
-.unit.is-occ .unit__pill {
-  background: rgba(215, 232, 184, 0.12);
-}
-.unit.is-clean .unit__pill,
-.unit.is-arriving .unit__pill {
-  border-color: rgba(213, 162, 77, 0.3);
-  color: var(--gold);
-}
-.unit.is-vacant .unit__pill {
-  border-color: rgba(247, 242, 232, 0.18);
-  color: rgba(247, 242, 232, 0.5);
-}
-.unit.is-alert {
-  border-color: rgba(229, 131, 79, 0.45);
-  background: rgba(229, 131, 79, 0.08);
-}
-.unit.is-alert .unit__pill {
-  border-color: rgba(229, 131, 79, 0.4);
-  color: #e5a882;
-}
-.unit.is-alert .unit__rows span:first-child {
-  color: #e5a882;
+.flat__foot .is-good {
+  color: var(--lime);
 }
 
 /* ---------- the eight problems ---------- */
@@ -528,23 +530,24 @@
   .learn article:nth-child(2n + 1) {
     padding-left: 0;
   }
-  .board__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .unit__rows {
-    font-size: 8.5px;
-  }
 }
 
 @media (max-width: 480px) {
-  .board__kpis .ops__kpi {
-    padding: 10px 8px;
+  .flat__state > div {
+    padding: 12px 10px;
   }
-  .board__kpis .ops__kpi strong {
+  .flat__state strong {
     font-size: 1rem;
   }
-  .board__kpis .ops__kpi em {
-    font-size: 8px;
+  .flat__state em {
+    font-size: 8.5px;
+  }
+  .flat__log {
+    padding-inline: 13px;
+  }
+  .flat__log li {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 9px;
   }
   .stay__step {
     padding: 9px 11px;
@@ -559,8 +562,7 @@
 }
 
 @media print {
-  .stay__steps,
-  .board {
+  .stay__steps {
     display: none !important;
   }
 }

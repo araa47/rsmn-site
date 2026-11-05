@@ -105,9 +105,10 @@ is loaded.
 
 ## The short-let proposal
 
-`airbnb/` is the companion pitch for hosts and small short-let operators —
-unlisted, `noindex`, out of the sitemap, linked from the hotel page footer
-rather than the studio site.
+`airbnb/` is the companion pitch for short-let hosts — written for one flat,
+because that is what most hosts have, and scales with a slider for people who
+run several. Unlisted, `noindex`, out of the sitemap, linked from the hotel page
+footer rather than the studio site.
 
 **Live:** https://araa47.github.io/rsmn-site/airbnb/
 
@@ -124,13 +125,14 @@ The commercial case has two parts, kept separate on purpose:
 - **Energy.** ₹9,000 a month per flat at a 25% saving, from checkout shutdown,
   pre-arrival cooling and a 24°C ceiling.
 
-Defaults: 6 listings, ₹4,500 ADR, 70% occupancy, 6% premium — ₹5.7 lakh a year,
-₹3.3–5.7 lakh capex, 0.6–1.0 year payback, and 2.0–3.5 years on energy alone,
-which is the line to read if you don't believe the premium.
+Defaults: one listing, ₹4,500 ADR, 70% occupancy, 6% premium — ₹95,040 a year
+(₹68,040 of it rate, ₹27,000 energy), ₹55,000–95,000 capex, 0.6–1.0 year
+payback, and 2.0–3.5 years on energy alone, which is the line to read if you
+don't believe the premium. Move the listings slider for a portfolio.
 
 What is on it: the eight problems, six automation areas, an interactive
 seven-step stay timeline, the premium argument with a sample listing card, the
-model, what a portfolio learns, a four-phase rollout from one flat, privacy
+model, what a season of stays teaches you, a four-phase rollout, privacy
 guardrails, and an FAQ (lock battery, Wi-Fi down, can a guest unplug the hub).
 
 ```

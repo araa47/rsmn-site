@@ -214,7 +214,8 @@
     }
     function band(a, b) {
       if (b >= 1e7) return "₹" + trim((a / 1e7).toFixed(1)) + "–" + trim((b / 1e7).toFixed(1)) + " crore";
-      return "₹" + trim((a / 1e5).toFixed(1)) + "–" + trim((b / 1e5).toFixed(1)) + " lakh";
+      if (b >= 1e5) return "₹" + trim((a / 1e5).toFixed(1)) + "–" + trim((b / 1e5).toFixed(1)) + " lakh";
+      return "₹" + Math.round(a).toLocaleString("en-IN") + "–" + Math.round(b).toLocaleString("en-IN");
     }
 
     function render() {
