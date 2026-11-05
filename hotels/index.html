@@ -261,7 +261,7 @@
           </div>
           <div class="statrow__item">
             <span class="statrow__num">58%</span>
-            <p>of that bill is air-conditioning — rooms and plant. Start there, or don’t start.</p>
+            <p>of that bill is air-conditioning — rooms and chillers. Start there, or don’t start.</p>
           </div>
         </div>
 
@@ -280,7 +280,7 @@
             </div>
             <div class="bill__item bill__item--plant">
               <span class="bill__pct">24%</span>
-              <strong>Central plant</strong>
+              <strong>Chillers &amp; plant</strong>
             </div>
             <div class="bill__item bill__item--kitchen">
               <span class="bill__pct">17%</span>
@@ -305,7 +305,7 @@
           <ul class="baseline__list">
             <li><b>Key card at the door</b><span>Power cuts when the card is pulled — but guests leave a spare in the slot, and half the rooms get bypassed.</span></li>
             <li><b>Manual thermostat</b><span>The guest sets 18°C and the room runs there all night.</span></li>
-            <li><b>Plant on a schedule</b><span>Written at handover, never revisited when occupancy changes.</span></li>
+            <li><b>Chillers on a timetable</b><span>Set when the building opened. They still start and stop at the same hours whether the hotel is full or a third empty.</span></li>
             <li><b>Housekeeping by phone</b><span>Room status is a phone call, not a signal.</span></li>
           </ul>
         </div>
@@ -339,43 +339,43 @@
 
           <div class="lrow">
             <div class="lrow__copy"><b>Not cooling rooms nobody is in</b><span>Check-out sets 26.5°C. The room waits for a reservation or a door event.</span></div>
-            <span class="lrow__need">sensor + controller</span>
+            <span class="lrow__need">room sensor</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:100%"></i></span><b>4.8</b></div>
           </div>
           <div class="lrow">
             <div class="lrow__copy"><b>Keeping the sun out</b><span>Blinds close before direct sun hits the glass, and open after it passes.</span></div>
-            <span class="lrow__need">blind motor</span>
+            <span class="lrow__need">motorised blind</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:67%"></i></span><b>3.2</b></div>
           </div>
           <div class="lrow">
             <div class="lrow__copy"><b>24°C, not 18°C</b><span>Every degree below 24 costs about 7% more cooling.</span></div>
-            <span class="lrow__need">logic only</span>
+            <span class="lrow__need">software only</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:50%"></i></span><b>2.4</b></div>
           </div>
           <div class="lrow">
             <div class="lrow__copy"><b>Windows and balcony doors</b><span>The AC pauses while the door is open.</span></div>
-            <span class="lrow__need">contact sensors</span>
+            <span class="lrow__need">door / window sensor</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:29%"></i></span><b>1.4</b></div>
           </div>
 
           <div class="lgroup">
-            <h3>Plant</h3>
+            <h3>Chillers &amp; air handling</h3>
             <span>3.4 points</span>
           </div>
 
           <div class="lrow">
-            <div class="lrow__copy"><b>Chilled-water reset</b><span>Raise supply temperature as the load falls.</span></div>
-            <span class="lrow__need">valve / BMS</span>
+            <div class="lrow__copy"><b>Warmer water when the load drops</b><span>Raise the chilled-water temperature as cooling demand falls, so the chillers work less.</span></div>
+            <span class="lrow__need">valve control</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:29%"></i></span><b>1.4</b></div>
           </div>
           <div class="lrow">
             <div class="lrow__copy"><b>Run the efficient machine first</b><span>Chillers stage on load, not on a rota.</span></div>
-            <span class="lrow__need">BMS write</span>
+            <span class="lrow__need">plant controls</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:23%"></i></span><b>1.1</b></div>
           </div>
           <div class="lrow">
-            <div class="lrow__copy"><b>AHUs and pumps</b><span>Zones run when their zone is occupied.</span></div>
-            <span class="lrow__need">BMS / VFD</span>
+            <div class="lrow__copy"><b>Air handling by zone</b><span>Cool a wing only while that wing is occupied.</span></div>
+            <span class="lrow__need">plant controls</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:19%"></i></span><b>0.9</b></div>
           </div>
 
@@ -386,17 +386,17 @@
 
           <div class="lrow">
             <div class="lrow__copy"><b>Light on presence and daylight</b><span>Corridors 30% and up on presence. The lobby follows the sun.</span></div>
-            <span class="lrow__need">dimmers + PIR</span>
+            <span class="lrow__need">dimmers + motion sensors</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:42%"></i></span><b>2.0</b></div>
           </div>
           <div class="lrow">
             <div class="lrow__copy"><b>Kitchen exhaust on demand</b><span>Hoods follow the burners, not the shift.</span></div>
-            <span class="lrow__need">VFD + probe</span>
+            <span class="lrow__need">kitchen exhaust control</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:31%"></i></span><b>1.5</b></div>
           </div>
           <div class="lrow">
             <div class="lrow__copy"><b>Hot water and steam</b><span>Generate against demand, not storage temperature.</span></div>
-            <span class="lrow__need">valve + probe</span>
+            <span class="lrow__need">hot-water controls</span>
             <div class="lrow__pts"><span class="lrow__bar"><i style="width:27%"></i></span><b>1.3</b></div>
           </div>
         </div>
@@ -432,7 +432,7 @@
               <svg class="icon" aria-hidden="true"><use href="#i-bulb"/></svg> Public &amp; F&amp;B
             </button>
             <button class="scope__tab" id="tab-plant" role="tab" aria-selected="false" aria-controls="panel-plant" data-tab="plant" tabindex="-1">
-              <svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg> Plant
+              <svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg> Cooling plant
             </button>
             <button class="scope__tab" id="tab-back" role="tab" aria-selected="false" aria-controls="panel-back" data-tab="back" tabindex="-1">
               <svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg> Back of house
@@ -507,11 +507,11 @@
               </div>
               <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
-                <div><h4>Chilled-water reset</h4><p>Supply temperature follows the load, not a fixed setpoint.</p></div>
+                <div><h4>Chilled water that follows the load</h4><p>Supply temperature rises as demand falls.</p></div>
               </div>
               <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
-                <div><h4>AHU zoning</h4><p>Valves and VFDs follow the zone, not the schedule.</p></div>
+                <div><h4>Air handling by zone</h4><p>Valves and fan speeds follow the zone, not the schedule.</p></div>
               </div>
               <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span>
@@ -594,7 +594,7 @@
               </div>
               <div class="auto__item">
                 <span class="auto__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
-                <div><h4>No lens in a room</h4><p>Presence is mmWave or a door contact. Never a camera.</p></div>
+                <div><h4>No lens in a room</h4><p>A motion sensor or the door contact. Never a camera.</p></div>
               </div>
             </div>
           </section>
@@ -790,7 +790,7 @@
               </div>
               <ul>
                 <li><i aria-hidden="true"></i> Cooling <b>59%</b></li>
-                <li><i aria-hidden="true"></i> Plant <b>17%</b></li>
+                <li><i aria-hidden="true"></i> Chillers &amp; plant <b>17%</b></li>
                 <li><i aria-hidden="true"></i> Lighting &amp; back of house <b>24%</b></li>
               </ul>
               <a class="model__mix-link" href="#savings">
@@ -910,7 +910,7 @@
               <text x="8" y="86" class="ch-label">5 weeks · COP</text>
             </svg>
             <h3>Tubes fouling</h3>
-            <p>COP down 9% on a flat load. Cleaned on a planned window, not in June.</p>
+            <p>Efficiency down 9% on a flat load. Cleaned on a planned window, not in June.</p>
           </article>
 
           <article class="signal">
