@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Ambient Form Studio — hotel edition
-   Sits on top of styles.css and inherits its tokens, header, footer and FAQ.
-   This file only adds the proposal's own components.
+   Ambient Form Studio — proposal components
+   Shared by the hotel and short-let pitches. Sits on top of styles.css and
+   inherits its tokens, header, footer and FAQ.
    ========================================================================== */
 
 /* ---------- hero ---------- */

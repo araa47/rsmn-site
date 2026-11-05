@@ -95,20 +95,60 @@ What is on it:
 
 ```
 hotels/index.html      the proposal
-hotels/hotels.css      proposal components, layered on styles.css
 hotels/hotels.js       tabs, room demo, savings model, theme, menu
 ```
 
-It reuses `styles.css` tokens, the icon sprite and the header/footer pattern from the
-studio site. Design tokens stay in `styles.css`; nothing external is loaded.
+The hotel page's components (`hotels/hotels.css` → `proposal.css`) are shared with
+`airbnb/`, which adds only its own board, stay timeline and premium card. Both reuse
+`styles.css` tokens, the icon sprite and the header/footer pattern. Nothing external
+is loaded.
+
+## The short-let proposal
+
+`airbnb/` is the companion pitch for hosts and small short-let operators —
+unlisted, `noindex`, out of the sitemap, linked from the hotel page footer
+rather than the studio site.
+
+**Live:** https://araa47.github.io/rsmn-site/airbnb/
+
+It is built around the things that actually go wrong in a flat with no staff in
+it: a door that doesn't catch, a 1 a.m. check-in, one keybox code shared for two
+years, the AC running for three days after checkout, a cleaner knocking on an
+occupied flat, and a five-star review lost to a 32°C arrival.
+
+The commercial case has two parts, kept separate on purpose:
+
+- **Rate.** Self check-in is one of the few amenities guests actively filter for,
+  so the premium is a *slider*, not a claimed percentage — set it to zero and the
+  energy case still stands.
+- **Energy.** ₹9,000 a month per flat at a 25% saving, from checkout shutdown,
+  pre-arrival cooling and a 24°C ceiling.
+
+Defaults: 6 listings, ₹4,500 ADR, 70% occupancy, 6% premium — ₹5.7 lakh a year,
+₹3.3–5.7 lakh capex, 0.6–1.0 year payback, and 2.0–3.5 years on energy alone,
+which is the line to read if you don't believe the premium.
+
+What is on it: the eight problems, six automation areas, an interactive
+seven-step stay timeline, the premium argument with a sample listing card, the
+model, what a portfolio learns, a four-phase rollout from one flat, privacy
+guardrails, and an FAQ (lock battery, Wi-Fi down, can a guest unplug the hub).
+
+```
+airbnb/index.html      the proposal
+airbnb/airbnb.css      short-let components, layered on proposal.css
+airbnb/airbnb.js       stay timeline, model, theme, menu
+```
 
 ## Files
+
 
 ```
 index.html              the one-page site
 hotels/                 unlisted hotel proposal (see above)
+airbnb/                 unlisted short-let proposal (see above)
 privacy.html            plain-language privacy note
 styles.css              design system, layout, phone UI, gallery, plan
+proposal.css            shared components for both pitches
 site.js                 mobile menu, app tabs, floor plan, voice demo, reveal, year
 robots.txt              crawler rules + sitemap reference
 sitemap.xml             the two public pages
