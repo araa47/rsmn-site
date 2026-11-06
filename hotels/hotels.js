@@ -277,9 +277,9 @@
   var MODEL = {
     roomKwh: 32,
     sharedKwh: 42,
-    low: 0.12,
+    low: 0.1,
     base: 0.2,
-    high: 0.28,
+    high: 0.2,
     grid: 0.71,
     capex: {
       retrofit: [60000, 110000],

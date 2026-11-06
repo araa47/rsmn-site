@@ -70,16 +70,19 @@ a city. Every figure is a model, not a quote: the inputs live in `MODEL` in
 `hotels/hotels.js`, the assumptions are on the page, and a real engagement replaces
 them with a metered audit.
 
-The economics are built on the HT-III commercial tariff — ₹9.40/unit, ₹608/kVA/month
+The economics are built on an industrial planning tariff — ₹9.40/unit, ₹608/kVA/month
 demand, 5% electricity tax, about ₹11.50 all-in — and a hotel that already has key
-cards and manual thermostats. That baseline is what makes the page honest: 94 kWh per
-occupied room-night, a ₹5.35 crore bill, a base-case saving of 20% (₹1.07 crore) and a
-1.1–2.1 year payback on a ₹1.2–2.2 crore retrofit. Change those inputs and the whole
-page should be re-checked, not just the calculator.
+cards and manual thermostats. That is an industrial number, not the Maharashtra
+commercial rate (about ₹19.70 all-in), so the page now says so and the tariff slider
+goes to ₹22. The baseline is 94 kWh per occupied room-night, a ₹5.35 crore bill at
+₹11.50, a full-programme saving of 20% (₹1.07 crore) and a 1.1–2.1 year payback on a
+₹1.2–2.2 crore retrofit. Rooms alone are 10–15%; the 20% needs the plant and lighting
+measures. Change those inputs and the whole page should be re-checked, not just the
+calculator.
 
 What is on it:
 
-- **The bill** — the three numbers that matter (₹11.50/unit, 94 kWh, 58% air-con),
+- **The bill** — the three numbers that matter (₹11.50/unit industrial, 94 kWh, 58% air-con),
   where the bill goes, and what the hotel already does (key cards, manual thermostats,
   fixed plant schedules, housekeeping by phone).
 - **Where the 20% comes from** — one table, ten changes, one line each, with the points

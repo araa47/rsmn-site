@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hotel automation — a 200-key hotel | Ambient Form Studio</title>
-  <meta name="description" content="A 200-key hotel spends about ₹5.3 crore a year on electricity. A proposal for what to automate, where the 20% comes from, and what it is worth against a metered baseline." />
+  <meta name="description" content="A 200-key hotel at ₹11.50 a unit spends about ₹5.3 crore a year on electricity. A proposal for what to automate, where the full-programme 20% comes from, and what it is worth against a metered baseline." />
   <meta name="robots" content="noindex, nofollow, noarchive" />
   <meta name="theme-color" content="#f5f0e6" />
   <meta name="color-scheme" content="light" />
   <link rel="icon" href="../assets/mark.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://araa47.github.io/rsmn-site/hotels/" />
   <link rel="stylesheet" href="../styles.css?v=20261106a" />
-  <link rel="stylesheet" href="../proposal.css?v=20261106a" />
+  <link rel="stylesheet" href="../proposal.css?v=20261106b" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://araa47.github.io/rsmn-site/hotels/" />
@@ -135,14 +135,14 @@
             <p class="eyebrow">Hotel edition · November 2026</p>
             <h1>The building<br />already knows.<br /><em>It just isn’t<br />listening.</em></h1>
             <p class="h-hero__sub">
-              A 200-key hotel spends about
+              A 200-key hotel at ₹11.50 a unit spends about
               <strong>₹5.3 crore a year on electricity</strong>. This is what happens when
               every room reports back — and what that is worth.
             </p>
             <div class="h-hero__stats">
               <div><b>₹5.3 cr</b><span>electricity a year</span></div>
-              <div><b>~20%</b><span>modelled saving</span></div>
-              <div><b>₹1.07 cr</b><span>back every year</span></div>
+              <div><b>up to 20%</b><span>full-programme saving</span></div>
+              <div><b>₹1.07 cr</b><span>at full scope</span></div>
             </div>
             <div class="h-hero__actions">
               <a class="btn" href="#savings">
@@ -254,7 +254,7 @@
         <div class="statrow">
           <div class="statrow__item">
             <span class="statrow__num">₹11.50</span>
-            <p>per unit all-in: ₹9.40 energy, ₹608/kVA demand, 5% tax — the HT-III commercial tariff.</p>
+            <p>per unit all-in: ₹9.40 energy, ₹608/kVA demand, 5% tax — an industrial-tariff number. A Maharashtra commercial connection is about ₹19.70.</p>
           </div>
           <div class="statrow__item">
             <span class="statrow__num">94 kWh</span>
@@ -322,7 +322,8 @@
             <h2>Where the 20% comes from.</h2>
           </div>
           <p class="lede">
-            Ten changes. Cooling is most of it. Each point is one per cent of the annual bill.
+            The full programme: ten changes, 20 points at the top of the credible range.
+            Rooms alone are 5–10 points; if you stop there, plan on 10–15%.
           </p>
         </div>
 
@@ -724,8 +725,9 @@
             <h2>What it’s worth.</h2>
           </div>
           <p class="lede">
-            A representative 200-key hotel at the HT-III commercial tariff. Move the sliders;
-            the audit replaces every number with yours.
+            A 200-key hotel at your tariff. The default ₹11.50 is an industrial rate; a
+            Maharashtra commercial connection is closer to ₹19.70. Move the sliders; the
+            audit replaces every number with yours.
           </p>
         </div>
 
@@ -754,9 +756,9 @@
                 <label for="tariff">All-in tariff</label>
                 <output class="field__val" data-out="tariff" for="tariff">₹11.50</output>
               </div>
-              <input id="tariff" type="range" min="8" max="16" step="0.25" value="11.5" data-input="tariff" />
-              <div class="field__scale" aria-hidden="true"><span>₹8</span><span>₹16 / unit</span></div>
-              <p class="field__hint">₹9.40 energy + ₹608/kVA demand + 5% tax. Adjust if your bill differs.</p>
+              <input id="tariff" type="range" min="8" max="22" step="0.25" value="11.5" data-input="tariff" />
+              <div class="field__scale" aria-hidden="true"><span>₹8</span><span>₹22 / unit</span></div>
+              <p class="field__hint">₹11.50 is an industrial rate. Commercial Maharashtra is about ₹19.70; set this to your bill.</p>
             </div>
 
             <fieldset class="path">
@@ -786,19 +788,19 @@
           </div>
 
           <div class="model__out" aria-live="polite">
-            <p class="model__label">Modelled annual saving</p>
+            <p class="model__label">Full-programme annual saving</p>
             <p class="model__big"><span data-out="save">₹1.07 crore</span></p>
             <p class="model__sub"><span data-out="saveKwh">9.3 lakh</span> kWh · <span data-out="co2">661</span> tCO₂e · <span data-out="perKey">₹53,500</span> a key</p>
 
             <div class="model__rows">
               <div><span>Electricity spend today</span><strong data-out="spend">₹5.35 crore</strong></div>
-              <div><span>Saving range</span><strong data-out="range">12–28%</strong></div>
-              <div><span>Payback, base case</span><strong data-out="payback">1.1–2.1 years</strong></div>
+              <div><span>Saving range</span><strong data-out="range">10–20%</strong></div>
+              <div><span>Payback, full programme</span><strong data-out="payback">1.1–2.1 years</strong></div>
               <div><span>Capex band</span><strong data-out="capex">₹1.2–2.2 crore</strong></div>
             </div>
 
             <div class="model__mix">
-              <span class="model__mix-label">Base case, by area</span>
+              <span class="model__mix-label">Full programme, by area</span>
               <div class="model__mix-bar" aria-hidden="true">
                 <i style="width:59%"></i><i style="width:17%"></i><i style="width:24%"></i>
               </div>
@@ -826,11 +828,11 @@
             <dl>
               <div><dt>Room energy</dt><dd>32 kWh per occupied room-night: a 1.5 TR inverter unit at about 1.3 kW average, plus lighting, TV and plugs.</dd></div>
               <div><dt>Shared energy</dt><dd>42 kWh per key per night for public areas, kitchens, laundry, pumping and plant.</dd></div>
-              <div><dt>Tariff</dt><dd>₹9.40/unit, ₹608/kVA/month demand, 5% electricity tax — about ₹11.50 all-in. We re-price it at your bill in the audit.</dd></div>
-              <div><dt>Savings</dt><dd>12% low, 20% base, 28% high, against a hotel with key cards and manual thermostats.</dd></div>
+              <div><dt>Tariff</dt><dd>₹9.40/unit, ₹608/kVA/month demand, 5% electricity tax — about ₹11.50 all-in. That is an industrial-tariff number; a Maharashtra commercial connection is about ₹19.70. We re-price it at your bill in the audit.</dd></div>
+              <div><dt>Savings</dt><dd>10% low, 15% rooms-only, 20% full programme, against a hotel with key cards and manual thermostats. The 20% needs the plant and lighting measures, not just room controls.</dd></div>
               <div><dt>Capex</dt><dd>Planning bands, not a quote. Hardware at actuals, vendor-neutral, itemised before approval.</dd></div>
             </dl>
-            <p class="assumptions__note">Roughly 7% of revenue — inside the 4–8% range for Indian hotels, at the top of it because of the cooling load.</p>
+            <p class="assumptions__note">Roughly 7% of revenue at this bill — inside the 4–8% range for Indian hotels, at the top of it because of the cooling load. A commercial tariff pushes the bill, and the ratio, higher.</p>
           </div>
         </details>
 
@@ -838,13 +840,14 @@
           <div class="truth__copy">
             <h3>Three things to check</h3>
             <p>
-              A 1–2 year payback is unusual, and it is a tariff story as much as a technology
-              one. Check these before believing any of it.
+              A 1–2 year payback is unusual. It needs the full 20% programme and an
+              industrial tariff; at 15% it is 1.5–2.8 years. Check these before believing
+              any of it.
             </p>
           </div>
           <ol class="truth__list">
             <li><span>01</span><div><b>The baseline</b><p>If key cards already work in every room, room savings shrink. The audit measures your rooms, not the model.</p></div></li>
-            <li><span>02</span><div><b>The tariff</b><p>At ₹11.50 all-in, every kilowatt-hour is worth saving. At ₹8 it is a different project.</p></div></li>
+            <li><span>02</span><div><b>The tariff</b><p>₹11.50 is industrial. Commercial Maharashtra is about ₹19.70, which makes the same saving worth more; a lower industrial rate makes it worth less. The bill decides.</p></div></li>
             <li><span>03</span><div><b>Comfort</b><p>Savings from a warmer room don’t count. Temperature excursions are reported next to the savings, every month.</p></div></li>
           </ol>
         </div>
@@ -1352,6 +1355,6 @@
     </div>
   </footer>
 
-  <script src="hotels.js?v=20261104a" defer></script>
+  <script src="hotels.js?v=20261106b" defer></script>
 </body>
 </html>

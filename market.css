@@ -943,12 +943,6 @@
   }
 }
 
-/* the brand tag costs more room than it earns on a small phone */
-@media (max-width: 480px) {
-  .site-header .brand__tag {
-    display: none;
-  }
-}
 
 /* ---------- the short version ---------- */
 .short {
