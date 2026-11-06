@@ -3061,6 +3061,24 @@ html[data-theme="dark"] .lrow__bar i {
 .matrix-panel .matrix-wrap {
   margin-top: 0;
 }
+.matrix-panel__link {
+  margin-top: 18px;
+}
+.matrix-panel__link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 600 0.78rem/1.4 var(--sans);
+  color: var(--lime);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.matrix-panel__link a:hover {
+  color: var(--cream);
+}
+.compare-link {
+  margin-top: 22px;
+}
 
 @media (min-width: 1081px) {
   .guard {

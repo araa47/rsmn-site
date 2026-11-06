@@ -122,8 +122,8 @@ The commercial case has two parts, kept separate on purpose:
 - **Rate.** Self check-in is one of the few amenities guests actively filter for,
   so the premium is a *slider*, not a claimed percentage — set it to zero and the
   energy case still stands.
-- **Energy.** ₹9,000 a month per flat at a 25% saving, from checkout shutdown,
-  pre-arrival cooling and a 24°C ceiling.
+- **Energy.** A ₹9,000-a-month bill per flat at a 25% saving (₹2,250 a month,
+  ₹27,000 a year), from checkout shutdown, pre-arrival cooling and a 24°C ceiling.
 
 Defaults: one listing, ₹4,500 ADR, 70% occupancy, 6% premium — ₹95,040 a year
 (₹68,040 of it rate, ₹27,000 energy), ₹55,000–95,000 capex, 0.6–1.0 year
@@ -141,19 +141,67 @@ airbnb/airbnb.css      short-let components, layered on proposal.css
 airbnb/airbnb.js       stay timeline, model, theme, menu
 ```
 
+## The competitive market pages
+
+Three pages ask the question the proposals leave implicit: what does the alternative
+cost, and why is this cheaper or better?
+
+- **`market.html`** — the homes market. Public, indexed, linked from the comparison
+  block and the footer of the studio site.
+- **`hotels/market.html`** — the hotel market. `noindex`, linked from the comparison
+  panel and footer of the hotel proposal.
+- **`airbnb/market.html`** — the short-let market. `noindex`, linked from the money
+  section and footer of the short-let proposal.
+
+**Live:** https://araa47.github.io/rsmn-site/market.html (the hotel and short-let
+pages are shared directly).
+
+Each page opens with a plain-English **short version**: three ways to buy, three
+prices, four or five bullets each and a one-line verdict, before any protocol or licence talk.
+The detailed landscape follows for anyone who wants it. A glossary at the bottom
+explains the acronyms — BMS, GRMS, PMS, KNX, Matter, AMC — and the technical detail
+stays in the small print.
+
+The rest of the skeleton is the same: a five-year cost ladder; the four or five ways a
+buyer can solve the problem; where the money goes; an interactive quote model with its
+assumptions printed; the structural reasons for the price gap; a capability matrix;
+the open-protocol "endless" argument; the limits, including where we are not the
+answer; and sources.
+
+The figures are indicative, dated and sourced. `market.js` holds the three models,
+`market.css` the shared components. The pages name categories, and name a firm only
+where the firm has published a price: Trescent's ₹25–50 lakh enquiry floor, AHA's ₹5
+lakh 3BHK benchmark, Basalte's keypad range. No non-public competitor price is used.
+
+The hotel page also puts the proposal's own anchors under the same light: ₹11.50/unit
+is an industrial tariff, not the Maharashtra commercial rate, and 10–18% is the
+realistic saving band, with 20% needing plant measures. Those caveats sit on the page
+rather than in a footnote.
+
+```
+market.html             homes competitive market (public)
+market.css              shared components for the three market pages
+market.js               three quote models, theme, menu, print
+hotels/market.html      hotel competitive market (unlisted)
+airbnb/market.html      short-let competitive market (unlisted)
+```
+
 ## Files
 
 
 ```
 index.html              the one-page site
-hotels/                 unlisted hotel proposal (see above)
-airbnb/                 unlisted short-let proposal (see above)
+market.html             competitive market for homes (public)
+hotels/                 unlisted hotel proposal + market page
+airbnb/                 unlisted short-let proposal + market page
 privacy.html            plain-language privacy note
 styles.css              design system, layout, phone UI, gallery, plan
-proposal.css            shared components for both pitches
+proposal.css            shared components for the pitches and market pages
+market.css              competitive-market components
 site.js                 mobile menu, app tabs, floor plan, voice demo, reveal, year
+market.js               quote models, theme, menu, print
 robots.txt              crawler rules + sitemap reference
-sitemap.xml             the two public pages
+sitemap.xml             the three public pages
 assets/
 ├── mark.svg            Ambient Form mark / favicon
 ├── og.png              1200 × 630 social preview image

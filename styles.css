@@ -3706,6 +3706,9 @@ ol {
   color: var(--muted);
   background: var(--paper);
 }
+.compare-block__link {
+  margin-top: 16px;
+}
 .compare-table thead th:first-child {
   color: var(--clay);
 }
