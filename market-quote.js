@@ -1,84 +1,8 @@
-/* Ambient Form Studio — competitive market pages.
-   Dependency-free: theme, menu, the three quote models, print, year. */
+/* Ambient Form Studio — the quote calculator used on the main pages.
+   Takes the three models and renders any [data-quote] block. Theme, menu and
+   page chrome stay with the page's own script. */
 (function () {
   "use strict";
-
-  var header = document.getElementById("site-header");
-  var menuBtn = document.querySelector(".menu-btn");
-  var mobileMenu = document.getElementById("mobile-menu");
-  var pageMain = document.querySelector("main");
-  var pageFooter = document.querySelector("footer");
-
-  /* ---------- header state on scroll ---------- */
-  function onScroll() {
-    if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
-  }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  /* ---------- mobile menu ---------- */
-  function setMenu(open) {
-    if (!menuBtn || !mobileMenu) return;
-    menuBtn.setAttribute("aria-expanded", String(open));
-    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    mobileMenu.classList.toggle("is-open", open);
-    header.classList.toggle("is-open", open);
-    document.body.style.overflow = open ? "hidden" : "";
-    if (pageMain) pageMain.toggleAttribute("inert", open);
-    if (pageFooter) pageFooter.toggleAttribute("inert", open);
-  }
-  if (menuBtn) {
-    menuBtn.addEventListener("click", function () {
-      setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
-    });
-  }
-  if (mobileMenu) {
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        setMenu(false);
-      });
-    });
-  }
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") setMenu(false);
-  });
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 900) setMenu(false);
-  });
-
-  /* ---------- theme ---------- */
-  var themeToggle = document.getElementById("themeToggle");
-  var themeMeta = document.querySelector('meta[name="theme-color"]');
-  function applyTheme(theme) {
-    var dark = theme === "dark";
-    document.documentElement.dataset.theme = dark ? "dark" : "light";
-    if (themeToggle) {
-      themeToggle.setAttribute("aria-pressed", String(dark));
-      themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-      var use = themeToggle.querySelector("use");
-      if (use) use.setAttribute("href", dark ? "#i-sun" : "#i-moon");
-    }
-    if (themeMeta) themeMeta.setAttribute("content", dark ? "#0d1714" : "#f5f0e6");
-    try {
-      localStorage.setItem("rsmn-theme", dark ? "dark" : "light");
-    } catch (e) {}
-  }
-  if (themeToggle) {
-    applyTheme(document.documentElement.dataset.theme || "light");
-    themeToggle.addEventListener("click", function () {
-      applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
-    });
-  }
-
-  /* ---------- year + print ---------- */
-  var year = document.getElementById("year");
-  if (year) year.textContent = String(new Date().getFullYear());
-  document.querySelectorAll("[data-print]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      window.print();
-    });
-  });
 
   /* ---------- money formatting ---------- */
   function trimNum(n, places) {

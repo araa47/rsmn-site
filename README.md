@@ -144,67 +144,54 @@ airbnb/airbnb.css      short-let components, layered on proposal.css
 airbnb/airbnb.js       stay timeline, model, theme, menu
 ```
 
-## The competitive market pages
+## The market sections
 
-Three pages ask the question the proposals leave implicit: what does the alternative
-cost, and why is this cheaper or better?
+The competitive analysis now lives inside the three pages, not on separate pages. Each
+page has a `#market` section that answers the same three questions in plain English:
 
-- **`market.html`** — the homes market. Public, indexed, linked from the comparison
-  block and the footer of the studio site.
-- **`hotels/market.html`** — the hotel market. `noindex`, linked from the comparison
-  panel and footer of the hotel proposal.
-- **`airbnb/market.html`** — the short-let market. `noindex`, linked from the money
-  section and footer of the short-let proposal.
+- **How it works now** — three ways a buyer can solve the problem, the price each one
+  actually lands at, and what they still don't get.
+- **What we offer** — the layer, the price, and what is handed over.
+- **Why we're better** — three structural reasons, followed by the same-scope
+  calculator.
 
-**Live:** https://araa47.github.io/rsmn-site/market.html (the hotel and short-let
-pages are shared directly).
+| Page | Market | Research |
+| --- | --- | --- |
+| Studio site | `index.html#market` | `index.html#research` |
+| Hotels | `hotels/index.html#market` | `hotels/index.html#research` |
+| Short-lets | `airbnb/index.html#market` | `airbnb/index.html#research` |
 
-Each page opens with a plain-English **short version**: three ways to buy, three
-prices, four or five bullets each and a one-line verdict, before any protocol or licence talk.
-The detailed landscape follows for anyone who wants it. A glossary at the bottom
-explains the acronyms — BMS, GRMS, PMS, KNX, Matter, AMC — and the technical detail
-stays in the small print.
+At the bottom of each page, `#research` holds the full competitive landscape, the
+method and every source in two collapsed panels. The main text stays plain; the
+research is there for anyone who wants the receipts.
 
-The rest of the skeleton is the same: a five-year cost ladder; the four or five ways a
-buyer can solve the problem; where the money goes; an interactive quote model with its
-assumptions printed; the structural reasons for the price gap; a capability matrix;
-the open-protocol "endless" argument; the limits, including where we are not the
-answer; and sources.
+`market.css` holds the components, `market-quote.js` the three quote models. The old
+`/market.html`, `/hotels/market.html` and `/airbnb/market.html` URLs now redirect to
+the new sections.
 
-The figures are indicative, dated and sourced. `market.js` holds the three models,
-`market.css` the shared components. The pages name categories, and name a firm only
-where the firm has published a price: Trescent's ₹25–50 lakh enquiry floor, AHA's ₹5
-lakh 3BHK benchmark, Basalte's keypad range. No non-public competitor price is used.
+Figures are indicative, dated and sourced. A firm is named only where it has published
+a price: Trescent's ₹25–50 lakh enquiry floor, AHA's ₹5 lakh 3BHK benchmark, Basalte's
+keypad range. No non-public competitor price is used.
 
-The hotel page also puts the proposal's own anchors under the same light: ₹11.50/unit
-is an industrial tariff, not the Maharashtra commercial rate, and 10–18% is the
-realistic saving band, with 20% needing plant measures. Those caveats sit on the page
-rather than in a footnote.
-
-```
-market.html             homes competitive market (public)
-market.css              shared components for the three market pages
-market.js               three quote models, theme, menu, print
-hotels/market.html      hotel competitive market (unlisted)
-airbnb/market.html      short-let competitive market (unlisted)
-```
+The hotel section puts the proposal's own anchors under the same light: ₹11.50/unit is
+an industrial tariff, not the Maharashtra commercial rate, and 10–20% is the
+full-programme band (10–15% rooms-only), with 20% needing plant measures.
 
 ## Files
 
 
 ```
-index.html              the one-page site
-market.html             competitive market for homes (public)
-hotels/                 unlisted hotel proposal + market page
-airbnb/                 unlisted short-let proposal + market page
+index.html              the one-page site (market at #market, research at #research)
+hotels/                 unlisted hotel proposal (market at hotels/#market)
+airbnb/                 unlisted short-let proposal (market at airbnb/#market)
 privacy.html            plain-language privacy note
 styles.css              design system, layout, phone UI, gallery, plan
-proposal.css            shared components for the pitches and market pages
-market.css              competitive-market components
+proposal.css            shared components for the pitches
+market.css              integrated market and research components
 site.js                 mobile menu, app tabs, floor plan, voice demo, reveal, year
-market.js               quote models, theme, menu, print
+market-quote.js         the three quote models for the integrated calculators
 robots.txt              crawler rules + sitemap reference
-sitemap.xml             the three public pages
+sitemap.xml             the two public pages
 assets/
 ├── mark.svg            Ambient Form mark / favicon
 ├── og.png              1200 × 630 social preview image
